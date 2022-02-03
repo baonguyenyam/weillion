@@ -80,112 +80,111 @@ function _typeof3(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
   }
 
   n.Modernizr = Modernizr;
-}(window, document);
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 20,
-      density: {
-        enable: true,
-        value_area: 200
-      }
-    },
-    color: {
-      value: ["#fff", "#fff", "#fff", "#fff"]
-    },
-    shape: {
-      type: "circle",
-      stroke: {
-        width: 0,
-        color: "#fff"
-      },
-      polygon: {
-        nb_sides: 15
-      }
-    },
-    opacity: {
-      value: 0.5,
-      random: false,
-      anim: {
-        enable: false,
-        speed: 1.5,
-        opacity_min: 0.15,
-        sync: false
-      }
-    },
-    size: {
-      value: 2.5,
-      random: false,
-      anim: {
-        enable: true,
-        speed: 2,
-        size_min: 0.15,
-        sync: false
-      }
-    },
-    line_linked: {
-      enable: true,
-      distance: 110,
-      color: "#fff",
-      opacity: 0.25,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 1.6,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      bounce: false,
-      attract: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 1200
-      }
-    }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: false,
-        mode: "repulse"
-      },
-      onclick: {
-        enable: false,
-        mode: "push"
-      },
-      resize: true
-    },
-    modes: {
-      grab: {
-        distance: 400,
-        line_linked: {
-          opacity: 1
-        }
-      },
-      bubble: {
-        distance: 400,
-        size: 40,
-        duration: 2,
-        opacity: 8,
-        speed: 3
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.4
-      },
-      push: {
-        particles_nb: 4
-      },
-      remove: {
-        particles_nb: 2
-      }
-    }
-  },
-  retina_detect: true
-});
+}(window, document); // particlesJS("particles-js", {
+// 	particles: {
+// 		number: {
+// 			value: 20,
+// 			density: {
+// 				enable: true,
+// 				value_area: 200,
+// 			},
+// 		},
+// 		color: {
+// 			value: ["#fff", "#fff", "#fff", "#fff"],
+// 		},
+// 		shape: {
+// 			type: "circle",
+// 			stroke: {
+// 				width: 0,
+// 				color: "#fff",
+// 			},
+// 			polygon: {
+// 				nb_sides: 15,
+// 			},
+// 		},
+// 		opacity: {
+// 			value: 0.5,
+// 			random: false,
+// 			anim: {
+// 				enable: false,
+// 				speed: 1.5,
+// 				opacity_min: 0.15,
+// 				sync: false,
+// 			},
+// 		},
+// 		size: {
+// 			value: 2.5,
+// 			random: false,
+// 			anim: {
+// 				enable: true,
+// 				speed: 2,
+// 				size_min: 0.15,
+// 				sync: false,
+// 			},
+// 		},
+// 		line_linked: {
+// 			enable: true,
+// 			distance: 110,
+// 			color: "#fff",
+// 			opacity: 0.25,
+// 			width: 1,
+// 		},
+// 		move: {
+// 			enable: true,
+// 			speed: 1.6,
+// 			direction: "none",
+// 			random: false,
+// 			straight: false,
+// 			out_mode: "out",
+// 			bounce: false,
+// 			attract: {
+// 				enable: false,
+// 				rotateX: 600,
+// 				rotateY: 1200,
+// 			},
+// 		},
+// 	},
+// 	interactivity: {
+// 		detect_on: "canvas",
+// 		events: {
+// 			onhover: {
+// 				enable: false,
+// 				mode: "repulse",
+// 			},
+// 			onclick: {
+// 				enable: false,
+// 				mode: "push",
+// 			},
+// 			resize: true,
+// 		},
+// 		modes: {
+// 			grab: {
+// 				distance: 400,
+// 				line_linked: {
+// 					opacity: 1,
+// 				},
+// 			},
+// 			bubble: {
+// 				distance: 400,
+// 				size: 40,
+// 				duration: 2,
+// 				opacity: 8,
+// 				speed: 3,
+// 			},
+// 			repulse: {
+// 				distance: 200,
+// 				duration: 0.4,
+// 			},
+// 			push: {
+// 				particles_nb: 4,
+// 			},
+// 			remove: {
+// 				particles_nb: 2,
+// 			},
+// 		},
+// 	},
+// 	retina_detect: true,
+// });
 
 function getParameterByName(name) {
   var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : window.location.href;
@@ -226,5 +225,43 @@ var WEILION_APP = {
 };
 jQuery(function () {
   WEILION_APP.init();
+});
+$('.btn_nav').click(function () {
+  // animate content
+  $('.page__style').addClass('animate_content');
+  $('.page__description').fadeOut(100).delay(2800).fadeIn();
+  setTimeout(function () {
+    $('.page__style').removeClass('animate_content');
+  }, 3200); //remove fadeIn class after 1500ms
+
+  setTimeout(function () {
+    $('.page__style').removeClass('fadeIn');
+  }, 1500);
+}); // on click show page after 1500ms
+
+$('.home_link').click(function () {
+  setTimeout(function () {
+    $('.home').addClass('fadeIn');
+  }, 1500);
+});
+$('.projects_link').click(function () {
+  setTimeout(function () {
+    $('.projects').addClass('fadeIn');
+  }, 1500);
+});
+$('.skills_link').click(function () {
+  setTimeout(function () {
+    $('.skills').addClass('fadeIn');
+  }, 1500);
+});
+$('.about_link').click(function () {
+  setTimeout(function () {
+    $('.about').addClass('fadeIn');
+  }, 1500);
+});
+$('.contact_link').click(function () {
+  setTimeout(function () {
+    $('.contact').addClass('fadeIn');
+  }, 1500);
 });
 //# sourceMappingURL=app.js.map
