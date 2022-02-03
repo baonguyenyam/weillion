@@ -7217,110 +7217,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: normal;
   font-style: normal; }
 
-footer {
-  padding: 2.5rem 0;
-  color: #666;
-  background-color: #f9f9f9; }
-
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  background: #242424; }
-  body section {
-    font-family: 'Poppins'; }
-
-.cd-btn {
-  display: inline-block;
-  padding: 1.4em 1.6em;
-  margin-bottom: 2em;
-  border-radius: 50em;
-  background-color: #283040;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); }
-
-.no-touch .cd-btn:hover {
-  background-color: #323c50; }
-
-.cd-about .cd-btn {
-  background-color: #4089a6; }
-
-/* --------------------------------
- *
- *Main Components
- *
- *-------------------------------- */
-body::after {
-  /* these are the 2 half blocks which cover the content once the animation is triggered */
-  content: '';
-  height: 50vh;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  background-color: #ffffff;
-  z-index: 1;
-  /* Force Hardware Acceleration */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition: -webkit-transform 0.4s 0.4s;
-  -moz-transition: -moz-transform 0.4s 0.4s;
-  transition: transform 0.4s 0.4s; }
-
-body::before {
-  /* these are the 2 half blocks which cover the content once the animation is triggered */
-  content: '';
-  height: 50vh;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  background-color: #ffffff;
-  z-index: 1;
-  /* Force Hardware Acceleration */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition: -webkit-transform 0.4s 0.4s;
-  -moz-transition: -moz-transform 0.4s 0.4s;
-  transition: transform 0.4s 0.4s;
-  top: 0;
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  transform: translateY(-100%); }
-
-body::after {
-  bottom: 0;
-  -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%);
-  transform: translateY(100%); }
-
-body.page-is-changing::after, body.page-is-changing::before {
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: -webkit-transform 0.4s 0s;
-  -moz-transition: -moz-transform 0.4s 0s;
-  transition: transform 0.4s 0s; }
-
-.page__style {
-  background: #6D326D;
-  font-family: OpenSans-Regular, sans-serif;
+#weilion_loading {
   position: fixed;
   top: 0;
   right: 0;
@@ -7329,29 +7226,133 @@ body.page-is-changing::after, body.page-is-changing::before {
   height: 100%;
   width: 100%;
   margin: auto auto;
-  overflow: hidden; }
-  .page__style .page__description {
-    color: #ffffff;
-    font-weight: 300;
-    text-align: center; }
+  overflow: hidden;
+  z-index: 10000; }
+  #weilion_loading__audio {
+    opacity: 0;
+    z-index: -100;
+    visibility: hidden; }
+  #weilion_loading .weilion_loading__top, #weilion_loading .weilion_loading__bottom {
+    position: fixed;
+    left: 0;
+    height: 50%;
+    width: 100%; }
+  #weilion_loading .weilion_loading__top {
+    top: 0;
+    background: #000;
+    animation: weilion_top 1s 2s ease; }
+    #weilion_loading .weilion_loading__top:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #1968b3; }
+  #weilion_loading .weilion_loading__bottom {
+    bottom: 0;
+    background: #000;
+    animation: weilion_bottom 1s 2s ease; }
+    #weilion_loading .weilion_loading__bottom:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #1968b3; }
+  #weilion_loading.loading .weilion_loading__top:after {
+    animation: weilion_loading_top 2s ease; }
+  #weilion_loading.loading .weilion_loading__bottom:before {
+    animation: weilion_loading_bottom 2s ease; }
 
-.animate_content {
-  animation: animate 2s ease; }
-
-@keyframes animate {
+@keyframes weilion_top {
   0% {
-    transform: scale(0, 0); }
-  75% {
-    opacity: 1;
-    transform: scale(1, 0.002); }
+    top: 0; }
   100% {
-    transform: scale(1, 1); } }
+    top: -100%; } }
 
-.fadeIn {
-  z-index: 10; }
+@keyframes weilion_bottom {
+  0% {
+    bottom: 0; }
+  100% {
+    bottom: -100%; } }
 
-/*  Projects */
-.projects {
-  background: #BD5DE9; }
+@keyframes weilion_loading_top {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.2); }
+  100% {
+    opacity: 1;
+    transform: scaleX(1); } }
+
+@keyframes weilion_loading_bottom {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.2); }
+  100% {
+    opacity: 1;
+    transform: scaleX(1); } }
+
+footer {
+  padding: 2.5rem 0;
+  color: #666;
+  background-color: #f9f9f9; }
+
+header .navbar {
+  padding: 0; }
+  header .navbar .navbar-brand img {
+    transition: all 300ms ease;
+    height: 60px; }
+
+header.active {
+  position: fixed;
+  top: 0;
+  background: rgba(25, 104, 179, 0.2);
+  width: 100%;
+  margin: 0; }
+  header.active .navbar {
+    padding: 0; }
+    header.active .navbar .navbar-brand img {
+      height: 45px; }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 7px;
+  width: 7px; }
+
+::-webkit-scrollbar-track {
+  background: #000; }
+
+::-webkit-scrollbar-thumb {
+  background: #1968b3;
+  height: 100px;
+  border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f26528; }
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+body {
+  background: #242424;
+  font-family: 'Poppins'; }
+  @media (min-width: 768px) {
+    body .container {
+      max-width: 90%; } }
+  body weilion-main,
+  body weilion-home {
+    display: block; }
+  body weilion-main {
+    height: 100%;
+    min-height: 100vh; }
+    body weilion-main weilion-home {
+      background: url("../img/weilion-home-bg.png") no-repeat bottom right;
+      background-size: cover;
+      height: 100%;
+      min-height: 100vh;
+      position: relative; }
 
 /*# sourceMappingURL=app.css.map */

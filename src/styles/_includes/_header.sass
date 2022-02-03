@@ -1,2 +1,19 @@
 header
-	
+	.navbar
+		padding: 0
+		.navbar-brand
+			img 
+				transition: $weilion-transition
+				height: 60px
+	&.active
+		position: fixed
+		top: 0
+		background: rgba(red($weilion-main-color),green($weilion-main-color), blue($weilion-main-color),.2)
+		width: 100%
+		margin: 0
+		// box-shadow: 0 0 5px 5px  rgba(0,0, 0,.25)
+		.navbar
+			padding: 0
+			.navbar-brand
+				img 
+					height: 45px
