@@ -1,0 +1,8 @@
+| <!-- inject:css -->
+| <!-- endinject -->
+if process.argv.slice(3).indexOf('--production') > -1
+	link(rel="stylesheet", href="./css/weilion.min.css")
+	link(rel="stylesheet", href="./css/app.min.css")
+else
+	link(rel="stylesheet", href="./css/weilion.css")
+	link(rel="stylesheet", href="./css/app.css")

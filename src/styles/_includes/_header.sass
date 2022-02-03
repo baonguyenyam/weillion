@@ -1,0 +1,41 @@
+header
+	background: $weilion-main-color
+	nav
+		// MENU TOGGLE
+		&.navbar
+			padding-left: 0
+			padding-right: 0
+		// Logo 
+		.navbar-brand
+			img 
+				max-height: 40px
+		// Button 
+		.navbar-toggler
+			background: $weilion-sec-color
+			border-radius: 2px
+			border: 0
+			padding: .35rem .5rem
+			svg 
+				max-width: 100%
+				width: 16px
+				height: 16px
+				display: flex
+				align-items: center
+				justify-content: center
+				stroke: #fff
+				fill: #fff
+			&.collapsed 
+				background: #fff
+				svg 
+					stroke: $weilion-main-color
+					fill: $weilion-main-color
+		// MAIN MENU 
+		.navbar-nav
+			.nav-item
+				.nav-link
+					color: lighten($weilion-main-color,30%)
+				&.active,
+				&:hover,
+				&:focus
+					.nav-link
+						color: #fff

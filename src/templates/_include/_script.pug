@@ -1,0 +1,8 @@
+| <!-- inject:js -->
+| <!-- endinject -->
+if process.argv.slice(3).indexOf('--production') > -1
+	script(src="./js/weilion.min.js")
+	script(src="./js/app.min.js")
+else 
+	script(src="./js/weilion.js")
+	script(src="./js/app.js")
