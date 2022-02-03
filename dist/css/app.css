@@ -7217,37 +7217,6 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: normal;
   font-style: normal; }
 
-header {
-  background: #1968b3; }
-  header nav.navbar {
-    padding-left: 0;
-    padding-right: 0; }
-  header nav .navbar-brand img {
-    max-height: 40px; }
-  header nav .navbar-toggler {
-    background: #f26528;
-    border-radius: 2px;
-    border: 0;
-    padding: .35rem .5rem; }
-    header nav .navbar-toggler svg {
-      max-width: 100%;
-      width: 16px;
-      height: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      stroke: #fff;
-      fill: #fff; }
-    header nav .navbar-toggler.collapsed {
-      background: #fff; }
-      header nav .navbar-toggler.collapsed svg {
-        stroke: #1968b3;
-        fill: #1968b3; }
-  header nav .navbar-nav .nav-item .nav-link {
-    color: #79b4ec; }
-  header nav .navbar-nav .nav-item.active .nav-link, header nav .navbar-nav .nav-item:hover .nav-link, header nav .navbar-nav .nav-item:focus .nav-link {
-    color: #fff; }
-
 footer {
   padding: 2.5rem 0;
   color: #666;
