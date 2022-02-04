@@ -1,0 +1,49 @@
+
+// INIT ROOT SETUP 
+\::-webkit-scrollbar
+	-webkit-appearance: none
+	height: 7px
+	overflow-y: scroll
+	width: 7px
+	background-color: transparent
+\::-webkit-scrollbar-track
+	background: $weilion-bgdark
+\::-webkit-scrollbar-thumb
+	background: $weilion-main-color
+	height: 100px
+	border-radius: 0
+	&:hover
+		background: $weilion-sec-color
+
+body 
+	overflow: hidden
+	&.loaded 
+		overflow-y: scroll
+html, body 
+	background: $weilion-bg
+	font-family: 'Poppins'
+	color: $weilion-copyright-bg
+	&:hover
+		\::-webkit-scrollbar
+	.container
+		max-width: 100%
+		+media-breakpoint-up(md)
+			max-width: calc(100% - 100px)
+		+media-breakpoint-up(xl)
+			max-width: calc(1600px - 100px)
+			
+///////////////////////////////////////////////////////////////////////
+// GLOBAL VARIABLES
+///////////////////////////////////////////////////////////////////////
+weilion-particles-js,
+weilion-main,
+weilion-home,
+weilion-home-text
+	display: block
+	width: 100%
+///////////////////////////////////////////////////////////////////////
+// MAIN
+///////////////////////////////////////////////////////////////////////
+weilion-main
+	height: 100%
+	min-height: 100vh
