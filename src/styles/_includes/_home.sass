@@ -71,6 +71,9 @@ weilion-home
 		transform: translateY(30px)
 		opacity: 0
 		animation: openButton .5s 4s ease-in forwards
+		margin-bottom: 2rem
+		+media-breakpoint-up(md)
+			margin-bottom: 3rem
 		text 
 			display: block
 		span 
@@ -133,6 +136,18 @@ weilion-home
 				border-left-color: transparent
 				border-bottom-color: $weilion-main-color
 				border-right-color: $weilion-main-color
+	.vivobo
+		max-width: 320px
+		padding: 1rem
+		background: rgba(0,0,0,1)
+		border: 1px solid rgba(255,255,255,.15)
+		border-radius: 10px
+		display: flex
+		justify-content: center
+		align-items: center
+		video 
+			width: 100%
+			margin: 0
 
 @keyframes openButton
 	100% 
