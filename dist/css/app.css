@@ -7247,10 +7247,10 @@ html, body {
     max-width: 100%; }
     @media (min-width: 768px) {
       html .container, body .container {
-        max-width: calc(100% - 100px); } }
-    @media (min-width: 1200px) {
+        max-width: calc(100% - 100px) !important; } }
+    @media (min-width: 1400px) {
       html .container, body .container {
-        max-width: calc(1600px - 100px); } }
+        max-width: calc(1600px - 100px) !important; } }
 
 weilion-particles-js,
 weilion-main,
@@ -7347,132 +7347,300 @@ footer {
   color: #666;
   background-color: #f9f9f9; }
 
-header .navbar {
-  padding: 0; }
-  header .navbar .navbar-brand img {
-    transition: all 300ms ease;
-    height: 30px; }
-  header .navbar .navbar-nav {
-    font-family: 'Mandalore';
-    font-size: 1.2rem; }
-    header .navbar .navbar-nav .nav-item .nav-link {
-      color: #f9f9f9;
-      letter-spacing: 2px; }
-  header .navbar #welionToggleMenu {
-    display: none; }
-
-@media (min-width: 992px) {
-  header {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    transition: all 300ms ease; }
-    header .navbar .navbar-brand {
-      order: 1;
-      margin-right: auto; }
-      header .navbar .navbar-brand img {
-        height: 40px; }
+header {
+  z-index: 1000; }
+  header .navbar {
+    padding-left: 0;
+    padding-right: 0; }
+    header .navbar .navbar-brand img {
+      transition: all 300ms ease;
+      height: 30px; }
+    header .navbar .navbar-nav {
+      font-family: 'Mandalore';
+      font-size: 1.2rem; }
+      header .navbar .navbar-nav .nav-item .nav-link {
+        color: #f9f9f9;
+        letter-spacing: 2px; }
+      header .navbar .navbar-nav .nav-item:hover .nav-link, header .navbar .navbar-nav .nav-item:active .nav-link, header .navbar .navbar-nav .nav-item:focus .nav-link {
+        color: #fff;
+        text-shadow: 0 0 7px #04b8ff, 0 0 20px #04b8ff; }
     header .navbar #welionMenu {
-      order: 3;
-      margin-left: 2rem; }
+      z-index: 950; }
+    header .navbar #welionToggleMenu .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.5); }
+      header .navbar #welionToggleMenu .dropdown-menu .dropdown-item {
+        color: #fff;
+        font-size: 1rem;
+        letter-spacing: 3px; }
+        header .navbar #welionToggleMenu .dropdown-menu .dropdown-item:hover, header .navbar #welionToggleMenu .dropdown-menu .dropdown-item:active, header .navbar #welionToggleMenu .dropdown-menu .dropdown-item:focus {
+          background: none;
+          color: #fff;
+          text-shadow: 0 0 7px #04b8ff, 0 0 20px #04b8ff; }
+    @media (max-width: 991.98px) {
+      header .navbar #welionToggleMenu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 900;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9); }
+        header .navbar #welionToggleMenu ul li,
+        header .navbar #welionToggleMenu ul .dropdown-item {
+          text-align: center; }
+        header .navbar #welionToggleMenu.open {
+          display: flex; } }
+  @media (min-width: 992px) {
+    header {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      transition: all 300ms ease; }
+      header .navbar {
+        padding-left: 0;
+        padding-right: 0; }
+        header .navbar .navbar-brand {
+          order: 1;
+          margin-right: auto;
+          animation: openBrand 300ms 2.5s ease-in forwards;
+          transform: translateX(-200px);
+          opacity: 0; }
+          header .navbar .navbar-brand img {
+            height: 40px; }
+        header .navbar #welionMenu {
+          order: 3;
+          animation: openMenu 1s 3s ease-in forwards;
+          position: relative;
+          opacity: 0; }
+          header .navbar #welionMenu #pulseMe {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.015);
+            z-index: -1; }
+            header .navbar #welionMenu #pulseMe .bar {
+              background: #04b8ff;
+              box-shadow: 0px 0px 0 #04b8ff, 0px 0px 1px #04b8ff, 0px 0px 8px #04b8ff, 0px 0px 16px #04b8ff;
+              border-radius: 2px;
+              position: absolute; }
+              header .navbar #welionMenu #pulseMe .bar.left {
+                width: 1px;
+                animation: left 2s linear infinite; }
+              header .navbar #welionMenu #pulseMe .bar.top {
+                height: 1px;
+                animation: top 2s linear infinite; }
+              header .navbar #welionMenu #pulseMe .bar.right {
+                width: 1px;
+                animation: right 2s linear infinite; }
+              header .navbar #welionMenu #pulseMe .bar.bottom {
+                height: 1px;
+                animation: bottom 2s linear infinite; }
+          header .navbar #welionMenu.open #pulseMe, header .navbar #welionMenu:hover #pulseMe {
+            background: rgba(0, 0, 0, 0.5); }
+            header .navbar #welionMenu.open #pulseMe .bar, header .navbar #welionMenu:hover #pulseMe .bar {
+              display: none; }
+        header .navbar #welionToggleMenu {
+          order: 2;
+          margin-right: 2rem;
+          justify-content: flex-end;
+          display: flex;
+          visibility: hidden;
+          overflow: hidden;
+          transition: all 500ms ease-in-out; }
+          header .navbar #welionToggleMenu.open {
+            visibility: visible;
+            overflow: visible; }
+          header .navbar #welionToggleMenu .navbar-nav {
+            white-space: nowrap;
+            flex-direction: row;
+            font-size: 1rem; }
+            header .navbar #welionToggleMenu .navbar-nav .nav-item {
+              white-space: nowrap;
+              margin-left: .5rem; }
+              header .navbar #welionToggleMenu .navbar-nav .nav-item .nav-link {
+                letter-spacing: 2px; } }
+  @media (min-width: 1200px) {
     header .navbar #welionToggleMenu {
-      order: 2;
-      justify-content: flex-end;
-      display: flex;
-      visibility: hidden;
-      overflow: hidden;
-      transition: all 500ms ease-in-out; }
-      header .navbar #welionToggleMenu.open {
-        visibility: visible;
-        overflow: visible; }
+      margin-right: 2rem; }
       header .navbar #welionToggleMenu .navbar-nav {
-        white-space: nowrap;
-        flex-direction: row; }
+        font-size: 1.1rem; }
         header .navbar #welionToggleMenu .navbar-nav .nav-item {
-          white-space: nowrap;
-          margin-left: 2rem; } }
-
-header.active {
-  position: fixed;
-  top: 0;
-  background: rgba(0, 0, 0, 0.85);
-  width: 100%;
-  margin: 0;
-  box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.35) inset; }
-  @media (min-width: 768px) {
-    header.active {
-      padding-top: 0rem;
-      padding-bottom: 0rem; } }
-  header.active .navbar {
-    padding: 0; }
+          margin-left: 2rem; }
+          header .navbar #welionToggleMenu .navbar-nav .nav-item .nav-link {
+            letter-spacing: 3px; } }
+  header.active {
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    margin: 0; }
+    @media (min-width: 768px) {
+      header.active {
+        padding-top: .5rem;
+        padding-bottom: .5rem; } }
     header.active .navbar .navbar-brand img {
       height: 30px; }
-
-#welionMenu {
-  width: 20px;
-  height: 14px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
-  border: none;
-    border-margin: 0;
-    border-padding: 0;
-    border-overflow: visible;
-    border-background: transparent;
-    border-color: inherit;
-    border-font: inherit;
-    border-line-height: normal;
-    border--webkit-font-smoothing: inherit;
-    border--moz-osx-font-smoothing: inherit;
-    border--webkit-appearance: none;
-  background-color: transparent; }
-  #welionMenu span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: #fff;
-    border-radius: 2px;
-    opacity: 1;
-    left: 0;
+  header #welionMenu {
+    width: 20px;
+    height: 14px;
+    position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out; }
-    #welionMenu span:nth-child(1) {
-      top: 0px; }
-    #welionMenu span:nth-child(2), #welionMenu span:nth-child(3) {
-      top: 6px; }
-    #welionMenu span:nth-child(4) {
-      top: 12px; }
-  #welionMenu.open span:nth-child(1) {
-    top: 18px;
-    width: 0%;
-    left: 50%; }
-  #welionMenu.open span:nth-child(2) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg); }
-  #welionMenu.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-  #welionMenu.open span:nth-child(4) {
-    top: 18px;
-    width: 0%;
-    left: 50%; }
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    background-color: transparent; }
+    header #welionMenu span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #fff;
+      border-radius: 2px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out; }
+      header #welionMenu span:nth-child(1) {
+        top: 0px; }
+      header #welionMenu span:nth-child(2), header #welionMenu span:nth-child(3) {
+        top: 6px; }
+      header #welionMenu span:nth-child(4) {
+        top: 12px; }
+    header #welionMenu.open span:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%; }
+    header #welionMenu.open span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    header #welionMenu.open span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    header #welionMenu.open span:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%; }
+
+@keyframes openMenu {
+  0% {
+    opacity: 1; }
+  10% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  30% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes openBrand {
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes left {
+  0% {
+    height: 0;
+    top: calc(2.5rem - 2px);
+    left: 0; }
+  20% {
+    height: 2.5rem;
+    top: 0;
+    left: 0; }
+  40% {
+    height: 0;
+    top: 0;
+    left: 0; } }
+
+@keyframes top {
+  0% {
+    width: 0;
+    top: 0;
+    left: 0; }
+  20% {
+    width: 0;
+    top: 0;
+    left: 0; }
+  40% {
+    width: 2.5rem;
+    top: 0;
+    left: 0; }
+  60% {
+    width: 0;
+    top: 0;
+    left: 2.5rem; } }
+
+@keyframes right {
+  0% {
+    height: 0;
+    top: 0;
+    left: calc(2.5rem - 2px); }
+  40% {
+    height: 0;
+    top: 0;
+    left: calc(2.5rem - 2px); }
+  60% {
+    height: 2.5rem;
+    top: 0;
+    left: calc(2.5rem - 2px); }
+  80% {
+    height: 0;
+    top: 2.5rem;
+    left: calc(2.5rem - 2px); } }
+
+@keyframes bottom {
+  0% {
+    width: 0;
+    top: 2.5rem;
+    left: calc(2.5rem - 2px); }
+  60% {
+    width: 0;
+    top: 2.5rem;
+    left: calc(2.5rem - 2px); }
+  80% {
+    width: 2.5rem;
+    top: 2.5rem;
+    left: 0px; }
+  100% {
+    width: 0px;
+    top: calc(2.5rem - 0px);
+    left: 0px; } }
 
 weilion-home {
   background: url("../img/weilion-home-bg.png") no-repeat bottom right;
@@ -7483,23 +7651,41 @@ weilion-home {
   display: flex;
   align-items: flex-end;
   padding: 3rem 0; }
-  weilion-home .texttyping {
-    overflow-x: auto;
-    border-radius: 10px 10px 0 0;
-    font-family: 'Mandalore';
-    opacity: .5;
-    user-select: none;
-    margin-bottom: 2rem; }
-    weilion-home .texttyping span {
-      letter-spacing: 2px;
-      font-size: 1rem;
-      line-height: 1.5rem; }
-    @media (min-width: 768px) {
-      weilion-home .texttyping {
-        margin-bottom: 4rem; }
-        weilion-home .texttyping span {
-          font-size: 1.3rem;
-          line-height: 1.8rem; } }
+  @media (max-width: 991.98px) {
+    weilion-home:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      background: -moz-linear-gradient(0deg, black 0%, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-linear-gradient(0deg, black 0%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(0deg, black 0%, rgba(255, 255, 255, 0) 100%); } }
+  weilion-home weilion-home-text {
+    z-index: 2; }
+    weilion-home weilion-home-text .texttyping {
+      overflow-x: auto;
+      border-radius: 10px 10px 0 0;
+      font-family: 'Mandalore';
+      opacity: .5;
+      user-select: none;
+      margin-bottom: 2rem; }
+      weilion-home weilion-home-text .texttyping span {
+        letter-spacing: 3px;
+        font-size: 1rem;
+        line-height: 1.5rem; }
+      @media (min-width: 768px) {
+        weilion-home weilion-home-text .texttyping {
+          margin-bottom: 3rem; }
+          weilion-home weilion-home-text .texttyping span {
+            font-size: 1rem;
+            line-height: 1.5rem; }
+          weilion-home weilion-home-text .texttyping .typed-cursor {
+            color: #1968b3;
+            opacity: 1; } }
   weilion-home weilion-particles-js {
     position: absolute;
     top: 0;
@@ -7525,14 +7711,18 @@ weilion-home {
     letter-spacing: 3px;
     color: rgba(255, 255, 255, 0.8);
     border: none;
-    z-index: 2; }
+    z-index: 2;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: openButton .5s 4s ease-in forwards; }
     weilion-home .weilion-home-btn text {
       display: block; }
     weilion-home .weilion-home-btn span {
       display: block;
-      margin-left: .25rem;
-      font-size: .8rem;
-      line-height: 1; }
+      margin-left: .5rem;
+      font-size: 1rem;
+      line-height: 1;
+      position: relative; }
     weilion-home .weilion-home-btn:before, weilion-home .weilion-home-btn:after {
       position: absolute;
       content: "";
@@ -7557,10 +7747,11 @@ weilion-home {
       border-right-color: transparent; }
     weilion-home .weilion-home-btn:hover {
       color: #1968b3;
-      background: rgba(0, 0, 0, 0.65); }
+      background: rgba(0, 0, 0, 0.65);
+      width: auto; }
       weilion-home .weilion-home-btn:hover:before, weilion-home .weilion-home-btn:hover:after {
-        width: 50%;
-        height: 50%; }
+        width: 100%;
+        height: 100%; }
       weilion-home .weilion-home-btn:hover:before {
         border-bottom-color: transparent;
         border-right-color: transparent;
@@ -7571,5 +7762,10 @@ weilion-home {
         border-left-color: transparent;
         border-bottom-color: #1968b3;
         border-right-color: #1968b3; }
+
+@keyframes openButton {
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -31,28 +31,34 @@ var WEILION_APP = {
 			$('#welionMenu, #welionToggleMenu').toggleClass('open');
 			if ($(this).attr('data-click-state') == 1) {
 				$(this).attr('data-click-state', 0);
+				if ($(window).width() > 991) {
+					$('#welionToggleMenu').css({
+						"width": "0px",
+					});
+				}
+			}
+			else {
+				$(this).attr('data-click-state', 1);
+				if ($(window).width() > 991) {
+					$('#welionToggleMenu').css({
+						"width": welionMenu + "px",
+					});
+				}
+			}
+		});
+		setTimeout(() => {
+			if ($(window).width() > 991) {
 				$('#welionToggleMenu').css({
 					"width": "0px",
 				});
 			}
-			else {
-				$(this).attr('data-click-state', 1);
-				$('#welionToggleMenu').css({
-					"width": welionMenu+"px",
-				});
-			}
-		});
-		setTimeout(() => {
-			$('#welionToggleMenu').css({
-				"width": "0px",
-			});
 		}, 500);
 	},
 	indexText: () => {
 		var typed = new Typed('#text-replace', {
 			strings: ["<span>First stage – S-IC</span><span>Length 138.0 ft (42.1 m) </span><br><span>Diameter 33.0 ft (10.1 m) </span><br><span>Empty mass 287,000 lb (130,000 kg) </span><br><span>Gross mass 5,040,000 lb (2,290,000 kg) </span><br><span>Engines 5 Rocketdyne F-1 </span><br><span>Thrust 7,891,000 lbf (35,100 kN) sea level </span><br><span>Specific impulse 263 seconds (2.58 km/s) sea level</span>"],
 			typeSpeed: 20,
-			startDelay: 1000,
+			startDelay: 4000,
 			backDelay: 10000,
 			loop: true,
 			contentType: 'html',
@@ -81,5 +87,4 @@ jQuery(window).on('scroll', () => {
 });
 jQuery(window).on('resize', () => {
 	WEILION_APP.fixedHeader();
-	// WEILION_APP.toggleMenu();
 });

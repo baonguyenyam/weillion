@@ -8,22 +8,40 @@ weilion-home
 	display: flex
 	align-items: flex-end
 	padding: 3rem 0
-	.texttyping
-		overflow-x: auto
-		border-radius: 10px 10px 0 0
-		font-family: 'Mandalore'
-		opacity: .5
-		user-select: none
-		margin-bottom: 2rem
-		span
-			letter-spacing: 2px
-			font-size: 1rem
-			line-height: 1.5rem
-		+media-breakpoint-up(md)
-			margin-bottom: 4rem
+	+media-breakpoint-down(md)
+		&:after 
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 1
+			background: rgba(0,0,0,.5)
+			background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)
+			background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)
+			background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)
+	weilion-home-text
+		z-index: 2
+		.texttyping
+			overflow-x: auto
+			border-radius: 10px 10px 0 0
+			font-family: 'Mandalore'
+			opacity: .5
+			user-select: none
+			margin-bottom: 2rem
 			span
-				font-size: 1.3rem
-				line-height: 1.8rem
+				letter-spacing: 3px
+				font-size: 1rem
+				line-height: 1.5rem
+			+media-breakpoint-up(md)
+				margin-bottom: 3rem
+				span
+					font-size: 1rem
+					line-height: 1.5rem
+				.typed-cursor
+					color: $weilion-main-color
+					opacity: 1
 	weilion-particles-js
 		position: absolute
 		top: 0
@@ -50,13 +68,23 @@ weilion-home
 		color: rgba(255,255,255,.8)
 		border: none
 		z-index: 2
+		transform: translateY(30px)
+		opacity: 0
+		animation: openButton .5s 4s ease-in forwards
 		text 
 			display: block
 		span 
 			display: block
-			margin-left: .25rem
-			font-size: .8rem
+			margin-left: .5rem
+			font-size: 1rem
 			line-height: 1
+			position: relative
+			// span
+			// 	opacity: 0
+			// 	transition: opacity 0.1s 0.5s,transform 0.4s 0.5s
+			// 	position: absolute
+			// 	right: -100%
+			// 	top: 0
 		&:before, &:after
 			position: absolute
 			content: ""
@@ -83,10 +111,18 @@ weilion-home
 		&:hover 
 			color: $weilion-main-color
 			background: rgba(0,0,0,.65)
+			width: auto
 			span
+				// span 
+				// 	opacity: 1
+				// 	right: -2px
+				// 	color: #fff
+				// 	z-index: -1
+				// 	opacity: .25
+				// 	transform: scale(1.2)
 			&:before, &:after
-				width: 50%
-				height: 50%
+				width: 100%
+				height: 100%
 			&:before
 				border-bottom-color: transparent
 				border-right-color: transparent
@@ -97,3 +133,8 @@ weilion-home
 				border-left-color: transparent
 				border-bottom-color: $weilion-main-color
 				border-right-color: $weilion-main-color
+
+@keyframes openButton
+	100% 
+		transform: translateY(0)
+		opacity: 1
