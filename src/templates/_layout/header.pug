@@ -1,7 +1,7 @@
 <!-- ////////////// HEADER ////////////// -->
-header#weilion-header.fixed-top
-	.container
-		nav.navbar.navbar-expand-lg
+weilion-header#weilion-header.fixed-top
+	weilion-header-container.container
+		weilion-nav.navbar.navbar-expand-lg
 			a.navbar-brand(href="/#weilion-home") 
 				img(src="./img/logo.webp", alt="Weilion Logo")
 			button#welionMenu(type="button" data-target="#welionToggleMenu" aria-controls="welionToggleMenu")
@@ -14,7 +14,7 @@ header#weilion-header.fixed-top
 					.bar.top
 					.bar.right
 					.bar.bottom
-			#welionToggleMenu
+			weilion-toggle-menu#welionToggleMenu
 				ul.navbar-nav
 					//- li.nav-item.active
 						a.nav-link(href="/")
