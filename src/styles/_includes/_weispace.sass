@@ -1,0 +1,186 @@
+// STYLES //////////////////////////////
+weilion-weispace
+	position: relative
+	display: flex
+	align-items: flex-end
+	padding: 2rem 0
+	h2
+		user-select: none
+		font-family: 'MandaloreTitle'
+		-webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
+		color: transparent
+		font-size: 3rem
+		letter-spacing: 1px
+		overflow: hidden
+		&:hover
+			color: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.035)
+			-webkit-text-stroke: 0.5px $weilion-main-hover
+			text-shadow: 0px 0px 12px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.5)
+		&.weispace-animated-visible
+			opacity: 0
+			animation: textAnimationOneTime 1s ease-in forwards, textAnimation 1s ease-in-out infinite alternate
+	.infobox
+		border: 2px solid $weilion-copyright-text
+		padding: 2rem
+		position: relative
+		font-size: .9rem
+		span
+			font-family: 'MandaloreTitle'
+			color: $weilion-main-hover
+			font-size: 1rem
+		+media-breakpoint-up(lg)
+			// padding: 3rem
+		&:before 
+			content: ''
+			position: absolute
+			left: calc(100% - 1.5rem - 1px)
+			top: calc(100% - 2.5rem - 2px)
+			width: 0
+			height: 0
+			display: block
+			border-top: calc(2rem - 1px) solid transparent
+			border-bottom: calc(2rem - 1px) solid transparent
+			border-left: calc(2rem - 2px) solid $weilion-copyright-text
+			z-index: 1
+			transform: rotate(45deg)
+		&:after 
+			content: ''
+			position: absolute
+			left: calc(100% - 1.5rem)
+			top: calc(100% - 2.5rem)
+			width: 0
+			height: 0
+			display: block
+			border-top: 2rem solid transparent
+			border-bottom: 2rem solid transparent
+			border-left: 2rem solid $weilion-bg
+			z-index: 1
+			transform: rotate(45deg)
+		// background: linear-gradient(45deg,$weilion-copyright-text 0 2px,transparent 0) 0 100% /50% 50%,linear-gradient(-45deg,$weilion-copyright-text 0 42px ,transparent 0) 100% 100%/50% 50%,linear-gradient(135deg,$weilion-copyright-text 0 2px,transparent 0) 0 0 /50% 50%,linear-gradient(-135deg,$weilion-copyright-text 0 2px,transparent 0) 100% 0 /50% 50%,#19191918
+		// background-origin: border-box
+		// background-repeat: no-repeat
+		// -webkit-mask: linear-gradient(45deg,transparent 0 0px,$weilion-copyright-text 0) bottom left,linear-gradient(-45deg,transparent 0 39.5px,$weilion-copyright-text 0) bottom right,linear-gradient(135deg,transparent 0 0px,$weilion-copyright-text 0) top left,linear-gradient(-135deg,transparent 0 0px,$weilion-copyright-text 0) top right
+		// -webkit-mask-size: 50.5% 50.5%
+		// -webkit-mask-repeat: no-repeat
+	.numberbox
+		border: 1px solid rgba(red($weilion-copyright-text), green($weilion-copyright-text), blue($weilion-copyright-text),.5)
+		border-left: 0
+		border-right: 0
+		padding: 1.5rem 0
+		position: relative
+		font-size: .9rem
+		h3 
+			font-size: 1rem
+			font-family: 'MandaloreTitle'
+			color: $weilion-copyright-text
+			margin-bottom: 0
+		p 
+			font-size: 1.3rem
+			letter-spacing: 1px
+			font-family: 'MandaloreTitle'
+			margin-bottom: 1.5rem
+			&:last-child
+				margin-bottom: 0
+		+media-breakpoint-up(lg)
+			padding: 2rem 0
+	.lanch
+		display: flex
+		flex-direction: column
+		li 
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			margin-bottom: 1rem
+			.icon 
+				background: rgba(0,0,0,.5)
+				color: $weilion-sec-space
+				border-radius: 5px
+				height: 3rem
+				width: 3rem
+				display: flex
+				align-items: center
+				justify-content: center
+				i 
+					font-size: 1.3rem
+					height: 1.3rem
+					line-height: 1.3rem
+			.text
+				margin-left: 1rem
+				span
+					font-size: 1rem
+					font-family: 'MandaloreTitle'
+					color: $weilion-copyright-text
+					margin-bottom: 0
+					display: block
+					+ span
+						font-size: 1.3rem
+						letter-spacing: 1px
+						font-family: 'MandaloreTitle'
+						margin-bottom: 1.5rem
+						color: #fff
+						&:last-child
+							margin-bottom: 0
+	+media-breakpoint-up(md)
+		padding: 3rem 0
+		h2
+			font-size: 4rem
+			letter-spacing: 2px
+	+media-breakpoint-only(md)
+		.lanch
+			ul 
+				flex-direction: row
+				display: flex
+				li 
+					flex: 0 0 33.333333%
+					max-width: 33.333333%
+	+media-breakpoint-up(lg)
+		padding: 4rem 0
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			right: 0
+			width: 50%
+			height: 100%
+			display: block
+			background: url('../img/home-weispace-bg-crop.jpg') no-repeat center right
+			background-size: cover
+			z-index: -1
+		h2
+			font-size: 5rem
+			letter-spacing: 5px
+		.lanch
+			justify-content: flex-end
+			align-items: flex-end
+			li 
+				.icon 
+					background: $weilion-bg
+					color: $weilion-sec-space
+					border-radius: 5px
+					height: 3rem
+					width: 3rem
+					display: flex
+					align-items: center
+					justify-content: center
+					box-shadow: 3px 2px 6px 0 rgba(0,0,0,.5)
+	+media-breakpoint-up(xl)
+		padding: 5rem 0
+		h2
+			font-size: 6rem
+			letter-spacing: 10px
+
+
+@keyframes textAnimation
+	0%
+		transform: translate(0, 3px)
+	100%
+		transform: translate(0, -3px)
+@keyframes textAnimationOneTime
+	0%
+		letter-spacing: 150px
+		opacity: 0
+		color: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.035)
+		-webkit-text-stroke: 0 $weilion-main-hover
+		text-shadow: 0px 0px 12px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.5)
+	100%
+		opacity: 1	

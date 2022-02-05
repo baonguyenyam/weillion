@@ -11,11 +11,10 @@ block body
 		bar(class=app+"_loading__top")
 		bar(class=app+"_loading__bottom")
 		audio(id=app+"_loading__audio", controls, autoplay)
-			source(src="./data/002.mp3" type="audio/mpeg")
-			source(src="./data/002.ogg" type="audio/ogg")
-			source(src="./data/002.wav" type="audio/wav")
+			source(src="/data/002.mp3" type="audio/mpeg")
+			source(src="/data/002.wav" type="audio/wav")
 	weilion-home(id=app+"-home")
-		weilion-particles-js(id=app+"-particles-js")
+		//- weilion-particles-js(id=app+"-particles-js")
 		weilion-home-text
 			.container 
 				.row 
@@ -26,9 +25,79 @@ block body
 							text TIME LINE
 							span >>>
 								//- span >>>
-						.vivobo
-							video(src="./data/w-x-header.mp4" muted autoplay preload="auto" loop)
-	weilion-team(id=app+"-team")
+						.weilion-home-vivobo
+							.weilion-home-vivobo-video
+								video(src="/data/w-x-header.mp4" muted autoplay preload="auto" loop)
+							.weilion-home-odometer
+								.odometer-number
+									h2 holder
+									#odometer-1.number.odometer 9999999
+								.odometer-number
+									h2 total liquidity
+									#odometer-2.number.odometer 9999999999
+								.odometer-number
+									h2 burned
+									#odometer-3.number.odometer 999999999
+								.odometer-number
+									h2 market cap
+									#odometer-4.number.odometer 999999999999
+								.player-controls
+									span.play
+										svg.player-btn-icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 200 200")
+											path.svg-play(fill="transparent", d="M90 50 L30 15 L30 160 L170 100 L130 75")
+									span.pause
+										svg.pause-btn-icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 200 200")
+											path.svg-pause(fill="transparent", d="M50 20 V160 M140 20 V160")
+
+	weilion-weispace(id=app+"-weispace")
+		.container 
+			.row 
+				.col-12
+					h2.weispace-animated weispace
+					.row 
+						.col-lg-5
+							.infobox.my-3.my-lg-4.my-lg-5 
+								span welion space 
+								| is a matrix space station for the development of space exploration ecosystem using WEI energy for the initiation process. Theoretically, the WEI energy is made from each point in the blockchain space which is block-quantized in the matrix by the chain platform source core with core multi matters, for example Binance Smart Chain or Aleph Zero. Chain platform source cores are encrypted in unique NFT form as a unique matter in blockchain space exploration.
+							
+							.numberbox.my-3.my-lg-4.my-lg-5 
+								h3.animatable.animate__fadeInUp.animate__fast length of the truss
+								p 108.4 m
+								h3 WEIGHT (400 tons)
+								p ~400.000 kg
+								h3 the pressurized volume
+								p -1000 m3
+								h3 Length of all modules
+								p 74 m
+						.col-lg-7.lanch
+							figure.mb-4.d-lg-none
+								img.w-100(src="./img/home-weispace-bg-crop.jpg", alt="", srcset="")
+							ul.list-unstyled
+								li 
+									.icon 
+										i.far.fa-calendar
+									.text 
+										span Launch date
+										span May 12, 2021
+								li 
+									.icon 
+										i.far.fa-comment-dots
+									.text 
+										span orbital speed
+										span 7.66 km/s
+								li 
+									.icon 
+										i.far.fa-clone
+									.text 
+										span orbital altitude
+										span 408 km
+	weilion-copyright.d-block.bg-light.text-dark(id=app+"-copyright")
+		.container 
+			.row 
+				.col-12.pt-3
+					p.text-center.small
+						span Copyright © 2020 WEILION. All rights reserved. Code by Nguyen Pham
+	//- weilion-team(id=app+"-team")
 		.container 
 			.row 
 				.col-12
@@ -38,3 +107,24 @@ block body
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
+	audio(id=app+"_background__audio", controls)
+		source(src="/data/beep-22.mp3" type="audio/mpeg")
+		source(src="/data/beep-22.wav" type="audio/wav")
+	audio(id=app+"_laser__audio", controls)
+		source(src="/data/001.mp3" type="audio/mpeg")
+		source(src="/data/001.wav" type="audio/wav")
+	audio(id=app+"_intro__audio", controls)
+		source(src="/data/beep-21.mp3" type="audio/mpeg")
+		source(src="/data/beep-21.wav" type="audio/wav")
+	audio(id=app+"_intro_click__audio", controls)
+		source(src="/data/button-3.mp3" type="audio/mpeg")
+		source(src="/data/button-3.wav" type="audio/wav")
+	audio(id=app+"_intro_screen__audio", controls)
+		source(src="/data/beep-1.mp3" type="audio/mpeg")
+		source(src="/data/beep-1.wav" type="audio/wav")
+	audio(id=app+"_typing__audio", controls loop)
+		source(src="/data/beep-24.mp3" type="audio/mpeg")
+		source(src="/data/beep-24.wav" type="audio/wav")
+	audio(id=app+"_space__audio", controls loop)
+		source(src="/data/audio.mp3" type="audio/mpeg")
+		source(src="/data/audio.ogg" type="audio/ogg")

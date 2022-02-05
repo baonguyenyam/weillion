@@ -1,0 +1,134 @@
+.player-controls
+	color: #FFF
+	cursor: pointer
+	display: none
+	height: 2rem
+	text-decoration: none
+	width: 2rem
+	-webkit-transition: transform 0.25s ease-in-out
+	transition: transform 0.25s ease-in-out
+	position: absolute
+	bottom: 50% 
+	left: calc(100% - 20px)
+	z-index: 500
+	+media-breakpoint-up(md)
+		display: flex
+		transform: translateY(50%)
+		justify-content: center
+		align-items: center
+	+media-breakpoint-up(xl)
+		transform: translateY(0)
+		bottom: calc(50% + .8rem)
+		left: calc(100% - 2rem)
+	@media (min-width: 1600px)
+		bottom: calc(50% + .35rem)
+	.play, .pause
+		display: flex
+		height: 2rem
+		position: absolute
+		width: 2rem
+		-webkit-transition: all 0.25s linear
+		transition: all 0.25s linear
+		z-index: 5
+		justify-content: center
+		align-items: center
+		svg
+			stroke: #FFF
+			stroke-dasharray: 1000
+			stroke-dashoffset: 0
+			stroke-linejoin: round
+			stroke-linecap: round
+			&.player-btn-icon
+				stroke-width: 20
+				width: 14px
+				height: 14px
+			&.pause-btn-icon
+				width: 16px
+				height: 14px
+				stroke-width: 30
+	.play::before, .pause::before, .play::after, .pause::after
+		-webkit-border-radius: 1000px
+		-moz-border-radius: 1000px
+		border-radius: 1000px
+		content: ""
+		display: block
+		position: absolute
+		height: 2rem
+		right: 0
+		top: 0
+		width: 2rem
+		z-index: 0
+
+	.play::before
+		box-shadow: 0 0 0 rgba(255, 255, 255, 0)
+		-webkit-transition: all 0.25s linear
+		transition: all 0.25s linear
+		// background: rgba(255, 255, 255, 0.5)
+		animation: audio1 1.5s infinite ease-in-out
+
+	.pause
+		opacity: 0
+		right: 0
+		top: 0
+
+	&.playing
+		.play
+			opacity: 0
+		.pause
+			opacity: 1
+			&::before
+				-moz-animation: audio1 1.5s infinite ease-in-out
+				-o-animation: audio1 1.5s infinite ease-in-out
+				-webkit-animation: audio1 1.5s infinite ease-in-out
+				animation: audio1 1.5s infinite ease-in-out
+			&::after
+				-moz-animation: audio2 2.2s infinite ease-in-out
+				-o-animation: audio2 2.2s infinite ease-in-out
+				-webkit-animation: audio2 2.2s infinite ease-in-out
+				animation: audio2 2.2s infinite ease-in-out
+
+	&:hover
+		// transform: scale(1.1)
+		.play::before
+			animation: audio1 1.5s infinite ease-in-out
+			// box-shadow: 0 0 12px rgba(255,255,255, 0.8)
+
+.animate-audio1
+	-moz-animation: audio1 1.5s infinite ease-in-out
+	-o-animation: audio1 1.5s infinite ease-in-out
+	-webkit-animation: audio1 1.5s infinite ease-in-out
+	animation: audio1 1.5s infinite ease-in-out
+
+@keyframes audio1
+	0%,
+	100%
+		box-shadow: 0 0 0 0.4rem rgba(255, 255, 255, 0.07)
+
+	25%
+		box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.045)
+
+	50%
+		box-shadow: 0 0 0 0.55rem rgba(255, 255, 255, 0.095)
+
+	75%
+		box-shadow: 0 0 0 1.5rem rgba(255, 255, 255, 0.045)
+
+.animate-audio2
+	-moz-animation: audio2 2.2s infinite ease-in-out
+	-o-animation: audio2 2.2s infinite ease-in-out
+	-webkit-animation: audio2 2.2s infinite ease-in-out
+	animation: audio2 2.2s infinite ease-in-out
+
+@keyframes audio2
+	0%,
+	100%
+		box-shadow: 0 0 0 1.5rem rgba(255, 255, 255, 0.045)
+
+	25%
+		box-shadow: 0 0 0 0.4rem rgba(255, 255, 255, 0.07)
+
+	50%
+		box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.045)
+
+	75%
+		box-shadow: 0 0 0 0.55rem rgba(255, 255, 255, 0.095)

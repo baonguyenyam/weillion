@@ -9,7 +9,9 @@ module.exports = function (gulp, $, browserSync) {
 				'bower_components/particles.js/particles.min.js',
 				'bower_components/typed.js/lib/typed.min.js',
 				'src/vendors/modernizr.js',
-				'src/vendors/particle.js',
+				'src/vendors/odometer.js',
+				'src/vendors/smoothscroll.js',
+				// 'src/vendors/particle.js',
 			])
 			.pipe($.concat('weilion.js'))
 			.pipe(gulp.dest('./dist/js'));
