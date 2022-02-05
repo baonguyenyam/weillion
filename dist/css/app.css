@@ -8205,6 +8205,10 @@ weilion-weispace {
     padding: 1.5rem 0;
     position: relative;
     font-size: .9rem; }
+    weilion-weispace .numberbox .item {
+      margin-bottom: 1.5rem; }
+      weilion-weispace .numberbox .item:last-child {
+        margin-bottom: 0; }
     weilion-weispace .numberbox h3 {
       font-size: 1rem;
       font-family: 'MandaloreTitle';
@@ -8213,10 +8217,7 @@ weilion-weispace {
     weilion-weispace .numberbox p {
       font-size: 1.3rem;
       letter-spacing: 1px;
-      font-family: 'MandaloreTitle';
-      margin-bottom: 1.5rem; }
-      weilion-weispace .numberbox p:last-child {
-        margin-bottom: 0; }
+      font-family: 'MandaloreTitle'; }
     @media (min-width: 992px) {
       weilion-weispace .numberbox {
         padding: 2rem 0; } }

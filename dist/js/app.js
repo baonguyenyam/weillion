@@ -75,9 +75,9 @@ jQuery(function ($) {
       var $animatablesCSS = $(this);
 
       if ($animatablesCSS.offset().top + $animatablesCSS.height() - 20 < offsetT) {
-        $animatablesCSS.addClass('animate__animated');
+        $animatablesCSS.addClass('animate__animated ' + $animatablesCSS.attr('data-animate'));
       } else {
-        $animatablesCSS.removeClass('animate__animated');
+        $animatablesCSS.removeClass('animate__animated ' + $animatablesCSS.attr('data-animate'));
       }
     });
   }; // Hook doAnimations on scroll, and trigger a scroll
