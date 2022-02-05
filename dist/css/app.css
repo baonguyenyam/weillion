@@ -8846,14 +8846,6 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: 'MandaloreTitle';
-  src: url("../webfonts/MandaloreTitle.svg#MandaloreTitle") format("svg"), url("../webfonts/MandaloreTitle.ttf") format("truetype"), url("../webfonts/MandaloreTitle.woff") format("woff");
-  src: url("../webfonts/MandaloreTitle.eot");
-  src: url("../webfonts/MandaloreTitle.eot?#iefix") format("embedded-opentype"), url("../webfonts/MandaloreTitle.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal; }
-
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   height: 7px;
@@ -8878,7 +8870,7 @@ body {
 
 html, body {
   background: #242424;
-  font-family: 'Poppins';
+  font-family: 'Roboto Mono';
   color: #f9f9f9; }
   html .container, body .container {
     max-width: 100%; }
@@ -9554,9 +9546,6 @@ weilion-home {
           weilion-home weilion-home-text .texttyping .typed-cursor {
             color: #1968b3;
             opacity: 1; } }
-      @media (min-width: 1200px) {
-        weilion-home weilion-home-text .texttyping {
-          min-height: 192px; } }
   weilion-home weilion-particles-js {
     position: absolute;
     top: 0;
@@ -10109,16 +10098,16 @@ weilion-weispace {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-family: 'MandaloreTitle';
+    font-family: 'Mandalore';
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
     color: transparent;
     font-size: 3rem;
     letter-spacing: 1px;
     overflow: hidden; }
     weilion-weispace h2:hover {
-      color: rgba(4, 184, 255, 0.035);
-      -webkit-text-stroke: 0.5px #04b8ff;
-      text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+      color: rgba(217, 98, 9, 0.035);
+      -webkit-text-stroke: 0.5px #d96209;
+      text-shadow: 0px 0px 12px rgba(217, 98, 9, 0.5); }
     weilion-weispace h2.weispace-animated-visible {
       opacity: 0;
       -webkit-animation: textAnimationOneTime 1s ease-in forwards, textAnimation 1s ease-in-out infinite alternate;
@@ -10129,8 +10118,8 @@ weilion-weispace {
     position: relative;
     font-size: .9rem; }
     weilion-weispace .infobox span {
-      font-family: 'MandaloreTitle';
-      color: #04b8ff;
+      font-family: 'Mandalore';
+      color: #d96209;
       font-size: 1rem; }
     weilion-weispace .infobox:before {
       content: '';
@@ -10170,13 +10159,13 @@ weilion-weispace {
         margin-bottom: 0; }
     weilion-weispace .numberbox h3 {
       font-size: 1rem;
-      font-family: 'MandaloreTitle';
+      font-family: 'Mandalore';
       color: #666;
       margin-bottom: 0; }
     weilion-weispace .numberbox p {
       font-size: 1.3rem;
       letter-spacing: 1px;
-      font-family: 'MandaloreTitle';
+      font-family: 'Mandalore';
       margin-bottom: 0; }
     @media (min-width: 992px) {
       weilion-weispace .numberbox {
@@ -10235,14 +10224,14 @@ weilion-weispace {
         margin-left: 1rem; }
         weilion-weispace .lanch li .text span {
           font-size: 1rem;
-          font-family: 'MandaloreTitle';
+          font-family: 'Mandalore';
           color: #666;
           margin-bottom: 0;
           display: block; }
           weilion-weispace .lanch li .text span + span {
             font-size: 1.3rem;
             letter-spacing: 1px;
-            font-family: 'MandaloreTitle';
+            font-family: 'Mandalore';
             margin-bottom: 1.5rem;
             color: #fff; }
             weilion-weispace .lanch li .text span + span:last-child {
@@ -10361,9 +10350,9 @@ weilion-weispace {
   0% {
     letter-spacing: 150px;
     opacity: 0;
-    color: rgba(4, 184, 255, 0.035);
-    -webkit-text-stroke: 0 #04b8ff;
-    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+    color: rgba(217, 98, 9, 0.035);
+    -webkit-text-stroke: 0 #d96209;
+    text-shadow: 0px 0px 12px rgba(217, 98, 9, 0.5); }
   100% {
     opacity: 1; } }
 
@@ -10371,8 +10360,8 @@ weilion-weispace {
   0% {
     letter-spacing: 150px;
     opacity: 0;
-    color: rgba(4, 184, 255, 0.035);
-    -webkit-text-stroke: 0 #04b8ff;
-    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+    color: rgba(217, 98, 9, 0.035);
+    -webkit-text-stroke: 0 #d96209;
+    text-shadow: 0px 0px 12px rgba(217, 98, 9, 0.5); }
   100% {
     opacity: 1; } }

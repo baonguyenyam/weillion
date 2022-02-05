@@ -6,16 +6,16 @@ weilion-weispace
 	padding: 2rem 0
 	h2
 		user-select: none
-		font-family: 'MandaloreTitle'
+		font-family: 'Mandalore'
 		-webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
 		color: transparent
 		font-size: 3rem
 		letter-spacing: 1px
 		overflow: hidden
 		&:hover
-			color: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.035)
-			-webkit-text-stroke: 0.5px $weilion-main-hover
-			text-shadow: 0px 0px 12px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.5)
+			color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
+			-webkit-text-stroke: 0.5px $weilion-sec-space
+			text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
 		&.weispace-animated-visible
 			opacity: 0
 			animation: textAnimationOneTime 1s ease-in forwards, textAnimation 1s ease-in-out infinite alternate
@@ -25,8 +25,8 @@ weilion-weispace
 		position: relative
 		font-size: .9rem
 		span
-			font-family: 'MandaloreTitle'
-			color: $weilion-main-hover
+			font-family: 'Mandalore'
+			color: $weilion-sec-space
 			font-size: 1rem
 		+media-breakpoint-up(lg)
 			// padding: 3rem
@@ -72,13 +72,13 @@ weilion-weispace
 				margin-bottom: 0
 		h3 
 			font-size: 1rem
-			font-family: 'MandaloreTitle'
+			font-family: 'Mandalore'
 			color: $weilion-copyright-text
 			margin-bottom: 0
 		p 
 			font-size: 1.3rem
 			letter-spacing: 1px
-			font-family: 'MandaloreTitle'
+			font-family: 'Mandalore'
 			margin-bottom: 0
 		+media-breakpoint-up(lg)
 			padding: 2rem 0
@@ -112,14 +112,14 @@ weilion-weispace
 				margin-left: 1rem
 				span
 					font-size: 1rem
-					font-family: 'MandaloreTitle'
+					font-family: 'Mandalore'
 					color: $weilion-copyright-text
 					margin-bottom: 0
 					display: block
 					+ span
 						font-size: 1.3rem
 						letter-spacing: 1px
-						font-family: 'MandaloreTitle'
+						font-family: 'Mandalore'
 						margin-bottom: 1.5rem
 						color: #fff
 						&:last-child
@@ -193,8 +193,8 @@ weilion-weispace
 	0%
 		letter-spacing: 150px
 		opacity: 0
-		color: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.035)
-		-webkit-text-stroke: 0 $weilion-main-hover
-		text-shadow: 0px 0px 12px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),.5)
+		color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
+		-webkit-text-stroke: 0 $weilion-sec-space
+		text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
 	100%
 		opacity: 1	
