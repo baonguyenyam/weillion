@@ -8199,9 +8199,6 @@ weilion-weispace {
       z-index: 1;
       transform: rotate(45deg); }
   weilion-weispace .numberbox {
-    border: 1px solid rgba(102, 102, 102, 0.5);
-    border-left: 0;
-    border-right: 0;
     padding: 1.5rem 0;
     position: relative;
     font-size: .9rem; }
@@ -8217,13 +8214,18 @@ weilion-weispace {
     weilion-weispace .numberbox p {
       font-size: 1.3rem;
       letter-spacing: 1px;
-      font-family: 'MandaloreTitle'; }
+      font-family: 'MandaloreTitle';
+      margin-bottom: 0; }
     @media (min-width: 992px) {
       weilion-weispace .numberbox {
         padding: 2rem 0; } }
   weilion-weispace .lanch {
     display: flex;
     flex-direction: column; }
+    @media (max-width: 767.98px) {
+      weilion-weispace .lanch figure {
+        margin-left: -15px;
+        margin-right: -15px; } }
     weilion-weispace .lanch li {
       display: flex;
       align-items: center;
@@ -8274,6 +8276,10 @@ weilion-weispace {
   @media (min-width: 992px) {
     weilion-weispace {
       padding: 4rem 0; }
+      weilion-weispace .numberbox {
+        border: 1px solid rgba(102, 102, 102, 0.5);
+        border-left: 0;
+        border-right: 0; }
       weilion-weispace:after {
         content: "";
         position: absolute;

@@ -63,9 +63,6 @@ weilion-weispace
 		// -webkit-mask-size: 50.5% 50.5%
 		// -webkit-mask-repeat: no-repeat
 	.numberbox
-		border: 1px solid rgba(red($weilion-copyright-text), green($weilion-copyright-text), blue($weilion-copyright-text),.5)
-		border-left: 0
-		border-right: 0
 		padding: 1.5rem 0
 		position: relative
 		font-size: .9rem
@@ -82,12 +79,17 @@ weilion-weispace
 			font-size: 1.3rem
 			letter-spacing: 1px
 			font-family: 'MandaloreTitle'
+			margin-bottom: 0
 		+media-breakpoint-up(lg)
 			padding: 2rem 0
 		
 	.lanch
 		display: flex
 		flex-direction: column
+		+media-breakpoint-down(sm)
+			figure
+				margin-left: -15px
+				margin-right: -15px
 		li 
 			display: flex
 			align-items: center
@@ -137,6 +139,10 @@ weilion-weispace
 					max-width: 33.333333%
 	+media-breakpoint-up(lg)
 		padding: 4rem 0
+		.numberbox
+			border: 1px solid rgba(red($weilion-copyright-text), green($weilion-copyright-text), blue($weilion-copyright-text),.5)
+			border-left: 0
+			border-right: 0
 		&:after
 			content: ""
 			position: absolute

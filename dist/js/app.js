@@ -53,14 +53,9 @@ jQuery(function ($) {
         $animatable.removeClass('weispace-animated-visible');
       }
     });
-  }; // Hook doAnimations on scroll, and trigger a scroll
+  }; // Function which adds the 'animated' class to any '.animatable' in view
 
 
-  $(window).on('scroll', doAnimations);
-  $(window).trigger('scroll');
-});
-jQuery(function ($) {
-  // Function which adds the 'animated' class to any '.animatable' in view
   var doAnimationsCSS3Animated = function doAnimationsCSS3Animated() {
     // Calc current offset and get all animatables
     var offsetT = $(window).scrollTop() + $(window).height(),
@@ -74,9 +69,11 @@ jQuery(function ($) {
     $animatablesCSS.each(function (i) {
       var $animatablesCSS = $(this);
 
-      if ($animatablesCSS.offset().top + $animatablesCSS.height() - 20 < offsetT) {
+      if ($animatablesCSS.offset().top < offsetT) {
         $animatablesCSS.addClass('animate__animated ' + $animatablesCSS.attr('data-animate'));
-      } else {
+      }
+
+      if ($animatablesCSS.offset().top - 100 > offsetT) {
         $animatablesCSS.removeClass('animate__animated ' + $animatablesCSS.attr('data-animate'));
       }
     });
@@ -84,6 +81,7 @@ jQuery(function ($) {
 
 
   $(window).on('scroll', doAnimationsCSS3Animated);
+  $(window).on('scroll', doAnimations);
   $(window).trigger('scroll');
 }); ///////////////////////////////////
 // SMOOTHLY SCROLL

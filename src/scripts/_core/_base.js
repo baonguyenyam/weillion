@@ -52,14 +52,6 @@ jQuery(function ($) {
 
     };
 
-
-    // Hook doAnimations on scroll, and trigger a scroll
-    $(window).on('scroll', doAnimations);
-    $(window).trigger('scroll');
-
-});
-jQuery(function ($) {
-
     // Function which adds the 'animated' class to any '.animatable' in view
     var doAnimationsCSS3Animated = function () {
 
@@ -75,9 +67,10 @@ jQuery(function ($) {
         // Check all animatables and animate them if necessary
         $animatablesCSS.each(function (i) {
             var $animatablesCSS = $(this);
-            if (($animatablesCSS.offset().top + $animatablesCSS.height() - 20) < offsetT) {
+            if (($animatablesCSS.offset().top) < offsetT) {
 				$animatablesCSS.addClass('animate__animated '+ $animatablesCSS.attr('data-animate'));
-			} else {
+			}
+            if (($animatablesCSS.offset().top - 100) > offsetT) {
                 $animatablesCSS.removeClass('animate__animated '+ $animatablesCSS.attr('data-animate'));
             }
         });
@@ -87,7 +80,9 @@ jQuery(function ($) {
 
     // Hook doAnimations on scroll, and trigger a scroll
     $(window).on('scroll', doAnimationsCSS3Animated);
+    $(window).on('scroll', doAnimations);
     $(window).trigger('scroll');
+
 
 });
 
