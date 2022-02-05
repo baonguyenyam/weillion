@@ -154,6 +154,7 @@ weilion-weispace
 			background: url('../img/home-weispace-bg-crop.jpg') no-repeat center right
 			background-size: cover
 			z-index: -1
+			animation: spaceAnimation 10s ease-in-out infinite alternate
 		h2
 			font-size: 5rem
 			letter-spacing: 5px
@@ -178,6 +179,11 @@ weilion-weispace
 			letter-spacing: 10px
 
 
+@keyframes spaceAnimation
+	0%
+		background-position: center left
+	100%
+		background-position: center right
 @keyframes textAnimation
 	0%
 		transform: translate(0, 3px)

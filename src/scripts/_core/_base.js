@@ -67,10 +67,11 @@ jQuery(function ($) {
         // Check all animatables and animate them if necessary
         $animatablesCSS.each(function (i) {
             var $animatablesCSS = $(this);
-            if (($animatablesCSS.offset().top) < offsetT) {
+            var $dataOffset = parseInt($animatablesCSS.attr('data-offset')) ? parseInt($animatablesCSS.attr('data-offset')) : 0;
+            // if ((($animatablesCSS.offset().top + $dataOffset) - 40) < offsetT) {
+            if ((($animatablesCSS.offset().top +  $dataOffset) - 40) < offsetT) {
 				$animatablesCSS.addClass('animate__animated '+ $animatablesCSS.attr('data-animate'));
-			}
-            if (($animatablesCSS.offset().top - 100) > offsetT) {
+			} else {
                 $animatablesCSS.removeClass('animate__animated '+ $animatablesCSS.attr('data-animate'));
             }
         });
@@ -79,8 +80,8 @@ jQuery(function ($) {
 
 
     // Hook doAnimations on scroll, and trigger a scroll
-    $(window).on('scroll', doAnimationsCSS3Animated);
     $(window).on('scroll', doAnimations);
+    $(window).on('scroll', doAnimationsCSS3Animated);
     $(window).trigger('scroll');
 
 

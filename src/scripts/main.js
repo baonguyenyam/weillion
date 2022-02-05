@@ -138,33 +138,33 @@ var WEILION_APP = {
 	},
 	runNumber: () => {
 		var odometer_1 = new Odometer({
-			el: document.querySelector('#odometer-1'),
+			el: $('#odometer-1')[0],
 			duration: 4000,
 		});
-		odometer_1.update(0);
-		odometer_1.render();
-		var odometer_2 = new Odometer({
-			el: document.querySelector('#odometer-2'),
-			duration: 7000
-		});
-		odometer_2.update(0);
-		odometer_2.render();
-		var odometer_3 = new Odometer({
-			el: document.querySelector('#odometer-3'),
-			duration: 5500
-		});
-		odometer_3.update(0);
-		odometer_3.render();
-		var odometer_4 = new Odometer({
-			el: document.querySelector('#odometer-4'),
-			duration: 10000
-		});
-		odometer_4.update(0);
-		odometer_4.render();
-		$('#odometer-1').html(2500000);
-		$('#odometer-2').html(1000310427);
-		$('#odometer-3').html(10000000);
-		$('#odometer-4').html(730244000014);
+		// odometer_1.update(0);
+		// odometer_1.render();
+		// var odometer_2 = new Odometer({
+		// 	el: $('#odometer-2')[0],
+		// 	duration: 7000
+		// });
+		// odometer_2.update(0);
+		// odometer_2.render();
+		// var odometer_3 = new Odometer({
+		// 	el: $('#odometer-3')[0],
+		// 	duration: 5500
+		// });
+		// odometer_3.update(0);
+		// odometer_3.render();
+		// var odometer_4 = new Odometer({
+		// 	el: $('#odometer-4')[0],
+		// 	duration: 10000
+		// });
+		// odometer_4.update(0);
+		// odometer_4.render();
+		$('#odometer-1').text(2500000);
+		// $('#odometer-2').text(1000310427);
+		// $('#odometer-3').text(10000000);
+		// $('#odometer-4').text(730244000014);
 	},
 	slotMachine: () => {
 		setTimeout(function () {
