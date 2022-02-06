@@ -1,0 +1,9 @@
+weilion-video(id=app+"-video")
+	#video-container
+		video.video-bg(preload="auto", loop, autoplay, muted, playsinline, width="1280", height="536")
+			source(type="video/mp4", src="./data/nasa.mp4")
+			source(type="video/webm", src="./data/nasa.webm")
+		noscript
+			video.video-bg(preload="auto", loop, autoplay, muted, playsinline)
+				source(src="./data/nasa.mp4", type="video/mp4")
+				source(src="./data/nasa.webm", type="video/webm")

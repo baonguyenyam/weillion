@@ -1,0 +1,37 @@
+weilion-home(id=app+"-home")
+	//- weilion-particles-js(id=app+"-particles-js")
+	weilion-home-text
+		.container 
+			.row 
+				.col-12
+					.texttyping
+						span#text-replace
+					.weilion-home-btn 
+						text TIME LINE
+						span >>>
+							//- span >>>
+					.weilion-home-vivobo
+						.weilion-home-vivobo-video
+							video(src="/data/w-x-header.mp4" muted autoplay preload="auto" loop)
+						.weilion-home-odometer
+							.odometer-number
+								h2 holder
+								#odometer-1.number.odometer 9999999
+							.odometer-number
+								h2 total liquidity
+								#odometer-2.number.odometer 1000310427
+							.odometer-number
+								h2 burned
+								#odometer-3.number.odometer 10000000
+							.odometer-number
+								h2 market cap
+								#odometer-4.number.odometer 730244000014
+							.player-controls
+								span.play
+									img(src="./img/audio.png", alt="", srcset="")
+									//- svg.player-btn-icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 200 200")
+									//- 	path.svg-play(fill="transparent", d="M90 50 L30 15 L30 160 L170 100 L130 75")
+								span.pause
+									img(src="./img/pause.png", alt="", srcset="")
+									//- svg.pause-btn-icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 200 200")
+										path.svg-pause(fill="transparent", d="M50 20 V160 M140 20 V160")
