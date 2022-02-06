@@ -1,17 +1,26 @@
 
-weilion-copyright.d-block.bg-light.text-dark(id=app+"-copyright")
-	.container 
-		.row 
-			.col-12.pt-3
-				p.text-center.small
-					span Copyright © 2020 WEILION. All rights reserved. Code by Nguyen Pham
-//- weilion-team(id=app+"-team")
+weilion-copyright(id=app+"-copyright")
 	.container 
 		.row 
 			.col-12
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consectetur maiores beatae, quibusdam corrupti id, dicta voluptate autem culpa voluptates quis eaque deleniti, exercitationem sed facilis a. At, vel voluptatibus?
+				.copyright 
+					ul.list-inline.animatable(data-animate="animate__fadeInUp")
+						li.list-inline-item
+							a(href="https://www.facebook.com/weilion/" target="_blank")
+								i.fa.fa-facebook
+						li.list-inline-item
+							a(href="https://www.reddit.com/weilion/" target="_blank")
+								i.fa.fa-reddit-alien
+						li.list-inline-item
+							a(href="https://www.twitter.com/weilion/" target="_blank")
+								i.fa.fa-twitter 
+						li.list-inline-item
+							a(href="https://www.twitter.com/weilion/" target="_blank")
+								i.fa.fa-paper-plane 
+						li.list-inline-item
+							a(href="https://www.twitter.com/weilion/" target="_blank")
+								i.fa.fa-twitter 
+					.logo.animatable(data-animate="animate__fadeInUp animate__fast")
+						a(href="/#weilion-home") 
+							img(src="./img/logo-big.png", alt="Weilion Logo")
+					.copytext.animatable(data-animate="animate__fadeInUp animate__slow") &copy; 2022 WEILION. All rights reserved.

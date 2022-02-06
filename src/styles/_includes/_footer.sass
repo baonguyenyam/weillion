@@ -1,4 +1,99 @@
-weilion-footer 
-	padding: 2.5rem 0
+weilion-copyright
+	padding: 2rem 0
 	color: $weilion-copyright-text
-	background-color: $weilion-copyright-bg
+	background-color: $weilion-bg
+	position: relative
+	.copyright 
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		text-align: center
+		.logo
+			margin-top: 1rem
+			margin-bottom: .5rem
+			img 
+				max-width: 200px
+		.copytext
+			font-size: .85rem
+			text-align: center
+
+	.list-inline
+		margin: 0
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		.list-inline-item
+			padding: 0
+			margin: 0 .35rem
+			a 
+				display: flex
+				justify-content: center
+				align-items: center
+				height: 2.5rem
+				width: 2.5rem
+				background: rgba(0,0,0,.35)
+				color: $weilion-copyright-text
+				text-decoration: none
+				position: relative
+				&:before,
+				&:after
+					content: ''
+					position: absolute
+					width: 12px
+					height: 12px
+					display: block
+					z-index: 100
+					transition: all .2s ease-in-out
+					opacity: 0
+				&:before
+					top: -2px
+					left: -2px
+					transform: translate(-4px, -4px)
+					border-left: 2px solid darken($weilion-sec-newspace,5%)
+					border-top: 2px solid darken($weilion-sec-newspace,5%)
+				&:after
+					bottom: -2px
+					right: -2px
+					transform: translate(4px, 4px)
+					border-right: 2px solid darken($weilion-sec-newspace,5%)
+					border-bottom: 2px solid darken($weilion-sec-newspace,5%)
+			&:hover,
+			&:active,
+			&:focus
+				a 
+					background: rgba(0,0,0,.8)
+					color: $weilion-sec-newspace
+					&:before
+						top: 0
+						left: 0
+						opacity: 1
+					&:after
+						bottom: 0
+						right: 0
+						opacity: 1
+	+media-breakpoint-up(md)
+		padding: 3rem 0
+	+media-breakpoint-up(xl)
+		padding: 2rem 0
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 50%
+			height: 100%
+			display: block
+			background: url('../img/logo-big.png') no-repeat left bottom
+			background-size: contain
+			opacity: .02
+			filter: brightness(1)
+			z-index: 1
+			
+		.list-inline
+			.list-inline-item
+				margin-left: .5rem
+		.copyright 
+			align-items: flex-end
+			.copytext
+				text-align: right

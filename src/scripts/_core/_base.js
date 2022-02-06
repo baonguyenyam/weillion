@@ -101,7 +101,10 @@ if ($(window).width() < 768) {
 }
 
 // Mouse Animation
-document.onmousemove = animateCircles; // circle follow mouse
+
+$('#weilion-home').on('mousemove', animateCircles);
+
+// document.onmousemove = animateCircles; // circle follow mouse
 var colors = ['#f9f9f9', '#04b8ff', , '#000', '#f26528']
 
 function animateCircles(event) {

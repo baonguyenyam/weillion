@@ -97,7 +97,7 @@ if ($(window).width() < 768) {
 } // Mouse Animation
 
 
-document.onmousemove = animateCircles; // circle follow mouse
+$('#weilion-home').on('mousemove', animateCircles); // document.onmousemove = animateCircles; // circle follow mouse
 
 var colors = ['#f9f9f9', '#04b8ff',, '#000', '#f26528'];
 
@@ -197,11 +197,11 @@ var WEILION_APP = {
       $('#weilion_loading__audio').get(0).play();
     }
 
-    $('.weilion-home-btn').on('mouseenter mouseleave', function () {
+    $('.weilion-home-btn, .weilion-mong-btn').on('mouseenter mouseleave', function () {
       $('#weilion_intro__audio').get(0).load();
       $('#weilion_intro__audio').get(0).play();
     });
-    $('.weilion-home-btn').on('click', function () {
+    $('.weilion-home-btn, .weilion-mong-btn').on('click', function () {
       $('#weilion_intro_click__audio').get(0).load();
       $('#weilion_intro_click__audio').get(0).play();
     });
@@ -210,6 +210,16 @@ var WEILION_APP = {
       $('#weilion_laser__audio').get(0).play();
     });
     $('#welionToggleMenu .nav-item').each(function () {
+      $(this).on('mouseenter', function () {
+        $('#weilion_background__audio').get(0).play();
+      });
+      $(this).on('mouseleave', function () {
+        $('#weilion_background__audio').get(0).load();
+      });
+    });
+  },
+  itemHover: function itemHover() {
+    $('.group-team .item, #weilion-copyright a').each(function () {
       $(this).on('mouseenter', function () {
         $('#weilion_background__audio').get(0).play();
       });
@@ -330,6 +340,7 @@ var WEILION_APP = {
     WEILION_APP.toggleMenu();
     WEILION_APP.indexText();
     WEILION_APP.slotMachine();
+    WEILION_APP.itemHover();
     WEILION_APP.marquee();
     WEILION_APP.weilion();
   }

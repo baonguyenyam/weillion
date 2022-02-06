@@ -7260,12 +7260,16 @@ html, body {
 
 weilion-particles-js,
 weilion-main,
+weilion-contact,
 weilion-home,
 weilion-weispace,
 weilion-generation,
+weilion-roadmap,
 weilion-home-text,
+weilion-weimong,
 weilion-header,
 weilion-team,
+weilion-copyright,
 weilion-video,
 weilion-header-container,
 weilion-nav,
@@ -7357,10 +7361,100 @@ weilion-main {
     opacity: 1;
     transform: scaleX(1); } }
 
-weilion-footer {
-  padding: 2.5rem 0;
+weilion-copyright {
+  padding: 2rem 0;
   color: #666;
-  background-color: #f9f9f9; }
+  background-color: #242424;
+  position: relative; }
+  weilion-copyright .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; }
+    weilion-copyright .copyright .logo {
+      margin-top: 1rem;
+      margin-bottom: .5rem; }
+      weilion-copyright .copyright .logo img {
+        max-width: 200px; }
+    weilion-copyright .copyright .copytext {
+      font-size: .85rem;
+      text-align: center; }
+  weilion-copyright .list-inline {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    weilion-copyright .list-inline .list-inline-item {
+      padding: 0;
+      margin: 0 .35rem; }
+      weilion-copyright .list-inline .list-inline-item a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5rem;
+        width: 2.5rem;
+        background: rgba(0, 0, 0, 0.35);
+        color: #666;
+        text-decoration: none;
+        position: relative; }
+        weilion-copyright .list-inline .list-inline-item a:before, weilion-copyright .list-inline .list-inline-item a:after {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          display: block;
+          z-index: 100;
+          transition: all .2s ease-in-out;
+          opacity: 0; }
+        weilion-copyright .list-inline .list-inline-item a:before {
+          top: -2px;
+          left: -2px;
+          transform: translate(-4px, -4px);
+          border-left: 2px solid #00a7ea;
+          border-top: 2px solid #00a7ea; }
+        weilion-copyright .list-inline .list-inline-item a:after {
+          bottom: -2px;
+          right: -2px;
+          transform: translate(4px, 4px);
+          border-right: 2px solid #00a7ea;
+          border-bottom: 2px solid #00a7ea; }
+      weilion-copyright .list-inline .list-inline-item:hover a, weilion-copyright .list-inline .list-inline-item:active a, weilion-copyright .list-inline .list-inline-item:focus a {
+        background: rgba(0, 0, 0, 0.8);
+        color: #04b8ff; }
+        weilion-copyright .list-inline .list-inline-item:hover a:before, weilion-copyright .list-inline .list-inline-item:active a:before, weilion-copyright .list-inline .list-inline-item:focus a:before {
+          top: 0;
+          left: 0;
+          opacity: 1; }
+        weilion-copyright .list-inline .list-inline-item:hover a:after, weilion-copyright .list-inline .list-inline-item:active a:after, weilion-copyright .list-inline .list-inline-item:focus a:after {
+          bottom: 0;
+          right: 0;
+          opacity: 1; }
+  @media (min-width: 768px) {
+    weilion-copyright {
+      padding: 3rem 0; } }
+  @media (min-width: 1200px) {
+    weilion-copyright {
+      padding: 2rem 0; }
+      weilion-copyright:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        display: block;
+        background: url("../img/logo-big.png") no-repeat left bottom;
+        background-size: contain;
+        opacity: .02;
+        filter: brightness(1);
+        z-index: 1; }
+      weilion-copyright .list-inline .list-inline-item {
+        margin-left: .5rem; }
+      weilion-copyright .copyright {
+        align-items: flex-end; }
+        weilion-copyright .copyright .copytext {
+          text-align: right; } }
 
 weilion-header {
   z-index: 1000; }
@@ -7755,7 +7849,8 @@ weilion-home {
     transform: translateY(30px);
     opacity: 0;
     animation: openButton .5s 4s ease-in forwards;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    text-decoration: none; }
     @media (min-width: 768px) {
       weilion-home .weilion-home-btn {
         margin-bottom: 3rem; } }
@@ -8148,7 +8243,8 @@ weilion-weispace {
     color: transparent;
     font-size: 3rem;
     letter-spacing: 7px;
-    overflow: hidden; }
+    overflow: hidden;
+    white-space: nowrap; }
     weilion-weispace h2:hover {
       color: rgba(4, 184, 255, 0.035);
       -webkit-text-stroke: 0.5px #04b8ff;
@@ -8252,12 +8348,31 @@ weilion-weispace {
       weilion-weispace .lanch li .icon {
         background: rgba(0, 0, 0, 0.5);
         color: #04b8ff;
-        border-radius: 5px;
         height: 3rem;
         width: 3rem;
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        position: relative; }
+        weilion-weispace .lanch li .icon:before, weilion-weispace .lanch li .icon:after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          display: block;
+          z-index: 100; }
+        weilion-weispace .lanch li .icon:before {
+          top: 0;
+          left: 0;
+          transform: translate(2px, 2px);
+          border-left: 2px solid #00a7ea;
+          border-top: 2px solid #00a7ea; }
+        weilion-weispace .lanch li .icon:after {
+          bottom: 0;
+          right: 0;
+          transform: translate(-2px, -2px);
+          border-right: 2px solid #00a7ea;
+          border-bottom: 2px solid #00a7ea; }
         weilion-weispace .lanch li .icon img {
           max-width: 26px;
           filter: invert(1); }
@@ -8323,7 +8438,6 @@ weilion-weispace {
         weilion-weispace .lanch li .icon {
           background: rgba(22, 21, 29, 0.75);
           color: #04b8ff;
-          border-radius: 5px;
           height: 3rem;
           width: 3rem;
           display: flex;
@@ -8390,29 +8504,59 @@ weilion-team {
     color: #04b8ff;
     text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5);
     margin-bottom: 2rem;
-    animation: textTeamAnimation 1s ease-in-out infinite alternate; }
+    text-align: center; }
   weilion-team .teams .group-team .item {
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    text-align: center; }
     weilion-team .teams .group-team .item figure {
       margin-bottom: 0; }
-      weilion-team .teams .group-team .item figure img {
-        max-width: 250px;
-        width: 100%; }
+      weilion-team .teams .group-team .item figure .block-img {
+        display: inline-flex; }
+        weilion-team .teams .group-team .item figure .block-img img {
+          max-width: 250px;
+          width: 100%;
+          transition: all .5s ease-in-out; }
       weilion-team .teams .group-team .item figure figcaption h4 {
         font-family: 'Mandalore';
         text-transform: lowercase;
         font-size: 1.2em;
         letter-spacing: 3px;
         color: #fff;
-        margin-top: 1rem; }
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
       weilion-team .teams .group-team .item figure figcaption .info {
         font-size: .85rem;
         line-height: 1.3;
-        opacity: .5; }
+        opacity: .5;
+        letter-spacing: 2px; }
       weilion-team .teams .group-team .item figure figcaption .talent {
         font-size: .75rem;
         line-height: 1.3;
-        margin-top: .5rem; }
+        max-width: 250px;
+        margin: .35rem auto; }
+    weilion-team .teams .group-team .item:hover .block-img, weilion-team .teams .group-team .item:focus .block-img, weilion-team .teams .group-team .item:active .block-img {
+      position: relative; }
+      weilion-team .teams .group-team .item:hover .block-img:before, weilion-team .teams .group-team .item:hover .block-img:after, weilion-team .teams .group-team .item:focus .block-img:before, weilion-team .teams .group-team .item:focus .block-img:after, weilion-team .teams .group-team .item:active .block-img:before, weilion-team .teams .group-team .item:active .block-img:after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        display: block;
+        z-index: 100; }
+      weilion-team .teams .group-team .item:hover .block-img:before, weilion-team .teams .group-team .item:focus .block-img:before, weilion-team .teams .group-team .item:active .block-img:before {
+        top: 0;
+        left: 0;
+        transform: translate(-10px, -10px);
+        border-left: 2px solid #00a7ea;
+        border-top: 2px solid #00a7ea; }
+      weilion-team .teams .group-team .item:hover .block-img:after, weilion-team .teams .group-team .item:focus .block-img:after, weilion-team .teams .group-team .item:active .block-img:after {
+        bottom: 0;
+        right: 0;
+        transform: translate(10px, 10px);
+        border-right: 2px solid #00a7ea;
+        border-bottom: 2px solid #00a7ea; }
+    weilion-team .teams .group-team .item:hover figure figcaption h4, weilion-team .teams .group-team .item:focus figure figcaption h4, weilion-team .teams .group-team .item:active figure figcaption h4 {
+      color: #04b8ff; }
   @media (min-width: 768px) {
     weilion-team {
       padding: 3rem 0; }
@@ -8425,19 +8569,41 @@ weilion-team {
       weilion-team h2 {
         font-size: 5rem;
         letter-spacing: 12px; }
-      weilion-team .teams h3 {
-        text-align: center; }
-      weilion-team .teams .group-team .item {
-        text-align: center; }
-        weilion-team .teams .group-team .item figure figcaption .talent {
-          max-width: 250px;
-          margin: .5rem auto; } }
+      weilion-team .headingcore {
+        position: relative;
+        padding-top: 10px; }
+        weilion-team .headingcore:after {
+          content: '';
+          position: absolute;
+          display: block;
+          bottom: calc(50% + 10px);
+          transform: translateY(50%);
+          z-index: -1;
+          right: -20px;
+          width: 80px;
+          height: 80px;
+          opacity: .23;
+          background: #04b8ff; } }
   @media (min-width: 1200px) {
     weilion-team {
       padding: 5rem 0; }
       weilion-team h2 {
         font-size: 6rem;
         letter-spacing: 10px; } }
+
+@keyframes imgTeamAnimation {
+  0% {
+    transform: translate(0, 0); }
+  20% {
+    transform: translate(3px, 0); }
+  40% {
+    transform: translate(3px, 3px); }
+  60% {
+    transform: translate(-3px, 3px); }
+  80% {
+    transform: translate(-3px, -3px); }
+  100% {
+    transform: translate(3px, 3px); } }
 
 @keyframes textTeamAnimation {
   0% {
@@ -8464,11 +8630,294 @@ weilion-video {
     height: 100%;
     display: flex; }
 
+weilion-weimong {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 0;
+  flex-direction: column;
+  z-index: 50; }
+  weilion-weimong:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("../img/weimong.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1; }
+  weilion-weimong .img-top,
+  weilion-weimong .img-bottom {
+    width: 100%;
+    position: absolute; }
+    weilion-weimong .img-top img,
+    weilion-weimong .img-bottom img {
+      opacity: 0;
+      max-width: 100%; }
+    weilion-weimong .img-top:after,
+    weilion-weimong .img-bottom:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  weilion-weimong .img-top {
+    top: 0;
+    left: 0;
+    transform: translateY(calc(-50% - 5px));
+    z-index: 10; }
+    weilion-weimong .img-top:after {
+      background: url("../img/overlay-weimong-top.png") no-repeat top left;
+      background-size: cover; }
+  weilion-weimong .img-bottom {
+    bottom: 0;
+    left: 0;
+    transform: translateY(35%);
+    z-index: 10; }
+    weilion-weimong .img-bottom:after {
+      background: url("../img/overlay-weimong-bottom-old.png") no-repeat bottom left;
+      background-size: cover; }
+  weilion-weimong h2 {
+    user-select: none;
+    font-family: 'Mandalore';
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 3rem;
+    letter-spacing: 7px;
+    overflow: hidden;
+    white-space: nowrap; }
+    weilion-weimong h2:hover {
+      color: rgba(4, 184, 255, 0.035);
+      -webkit-text-stroke: 0.5px #04b8ff;
+      text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+    weilion-weimong h2.weispace-animated-visible {
+      opacity: 0;
+      animation: textMongAnimationOneTime 1s ease-in forwards, textMongAnimation 1s ease-in-out infinite alternate; }
+  weilion-weimong .textdescription {
+    overflow-x: auto;
+    border-radius: 10px 10px 0 0;
+    font-family: 'Mandalore';
+    opacity: .5;
+    margin-bottom: 2rem;
+    letter-spacing: 2px; }
+  weilion-weimong .weilion-mong-btn {
+    user-select: none;
+    padding: .75rem 2.5rem;
+    font-family: 'Mandalore';
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.4);
+    border: none;
+    z-index: 2;
+    transform: translateY(30px);
+    margin-bottom: 2rem; }
+    @media (min-width: 768px) {
+      weilion-weimong .weilion-mong-btn {
+        margin-bottom: 3rem; } }
+    weilion-weimong .weilion-mong-btn text {
+      display: block; }
+    weilion-weimong .weilion-mong-btn span {
+      display: block;
+      margin-left: .5rem;
+      font-size: 1rem;
+      line-height: 1;
+      position: relative; }
+    weilion-weimong .weilion-mong-btn:before, weilion-weimong .weilion-mong-btn:after {
+      position: absolute;
+      content: "";
+      width: 0%;
+      height: 0%;
+      border: 2px solid;
+      z-index: -1;
+      transition: all 0.3s ease; }
+    weilion-weimong .weilion-mong-btn:before {
+      top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      border-left-color: transparent; }
+    weilion-weimong .weilion-mong-btn:after {
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      border-right-color: transparent; }
+    weilion-weimong .weilion-mong-btn:hover {
+      color: #1968b3;
+      background: rgba(0, 0, 0, 0.65);
+      width: auto; }
+      weilion-weimong .weilion-mong-btn:hover:before, weilion-weimong .weilion-mong-btn:hover:after {
+        width: 100%;
+        height: 100%; }
+      weilion-weimong .weilion-mong-btn:hover:before {
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-top-color: #1968b3;
+        border-left-color: #1968b3; }
+      weilion-weimong .weilion-mong-btn:hover:after {
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: #1968b3;
+        border-right-color: #1968b3; }
+  @media (min-width: 768px) {
+    weilion-weimong {
+      padding: 6rem 0; }
+      weilion-weimong h2 {
+        font-size: 4rem;
+        letter-spacing: 8px; } }
+  @media (min-width: 992px) {
+    weilion-weimong {
+      padding: 8rem 0; }
+      weilion-weimong h2 {
+        font-size: 5rem;
+        letter-spacing: 12px; } }
+  @media (min-width: 1200px) {
+    weilion-weimong {
+      padding: 10rem 0; }
+      weilion-weimong h2 {
+        font-size: 6rem;
+        letter-spacing: 10px; }
+      weilion-weimong .img-top {
+        transform: translateY(-55%); } }
+
+@keyframes textMongAnimation {
+  0% {
+    transform: translate(0, 3px); }
+  100% {
+    transform: translate(0, -3px); } }
+
+@keyframes textMongAnimationOneTime {
+  0% {
+    letter-spacing: 150px;
+    opacity: 0;
+    color: rgba(4, 184, 255, 0.035);
+    -webkit-text-stroke: 0 #04b8ff;
+    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+  100% {
+    opacity: 1; } }
+
+weilion-timeline {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 0;
+  flex-direction: column;
+  z-index: 50; }
+
+weilion-contact {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 0;
+  overflow-x: hidden;
+  background: #171717;
+  z-index: -1; }
+  weilion-contact:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("../img/home-weispace-bg-1.jpg") no-repeat center right;
+    filter: grayscale(100%);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -2; }
+  weilion-contact:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #1968b3;
+    opacity: 0.5;
+    z-index: -1; }
+  weilion-contact h2 {
+    user-select: none;
+    font-family: 'Mandalore';
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 3rem;
+    letter-spacing: 7px;
+    overflow: hidden;
+    text-shadow: 4px 3px 0px #1968b3; }
+    weilion-contact h2.weispace-animated-visible {
+      opacity: 0;
+      animation: textContactAnimationOneTime 1s ease-in forwards, textContactAnimation 1s ease-in-out infinite alternate; }
+  weilion-contact .notebox h3 {
+    font-size: 1.3rem;
+    font-family: 'Mandalore';
+    color: #04b8ff;
+    letter-spacing: 3px; }
+    weilion-contact .notebox h3 svg {
+      fill: #04b8ff;
+      height: 1.3rem;
+      margin-right: .5rem; }
+  weilion-contact .notebox p {
+    margin-bottom: .25rem;
+    line-height: 1.5;
+    font-size: 1.3rem; }
+    weilion-contact .notebox p + p {
+      margin-bottom: 0; }
+  @media (min-width: 768px) {
+    weilion-contact {
+      padding: 5rem 0; }
+      weilion-contact h2 {
+        font-size: 4rem;
+        letter-spacing: 8px; } }
+  @media (min-width: 992px) {
+    weilion-contact {
+      padding: 6rem 0; }
+      weilion-contact h2 {
+        font-size: 5rem;
+        letter-spacing: 12px; } }
+  @media (min-width: 1200px) {
+    weilion-contact {
+      padding: 7rem 0; }
+      weilion-contact h2 {
+        font-size: 6rem;
+        letter-spacing: 10px; } }
+
+@keyframes textContactAnimation {
+  0% {
+    transform: translate(0, 3px); }
+  100% {
+    transform: translate(0, -3px); } }
+
+@keyframes textContactAnimationOneTime {
+  0% {
+    letter-spacing: 150px;
+    opacity: 0;
+    color: rgba(4, 184, 255, 0.035);
+    -webkit-text-stroke: 0 #04b8ff;
+    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+  100% {
+    opacity: 1; } }
+
 weilion-generation {
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: 4em 0 2rem 0;
+  padding: 4em 0 4rem 0;
   overflow-x: hidden;
   flex-direction: column;
   border-top: 3px solid #d96209;
@@ -8762,7 +9211,8 @@ weilion-generation {
         margin-top: 0; } }
   @media (min-width: 992px) {
     weilion-generation {
-      border-top: 0; }
+      border-top: 0;
+      padding: 4em 0 6rem 0; }
       weilion-generation h2 {
         font-size: 7rem;
         letter-spacing: 23px; }
@@ -8799,15 +9249,17 @@ weilion-generation {
       weilion-generation .tabbox #weilionTab .nav-item .nav-link {
         font-size: 1.5rem; } }
   @media (min-width: 1200px) {
-    weilion-generation h2 {
-      font-size: 9rem;
-      letter-spacing: 40px; }
-      weilion-generation h2 span:first-child {
-        left: -9px; }
-      weilion-generation h2 span:last-child {
-        right: -18px; }
-    weilion-generation .boxupto .upto {
-      right: calc(70% + 160px); } }
+    weilion-generation {
+      padding: 4em 0 10rem 0; }
+      weilion-generation h2 {
+        font-size: 9rem;
+        letter-spacing: 40px; }
+        weilion-generation h2 span:first-child {
+          left: -9px; }
+        weilion-generation h2 span:last-child {
+          right: -18px; }
+      weilion-generation .boxupto .upto {
+        right: calc(70% + 160px); } }
   @media (max-width: 389px) {
     weilion-generation .boxupto .upto {
       display: none; } }

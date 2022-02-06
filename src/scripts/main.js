@@ -63,11 +63,11 @@ var WEILION_APP = {
 			$('#weilion_loading__audio').get(0).load();
 			$('#weilion_loading__audio').get(0).play();
 		}
-		$('.weilion-home-btn').on('mouseenter mouseleave', () => {
+		$('.weilion-home-btn, .weilion-mong-btn').on('mouseenter mouseleave', () => {
 			$('#weilion_intro__audio').get(0).load();
 			$('#weilion_intro__audio').get(0).play();
 		});
-		$('.weilion-home-btn').on('click', () => {
+		$('.weilion-home-btn, .weilion-mong-btn').on('click', () => {
 			$('#weilion_intro_click__audio').get(0).load();
 			$('#weilion_intro_click__audio').get(0).play();
 		});
@@ -76,6 +76,16 @@ var WEILION_APP = {
 			$('#weilion_laser__audio').get(0).play();
 		});
 		$('#welionToggleMenu .nav-item').each(function () {
+			$(this).on('mouseenter', () => {
+				$('#weilion_background__audio').get(0).play();
+			});
+			$(this).on('mouseleave', () => {
+				$('#weilion_background__audio').get(0).load();
+			});
+		});
+	},
+	itemHover: () => {
+		$('.group-team .item, #weilion-copyright a').each(function () {
 			$(this).on('mouseenter', () => {
 				$('#weilion_background__audio').get(0).play();
 			});
@@ -195,6 +205,7 @@ var WEILION_APP = {
 		WEILION_APP.toggleMenu();
 		WEILION_APP.indexText();
 		WEILION_APP.slotMachine();
+		WEILION_APP.itemHover();
 		WEILION_APP.marquee();
 		WEILION_APP.weilion();
 	},

@@ -6,7 +6,7 @@ module.exports = function (gulp, $, browserSync) {
 				'bower_components/bootstrap/dist/js/bootstrap.min.js',
 				// Phần Plugins
 				'bower_components/owl.carousel/dist/owl.carousel.min.js',
-				'bower_components/particles.js/particles.min.js',
+				// 'bower_components/particles.js/particles.min.js',
 				'bower_components/typed.js/lib/typed.min.js',
 				'src/vendors/modernizr.js',
 				'src/vendors/odometer.js',
