@@ -11,6 +11,7 @@ module.exports = function (gulp, $, browserSync) {
 				'src/vendors/modernizr.js',
 				'src/vendors/odometer.js',
 				'src/vendors/smoothscroll.js',
+				'src/vendors/jquery.marquee.min.js',
 				// 'src/vendors/particle.js',
 			])
 			.pipe($.concat('weilion.js'))

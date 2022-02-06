@@ -8141,7 +8141,9 @@ weilion-weispace {
   display: flex;
   align-items: flex-end;
   padding: 2rem 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background: #171717;
+  z-index: -1; }
   weilion-weispace h2 {
     user-select: none;
     font-family: 'Mandalore';
@@ -8158,7 +8160,7 @@ weilion-weispace {
       opacity: 0;
       animation: textAnimationOneTime 1s ease-in forwards, textAnimation 1s ease-in-out infinite alternate; }
   weilion-weispace .infobox {
-    border: 2px solid #666;
+    border: 2px solid #595959;
     padding: 2rem;
     position: relative;
     font-size: .9rem; }
@@ -8190,7 +8192,7 @@ weilion-weispace {
       display: block;
       border-top: 2rem solid transparent;
       border-bottom: 2rem solid transparent;
-      border-left: 2rem solid #242424;
+      border-left: 2rem solid #171717;
       z-index: 1;
       transform: rotate(45deg); }
   weilion-weispace .numberbox {
@@ -8361,7 +8363,7 @@ weilion-generation {
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: 2rem 0;
+  padding: 4em 0 2rem 0;
   overflow-x: hidden;
   flex-direction: column;
   border-top: 3px solid #d96209;
@@ -8402,13 +8404,25 @@ weilion-generation {
       opacity: 0;
       animation: textGeneralAnimationOneTime 1s ease-in forwards; }
   weilion-generation .boxupto {
-    background: #d96209;
-    background: -moz-linear-gradient(90deg, rgba(217, 98, 9, 0) 0%, #d96209 100%);
-    background: -webkit-linear-gradient(90deg, rgba(217, 98, 9, 0) 0%, #d96209 100%);
-    background: linear-gradient(90deg, rgba(217, 98, 9, 0) 0%, #d96209 100%);
-    width: 70%;
+    width: 100%;
     margin-top: 2rem;
-    position: relative; }
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; }
+    weilion-generation .boxupto:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      height: 100%;
+      background: #d96209;
+      background: -moz-linear-gradient(90deg, rgba(217, 98, 9, 0) 0%, #d96209 100%);
+      background: -webkit-linear-gradient(90deg, rgba(217, 98, 9, 0) 0%, #d96209 100%);
+      background: linear-gradient(90deg, rgba(217, 98, 9, 0) 0%, #d96209 100%);
+      width: 70%;
+      z-index: 50; }
     weilion-generation .boxupto:after {
       content: '';
       position: absolute;
@@ -8421,8 +8435,23 @@ weilion-generation {
       z-index: 100; }
     weilion-generation .boxupto.weispace-animated-visible:after {
       animation: openBox 350ms ease-in-out forwards; }
+    weilion-generation .boxupto .upto {
+      font-family: 'Mandalore';
+      color: white;
+      font-size: 2rem;
+      letter-spacing: 5px;
+      transform: rotate(180deg);
+      width: 2rem;
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      position: absolute;
+      right: calc(70% + 74px);
+      z-index: 100;
+      top: 0; }
     weilion-generation .boxupto .num {
-      position: relative; }
+      position: relative;
+      width: 70%; }
       weilion-generation .boxupto .num svg {
         height: 150px;
         fill: transparent; }
@@ -8432,20 +8461,163 @@ weilion-generation {
           top: 0;
           fill: #d96209;
           z-index: 100; }
+          weilion-generation .boxupto .num svg:not(:first-child).weispace-animated-visible {
+            opacity: 0;
+            animation: openText .2s .350s  ease-in-out forwards; }
         weilion-generation .boxupto .num svg:not(:last-child) {
           opacity: .5; }
         weilion-generation .boxupto .num svg:nth-child(2) {
           right: calc(100% + 5px);
           fill: #d46009; }
+          weilion-generation .boxupto .num svg:nth-child(2).weispace-animated-visible {
+            opacity: 0;
+            animation: openTextBlind .1s .400s  ease-in-out forwards, openTextBlindA_5 5s 3s  ease-in-out infinite alternate; }
         weilion-generation .boxupto .num svg:nth-child(3) {
           right: calc(100% + 10px);
           fill: #ca5b08; }
+          weilion-generation .boxupto .num svg:nth-child(3).weispace-animated-visible {
+            opacity: 0;
+            animation: openTextBlind .1s .450s  ease-in-out forwards, openTextBlindA_5 5s 3s  ease-in-out infinite alternate; }
         weilion-generation .boxupto .num svg:nth-child(4) {
           right: calc(100% + 15px);
           fill: #c15708; }
+          weilion-generation .boxupto .num svg:nth-child(4).weispace-animated-visible {
+            opacity: 0;
+            animation: openTextBlind .1s .500s  ease-in-out forwards, openTextBlindA_5 5s 3s  ease-in-out infinite alternate; }
         weilion-generation .boxupto .num svg:nth-child(5) {
           right: calc(100% + 18px);
           fill: #b75308; }
+          weilion-generation .boxupto .num svg:nth-child(5).weispace-animated-visible {
+            opacity: 0;
+            animation: openTextBlind .1s .550s  ease-in-out forwards, openTextBlindA_5 5s 3s  ease-in-out infinite alternate; }
+    weilion-generation .boxupto .billion {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 200; }
+      weilion-generation .boxupto .billion .co {
+        font-family: 'Mandalore';
+        font-size: 2rem;
+        line-height: 3rem;
+        letter-spacing: 1px;
+        color: #ffeb3b;
+        font-style: italic;
+        margin-bottom: 4px; }
+      weilion-generation .boxupto .billion .em {
+        font-family: 'Mandalore';
+        color: white;
+        font-size: 4rem;
+        letter-spacing: 7px;
+        line-height: 3rem;
+        color: #fff;
+        text-shadow: 4px 3px 0px #d96209; }
+      weilion-generation .boxupto .billion span {
+        display: block;
+        font-family: 'Mandalore';
+        letter-spacing: 5px;
+        opacity: .7;
+        font-size: 1.2rem;
+        margin-top: 3px; }
+      weilion-generation .boxupto .billion .item2 .em {
+        font-size: 2rem;
+        line-height: 2rem;
+        letter-spacing: 3px;
+        text-shadow: none;
+        color: #d96209;
+        text-shadow: 1px 1px 0px #fff; }
+      weilion-generation .boxupto .billion .item2 span {
+        font-size: .9rem;
+        margin-top: 0; }
+  weilion-generation .textscroll {
+    margin: 3rem 0;
+    font-family: 'Mandalore';
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; }
+    weilion-generation .textscroll:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(249, 249, 249, 0.125);
+      z-index: -1; }
+    weilion-generation .textscroll span {
+      white-space: nowrap;
+      padding-left: 5px;
+      padding-right: 3px;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      background: #242424; }
+  weilion-generation .tabbox {
+    width: 100%;
+    margin-bottom: 2rem; }
+    weilion-generation .tabbox #weilionTab {
+      border: 2px solid #666;
+      border-bottom: 0; }
+      weilion-generation .tabbox #weilionTab .nav-item {
+        margin-right: 2px; }
+        weilion-generation .tabbox #weilionTab .nav-item .nav-link {
+          font-family: 'Mandalore';
+          color: #666;
+          font-size: 1rem;
+          letter-spacing: 3px;
+          margin-bottom: 0;
+          border: 0;
+          border-radius: 0;
+          background: none;
+          box-shadow: none; }
+          weilion-generation .tabbox #weilionTab .nav-item .nav-link.active, weilion-generation .tabbox #weilionTab .nav-item .nav-link:focus, weilion-generation .tabbox #weilionTab .nav-item .nav-link:hover {
+            color: #fff;
+            background: rgba(249, 249, 249, 0.125); }
+    weilion-generation .tabbox .infobox {
+      border: 2px solid #666;
+      padding: 2rem;
+      position: relative;
+      font-size: .9rem; }
+      weilion-generation .tabbox .infobox span {
+        font-family: 'Mandalore';
+        color: #d96209;
+        font-size: 1rem;
+        letter-spacing: 1px; }
+      @media (min-width: 992px) {
+        weilion-generation .tabbox .infobox {
+          padding: 3rem; } }
+      weilion-generation .tabbox .infobox:before {
+        content: '';
+        position: absolute;
+        left: calc(100% - 1.5rem - 1px);
+        top: calc(100% - 2.5rem - 2px);
+        width: 0;
+        height: 0;
+        display: block;
+        border-top: calc(2rem - 1px) solid transparent;
+        border-bottom: calc(2rem - 1px) solid transparent;
+        border-left: calc(2rem - 2px) solid #666;
+        z-index: 1;
+        transform: rotate(45deg); }
+      weilion-generation .tabbox .infobox:after {
+        content: '';
+        position: absolute;
+        left: calc(100% - 1.5rem);
+        top: calc(100% - 2.5rem);
+        width: 0;
+        height: 0;
+        display: block;
+        border-top: 2rem solid transparent;
+        border-bottom: 2rem solid transparent;
+        border-left: 2rem solid #242424;
+        z-index: 1;
+        transform: rotate(45deg); }
   @media (min-width: 576px) {
     weilion-generation h2 {
       font-size: 5rem;
@@ -8454,6 +8626,10 @@ weilion-generation {
         left: -5px; }
       weilion-generation h2 span:last-child {
         right: -10px; }
+    weilion-generation .boxupto .upto {
+      right: calc(70% + 105px);
+      display: block;
+      top: 0; }
     weilion-generation .boxupto .num svg {
       height: 200px; }
       weilion-generation .boxupto .num svg:nth-child(2) {
@@ -8463,7 +8639,20 @@ weilion-generation {
       weilion-generation .boxupto .num svg:nth-child(4) {
         right: calc(100% + 17px); }
       weilion-generation .boxupto .num svg:nth-child(5) {
-        right: calc(100% + 20px); } }
+        right: calc(100% + 20px); }
+    weilion-generation .boxupto .num .billion {
+      left: 30px;
+      top: 20px; }
+      weilion-generation .boxupto .num .billion .em {
+        font-size: 5rem;
+        letter-spacing: 15px;
+        line-height: 4rem; }
+      weilion-generation .boxupto .num .billion .item2 .em {
+        font-size: 3rem;
+        line-height: 2.5rem; }
+      weilion-generation .boxupto .num .billion .item2 span {
+        font-size: .9rem;
+        margin-top: 0; } }
   @media (min-width: 992px) {
     weilion-generation {
       border-top: 0; }
@@ -8474,6 +8663,20 @@ weilion-generation {
           left: -7px; }
         weilion-generation h2 span:last-child {
           right: -13px; }
+      weilion-generation .boxupto .upto {
+        right: calc(70% + 150px);
+        -ms-writing-mode: tb-rl;
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        width: auto;
+        letter-spacing: 2px;
+        font-size: 4.5rem;
+        line-height: 1;
+        height: 4.5rem;
+        top: -12px;
+        -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+        color: #242424;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5); }
       weilion-generation .boxupto .num svg {
         height: 250px; }
         weilion-generation .boxupto .num svg:nth-child(2) {
@@ -8483,7 +8686,11 @@ weilion-generation {
         weilion-generation .boxupto .num svg:nth-child(4) {
           right: calc(100% + 27px); }
         weilion-generation .boxupto .num svg:nth-child(5) {
-          right: calc(100% + 33px); } }
+          right: calc(100% + 33px); }
+      weilion-generation .textscroll {
+        margin: 4rem 0; }
+      weilion-generation .tabbox #weilionTab .nav-item .nav-link {
+        font-size: 1.5rem; } }
   @media (min-width: 1200px) {
     weilion-generation h2 {
       font-size: 9rem;
@@ -8491,7 +8698,12 @@ weilion-generation {
       weilion-generation h2 span:first-child {
         left: -9px; }
       weilion-generation h2 span:last-child {
-        right: -18px; } }
+        right: -18px; }
+    weilion-generation .boxupto .upto {
+      right: calc(70% + 160px); } }
+  @media (max-width: 389px) {
+    weilion-generation .boxupto .upto {
+      display: none; } }
 
 @keyframes textGeneralAnimation {
   0% {
@@ -8553,5 +8765,27 @@ weilion-generation {
     width: 100%; }
   100% {
     width: 0%; } }
+
+@keyframes openTextBlind {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: .35; } }
+
+@keyframes openText {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+
+@keyframes openTextBlindA_5 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px); }
+  10% {
+    opacity: .35;
+    transform: translateX(0px); } }
 
 /*# sourceMappingURL=app.css.map */

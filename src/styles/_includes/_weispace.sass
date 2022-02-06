@@ -5,6 +5,8 @@ weilion-weispace
 	align-items: flex-end
 	padding: 2rem 0
 	overflow-x: hidden
+	background: darken($weilion-bg,5%)
+	z-index: -1
 	h2
 		user-select: none
 		font-family: 'Mandalore'
@@ -21,7 +23,7 @@ weilion-weispace
 			opacity: 0
 			animation: textAnimationOneTime 1s ease-in forwards, textAnimation 1s ease-in-out infinite alternate
 	.infobox
-		border: 2px solid $weilion-copyright-text
+		border: 2px solid darken($weilion-copyright-text,5%)
 		padding: 2rem
 		position: relative
 		font-size: .9rem
@@ -55,7 +57,7 @@ weilion-weispace
 			display: block
 			border-top: 2rem solid transparent
 			border-bottom: 2rem solid transparent
-			border-left: 2rem solid $weilion-bg
+			border-left: 2rem solid darken($weilion-bg,5%)
 			z-index: 1
 			transform: rotate(45deg)
 		// background: linear-gradient(45deg,$weilion-copyright-text 0 2px,transparent 0) 0 100% /50% 50%,linear-gradient(-45deg,$weilion-copyright-text 0 42px ,transparent 0) 100% 100%/50% 50%,linear-gradient(135deg,$weilion-copyright-text 0 2px,transparent 0) 0 0 /50% 50%,linear-gradient(-135deg,$weilion-copyright-text 0 2px,transparent 0) 100% 0 /50% 50%,#19191918
