@@ -7230,6 +7230,11 @@ body {
   overflow: hidden; }
   body.loaded {
     overflow-y: scroll; }
+  body * {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
 
 html, body {
   background: #242424;
@@ -7245,6 +7250,13 @@ html, body {
         max-width: calc(1600px - 100px) !important; } }
   html audio, body audio {
     display: none; }
+  html .weilion-mouse-circle, body .weilion-mouse-circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    position: fixed;
+    border-radius: 15px;
+    z-index: 1; }
 
 weilion-particles-js,
 weilion-main,
@@ -7695,7 +7707,6 @@ weilion-home {
       border-radius: 10px 10px 0 0;
       font-family: 'Mandalore';
       opacity: .5;
-      user-select: none;
       margin-bottom: 2rem; }
       weilion-home weilion-home-text .texttyping span {
         letter-spacing: 2px;
@@ -8659,7 +8670,8 @@ weilion-generation {
       border: 2px solid #666;
       border-bottom: 0; }
       weilion-generation .tabbox #weilionTab .nav-item {
-        margin-right: 2px; }
+        margin-right: 2px;
+        z-index: 10; }
         weilion-generation .tabbox #weilionTab .nav-item .nav-link {
           font-family: 'Mandalore';
           color: #666;
@@ -8669,7 +8681,8 @@ weilion-generation {
           border: 0;
           border-radius: 0;
           background: none;
-          box-shadow: none; }
+          box-shadow: none;
+          z-index: 10; }
           weilion-generation .tabbox #weilionTab .nav-item .nav-link.active, weilion-generation .tabbox #weilionTab .nav-item .nav-link:focus, weilion-generation .tabbox #weilionTab .nav-item .nav-link:hover {
             color: #fff;
             background: rgba(249, 249, 249, 0.125); }

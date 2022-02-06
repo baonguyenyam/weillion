@@ -19,6 +19,11 @@ body
 	overflow: hidden
 	&.loaded 
 		overflow-y: scroll
+	* 
+		-moz-user-select: none
+		-webkit-user-select: none
+		-ms-user-select: none
+		user-select: none
 html, body 
 	background: $weilion-bg
 	font-family: 'Roboto Mono'
@@ -33,9 +38,13 @@ html, body
 			max-width: calc(1600px - 100px) !important
 	audio
 		display: none
-
-
-		
+	.weilion-mouse-circle 
+		width: 20px
+		height: 20px
+		border: 1px solid #fff
+		position: fixed
+		border-radius: 15px
+		z-index: 1
 ///////////////////////////////////////////////////////////////////////
 // GLOBAL VARIABLES
 ///////////////////////////////////////////////////////////////////////
