@@ -1,17 +1,17 @@
 {
 	"config": {
 		"SEO": {
-			"AppName": "Home",
+			"AppName": "Weilion - Weimong to the moon",
 			"mobile_color": "#000000",
-			"cfg_name": "DEMO SITE",
-			"cfg_url": "demo-site.com",
+			"cfg_name": "Weilion - Weimong to the moon",
+			"cfg_url": "weilion.com",
 			"analytics": "UA-XXXXXXXXXXX-1",
 			"seo_lang": "en",
 			"seo_geo": "EN",
 			"seo_geo_latitude": "36.204824",
 			"seo_geo_longitude": "138.252924",
 			"app_facebook_ID": "100000511421818",
-			"cfg_description": "I’ve been designing profesionally since 2003. I founded GC Com in 2008.",
+			"cfg_description": "Welion space is a matrix space station for the development of space exploration ecosystem using WEI energy for the initiation process. Theoretically, the WEI energy is made from each point in the blockchain space which is block-quantized in the matrix by the chain platform source core with core multi matters, for example Binance Smart Chain or Aleph Zero. Chain platform source cores are encrypted in unique NFT form as a unique matter in blockchain space exploration.",
 			"cfg_keywords": "Bao Nguyen, Bảo Nguyên, Brands Designer, Web Developer, Apps Developer, Photograper, Front-End Developer",
 			"cfg_author": "Bao Nguyen",
 			"cfg_sitenameurl": "baonguyenyam",
@@ -23,17 +23,17 @@
 			"verf_yandex": "bc82adfacdd74cbf"
 		},
 		"favicondist": "./favicon/",
-		"website": "baonguyenyam.github.io",
+		"website": "weilion.com",
 		"title": "Gulp App by FullStack Vietnam",
 		"author": {
 			"email": "baonguyenyam@gmail.com",
 			"name": "BaoNguyen",
 			"phone": "0969689893",
-			"link": "https://baonguyenyam.github.io",
+			"link": "https://weilion.com",
 			"coding": "Coding by Bao Nguyen"
 		},
 		"license": "MIT",
-		"name": "Bao Nguyen Apps",
+		"name": "Welion Apps",
 		"version": "1.0"
 	}
 }
