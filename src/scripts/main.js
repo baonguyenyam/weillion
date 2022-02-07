@@ -14,11 +14,11 @@ var WEILION_APP = {
 			var getaudio = $('#weilion_space__audio')[0],
 				mouseovertimer, audiostatus = 'off',
 				playerControls = ".player-controls";
-			setTimeout(() => {
-				$('#weilion_space__audio').get(0).load();
-				$('#weilion_space__audio').get(0).play();
-				$('.player-controls').addClass('playing');
-			}, 2000);
+			// setTimeout(() => {
+			// 	$('#weilion_space__audio').get(0).load();
+			// 	$('#weilion_space__audio').get(0).play();
+			// 	$('.player-controls').addClass('playing');
+			// }, 2000);
 			$(document).on('mouseenter', playerControls, function () {
 				if (!mouseovertimer) {
 					mouseovertimer = window.setTimeout(function () {
@@ -151,25 +151,25 @@ var WEILION_APP = {
 		var odometerParams = [
 			{
 				id: 1, 
-				startVal: 2500000,
+				startVal: 11,
 				duration: 4000,
 				delay: 3000
 			},
 			{
 				id: 2, 
-				startVal: 1000310427,
+				startVal: 90000000,
 				duration: 7000,
 				delay: 4000
 			},
 			{
 				id: 3, 
-				startVal: 10000000,
+				startVal: 15000000,
 				duration: 5500,
 				delay: 5000
 			},
 			{
 				id: 4, 
-				startVal: 730244000014,
+				startVal: 75000000,
 				duration: 10000,
 				delay: 6000
 			}
@@ -211,6 +211,16 @@ var WEILION_APP = {
 			$('#roadmap .owl-dot').eq(i).append(element);
 		});
 	},
+	techCarousel: () => {
+		$("#tech-01").owlCarousel({
+			items: 1,
+			autoHeight: true,
+			margin: 30,
+			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+			nav:true,
+			dots: false
+		})
+	},
 	marquee: () =>{
 		$('.marquee').marquee({
 			direction: 'left',
@@ -230,6 +240,7 @@ var WEILION_APP = {
 		WEILION_APP.slotMachine();
 		WEILION_APP.itemHover();
 		WEILION_APP.marquee();
+		WEILION_APP.techCarousel();
 		WEILION_APP.timeLine();
 		WEILION_APP.weilion();
 	},
@@ -243,5 +254,5 @@ jQuery(window).on('scroll', () => {
 });
 jQuery(window).on('resize', () => {
 	WEILION_APP.fixedHeader();
-	WEILION_APP.timeLine();
+	// WEILION_APP.timeLine();
 });

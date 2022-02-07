@@ -6,7 +6,7 @@ weilion-home(id=app+"-home")
 				.col-12
 					.texttyping
 						span#text-replace
-					a.weilion-home-btn(href="#weilion-roadmap")
+					a.weilion-home-btn(href="javascript:void(0);", data-toggle="modal", data-target="#weilionBackdrop")
 						text time line
 						span >>>
 							//- span >>>
@@ -16,16 +16,16 @@ weilion-home(id=app+"-home")
 						.weilion-home-odometer
 							.odometer-number
 								h2 holder
-								#odometer-1.number.odometer 9999999
+								#odometer-1.number.odometer 99
 							.odometer-number
 								h2 total liquidity
-								#odometer-2.number.odometer 9999999999
+								#odometer-2.number.odometer 99999999
 							.odometer-number
-								h2 burned
+								h2 spent
 								#odometer-3.number.odometer 99999999
 							.odometer-number
 								h2 market cap
-								#odometer-4.number.odometer 999999999999
+								#odometer-4.number.odometer 99999999
 							.player-controls
 								span.play
 									img(src="./img/audio.png", alt="", srcset="")

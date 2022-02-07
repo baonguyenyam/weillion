@@ -7283,6 +7283,21 @@ weilion-main {
   height: 100%;
   min-height: 100vh; }
 
+#weilionBackdrop .modal-content {
+  border-radius: 0;
+  background: #030d16;
+  border: 2px solid #1968b3; }
+  #weilionBackdrop .modal-content .modal-header {
+    background: #030d16;
+    border-bottom: 2px solid #061a2d; }
+    #weilionBackdrop .modal-content .modal-header .close {
+      color: #1968b3;
+      opacity: 1;
+      text-shadow: none;
+      font-size: 1.3rem; }
+  #weilionBackdrop .modal-content .modal-body {
+    background: #030d16; }
+
 #weilion_loading {
   position: fixed;
   top: 0;
@@ -7979,7 +7994,7 @@ weilion-home {
           weilion-home .weilion-home-vivobo .weilion-home-odometer .odometer-number {
             flex: 0 0 auto;
             max-width: auto;
-            padding-right: 4rem;
+            padding-right: 6rem;
             padding-left: 1.5rem;
             padding-top: 1.5rem;
             padding-bottom: 0 !important;
@@ -8498,9 +8513,9 @@ weilion-team {
     overflow: hidden;
     white-space: nowrap; }
     weilion-team h2:hover {
-      color: rgba(4, 184, 255, 0.035);
-      -webkit-text-stroke: 0.5px #04b8ff;
-      text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+      color: rgba(217, 98, 9, 0.035);
+      -webkit-text-stroke: 0.5px #d96209;
+      text-shadow: 0px 0px 12px rgba(217, 98, 9, 0.5); }
     weilion-team h2.weispace-animated-visible {
       opacity: 0;
       animation: textTeamAnimationOneTime 1s ease-in forwards, textTeamAnimation 1s ease-in-out infinite alternate; }
@@ -8508,8 +8523,8 @@ weilion-team {
     font-family: 'Mandalore';
     font-size: 1.8em;
     letter-spacing: 5px;
-    color: #04b8ff;
-    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5);
+    color: #d96209;
+    text-shadow: 0px 0px 12px rgba(217, 98, 9, 0.5);
     margin-bottom: 2rem;
     text-align: center; }
   weilion-team .teams .group-team .item {
@@ -8554,16 +8569,16 @@ weilion-team {
         top: 0;
         left: 0;
         transform: translate(-10px, -10px);
-        border-left: 2px solid #00a7ea;
-        border-top: 2px solid #00a7ea; }
+        border-left: 2px solid #c15708;
+        border-top: 2px solid #c15708; }
       weilion-team .teams .group-team .item:hover .block-img:after, weilion-team .teams .group-team .item:focus .block-img:after, weilion-team .teams .group-team .item:active .block-img:after {
         bottom: 0;
         right: 0;
         transform: translate(10px, 10px);
-        border-right: 2px solid #00a7ea;
-        border-bottom: 2px solid #00a7ea; }
+        border-right: 2px solid #c15708;
+        border-bottom: 2px solid #c15708; }
     weilion-team .teams .group-team .item:hover figure figcaption h4, weilion-team .teams .group-team .item:focus figure figcaption h4, weilion-team .teams .group-team .item:active figure figcaption h4 {
-      color: #04b8ff; }
+      color: #d96209; }
   @media (min-width: 768px) {
     weilion-team {
       padding: 3rem 0; }
@@ -8590,7 +8605,7 @@ weilion-team {
           width: 80px;
           height: 80px;
           opacity: .23;
-          background: #04b8ff; } }
+          background: #d96209; } }
   @media (min-width: 1200px) {
     weilion-team {
       padding: 5rem 0; }
@@ -8622,9 +8637,9 @@ weilion-team {
   0% {
     letter-spacing: 150px;
     opacity: 0;
-    color: rgba(4, 184, 255, 0.035);
-    -webkit-text-stroke: 0 #04b8ff;
-    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+    color: rgba(217, 98, 9, 0.035);
+    -webkit-text-stroke: 0 #d96209;
+    text-shadow: 0px 0px 12px rgba(217, 98, 9, 0.5); }
   100% {
     opacity: 1; } }
 
@@ -8845,6 +8860,17 @@ weilion-roadmap {
     color: #04b8ff;
     margin: 1rem 0 1rem 0;
     letter-spacing: 1px; }
+  weilion-roadmap .infobox ul.list-unstyled > li {
+    font-family: 'Mandalore';
+    letter-spacing: 3px;
+    font-size: 1.2rem; }
+  weilion-roadmap .infobox ul.list-unstyled ul {
+    margin: .5rem 0; }
+    weilion-roadmap .infobox ul.list-unstyled ul li {
+      font-family: 'Roboto Mono';
+      letter-spacing: normal;
+      font-size: .9rem;
+      color: #8c8c8c; }
   @media (max-width: 991.98px) {
     weilion-roadmap #roadmap.owl-carousel .owl-nav {
       display: flex;
@@ -8866,7 +8892,6 @@ weilion-roadmap {
       weilion-roadmap #roadmap.owl-carousel .owl-nav .owl-next:hover {
         background: rgba(4, 184, 255, 0.5); } }
   weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot {
-    margin-right: .5rem;
     z-index: 10;
     font-family: 'Mandalore';
     color: #666;
@@ -8878,10 +8903,11 @@ weilion-roadmap {
     background: none;
     box-shadow: none;
     display: inline-block;
-    padding: .5rem 1.5rem !important; }
+    padding: .5rem 1.5rem !important;
+    background: #171717; }
     weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot.active, weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot:focus, weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot:hover {
       color: #fff;
-      background: rgba(249, 249, 249, 0.125); }
+      background: #04b8ff; }
   @media (min-width: 768px) {
     weilion-roadmap h2 {
       font-size: 4rem;
@@ -8899,8 +8925,25 @@ weilion-roadmap {
           order: 2; }
         weilion-roadmap .owl-carousel .owl-dots {
           order: 1;
+          margin-top: 2rem;
           margin-bottom: 2rem;
-          background: rgba(249, 249, 249, 0.025); } }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative; }
+          weilion-roadmap .owl-carousel .owl-dots:after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            z-index: -1;
+            background: #171717; }
+          weilion-roadmap .owl-carousel .owl-dots .owl-dot {
+            z-index: 10; } }
   @media (min-width: 1200px) {
     weilion-roadmap {
       padding: 7rem 0 4rem 0; }
@@ -9165,7 +9208,7 @@ weilion-generation {
         font-size: 2rem;
         line-height: 3rem;
         letter-spacing: 1px;
-        color: #ffeb3b;
+        color: #aaaaaa;
         font-style: italic;
         margin-bottom: 4px; }
       weilion-generation .boxupto .billion .em {
@@ -9523,6 +9566,28 @@ weilion-tech {
       margin-bottom: 1rem; }
     weilion-tech #weilionTechTabContent img {
       width: 100%; }
+  weilion-tech .owl-tech {
+    margin-bottom: 2rem;
+    position: relative; }
+    weilion-tech .owl-tech .owl-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem; }
+      weilion-tech .owl-tech .owl-nav .owl-prev,
+      weilion-tech .owl-tech .owl-nav .owl-next {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        justify-content: center;
+        align-items: center;
+        margin: 0.25rem;
+        color: #000; }
+      weilion-tech .owl-tech .owl-nav .owl-prev:hover {
+        background: rgba(4, 184, 255, 0.5); }
+      weilion-tech .owl-tech .owl-nav .owl-next:hover {
+        background: rgba(4, 184, 255, 0.5); }
   @media (min-width: 576px) {
     weilion-tech #weilionTechTabContent {
       padding: 2rem; } }
@@ -9547,7 +9612,34 @@ weilion-tech {
         weilion-tech #weilionTechTab .nav-item .nav-link img {
           display: block; }
       weilion-tech #weilionTechTabContent {
-        padding: 3rem; } }
+        padding: 3rem; }
+      weilion-tech .owl-tech .owl-nav {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        margin-top: 0; }
+        weilion-tech .owl-tech .owl-nav .owl-prev,
+        weilion-tech .owl-tech .owl-nav .owl-next {
+          position: absolute;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.8);
+          color: rgba(255, 255, 255, 0.5); }
+          weilion-tech .owl-tech .owl-nav .owl-prev:first-child,
+          weilion-tech .owl-tech .owl-nav .owl-next:first-child {
+            top: 50%;
+            left: 0; }
+          weilion-tech .owl-tech .owl-nav .owl-prev:last-child,
+          weilion-tech .owl-tech .owl-nav .owl-next:last-child {
+            top: 50%;
+            right: 0; }
+        weilion-tech .owl-tech .owl-nav .owl-prev:hover {
+          color: #000;
+          background: #04b8ff; }
+        weilion-tech .owl-tech .owl-nav .owl-next:hover {
+          color: #000;
+          background: #04b8ff; } }
   @media (min-width: 1200px) {
     weilion-tech {
       padding: 4em 0 12rem 0; }

@@ -105,35 +105,32 @@ if ($(window).width() < 768) {
     offset: 0
   });
 } // Mouse Animation
-
-
-$('#weilion-home').on('mousemove', animateCircles); // document.onmousemove = animateCircles; // circle follow mouse
-
-var colors = ['#f9f9f9', '#04b8ff',, '#000', '#f26528'];
-
-function animateCircles(event) {
-  var circle = document.createElement("div");
-  circle.setAttribute("class", "weilion-mouse-circle");
-  document.body.appendChild(circle); // adds function to body
-  // adds motion
-
-  circle.style.left = event.clientX + 'px';
-  circle.style.top = event.clientY + 'px'; // randomize color
-
-  var color = colors[Math.floor(Math.random() * colors.length)];
-  circle.style.borderColor = color; // adds animation
-
-  circle.style.transition = "all 0.5s linear 0s";
-  circle.style.left = circle.offsetLeft - 20 + 'px';
-  circle.style.top = circle.offsetTop - 20 + 'px';
-  circle.style.width = "50px";
-  circle.style.height = "50px";
-  circle.style.borderWidth = "5px";
-  circle.style.opacity = 0;
-  setTimeout(function () {
-    circle.remove();
-  }, 500);
-} // APP
+// $('#weilion-home').on('mousemove', animateCircles);
+// // document.onmousemove = animateCircles; // circle follow mouse
+// var colors = ['#f9f9f9', '#04b8ff', , '#000', '#f26528']
+// function animateCircles(event) {
+//     var circle = document.createElement("div");
+//     circle.setAttribute("class", "weilion-mouse-circle");
+//     document.body.appendChild(circle); // adds function to body
+//     // adds motion
+//     circle.style.left = event.clientX + 'px';
+//     circle.style.top = event.clientY + 'px';
+//     // randomize color
+//     var color = colors[Math.floor(Math.random() * colors.length)];
+//     circle.style.borderColor = color;
+//     // adds animation
+//     circle.style.transition = "all 0.5s linear 0s";
+//     circle.style.left = circle.offsetLeft - 20 + 'px';
+//     circle.style.top = circle.offsetTop - 20 + 'px';
+//     circle.style.width = "50px";
+//     circle.style.height = "50px";
+//     circle.style.borderWidth = "5px";
+//     circle.style.opacity = 0;
+//     setTimeout(() => {
+//         circle.remove()
+//     }, 500);
+// }
+// APP
 
 
 var WEILION_APP = {
@@ -151,12 +148,12 @@ var WEILION_APP = {
       var getaudio = $('#weilion_space__audio')[0],
           mouseovertimer,
           audiostatus = 'off',
-          playerControls = ".player-controls";
-      setTimeout(function () {
-        $('#weilion_space__audio').get(0).load();
-        $('#weilion_space__audio').get(0).play();
-        $('.player-controls').addClass('playing');
-      }, 2000);
+          playerControls = ".player-controls"; // setTimeout(() => {
+      // 	$('#weilion_space__audio').get(0).load();
+      // 	$('#weilion_space__audio').get(0).play();
+      // 	$('.player-controls').addClass('playing');
+      // }, 2000);
+
       $(document).on('mouseenter', playerControls, function () {
         if (!mouseovertimer) {
           mouseovertimer = window.setTimeout(function () {
@@ -296,22 +293,22 @@ var WEILION_APP = {
   runNumber: function runNumber() {
     var odometerParams = [{
       id: 1,
-      startVal: 2500000,
+      startVal: 11,
       duration: 4000,
       delay: 3000
     }, {
       id: 2,
-      startVal: 1000310427,
+      startVal: 90000000,
       duration: 7000,
       delay: 4000
     }, {
       id: 3,
-      startVal: 10000000,
+      startVal: 15000000,
       duration: 5500,
       delay: 5000
     }, {
       id: 4,
-      startVal: 730244000014,
+      startVal: 75000000,
       duration: 10000,
       delay: 6000
     }];
@@ -349,6 +346,16 @@ var WEILION_APP = {
       $('#roadmap .owl-dot').eq(i).append(element);
     });
   },
+  techCarousel: function techCarousel() {
+    $("#tech-01").owlCarousel({
+      items: 1,
+      autoHeight: true,
+      margin: 30,
+      navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+      nav: true,
+      dots: false
+    });
+  },
   marquee: function marquee() {
     $('.marquee').marquee({
       direction: 'left',
@@ -368,6 +375,7 @@ var WEILION_APP = {
     WEILION_APP.slotMachine();
     WEILION_APP.itemHover();
     WEILION_APP.marquee();
+    WEILION_APP.techCarousel();
     WEILION_APP.timeLine();
     WEILION_APP.weilion();
   }
@@ -379,7 +387,6 @@ jQuery(window).on('scroll', function () {
   WEILION_APP.fixedHeader();
 });
 jQuery(window).on('resize', function () {
-  WEILION_APP.fixedHeader();
-  WEILION_APP.timeLine();
+  WEILION_APP.fixedHeader(); // WEILION_APP.timeLine();
 });
 //# sourceMappingURL=app.js.map

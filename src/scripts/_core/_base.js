@@ -117,35 +117,35 @@ if ($(window).width() < 768) {
 
 // Mouse Animation
 
-$('#weilion-home').on('mousemove', animateCircles);
+// $('#weilion-home').on('mousemove', animateCircles);
 
-// document.onmousemove = animateCircles; // circle follow mouse
-var colors = ['#f9f9f9', '#04b8ff', , '#000', '#f26528']
+// // document.onmousemove = animateCircles; // circle follow mouse
+// var colors = ['#f9f9f9', '#04b8ff', , '#000', '#f26528']
 
-function animateCircles(event) {
-    var circle = document.createElement("div");
-    circle.setAttribute("class", "weilion-mouse-circle");
-    document.body.appendChild(circle); // adds function to body
+// function animateCircles(event) {
+//     var circle = document.createElement("div");
+//     circle.setAttribute("class", "weilion-mouse-circle");
+//     document.body.appendChild(circle); // adds function to body
 
-    // adds motion
-    circle.style.left = event.clientX + 'px';
-    circle.style.top = event.clientY + 'px';
+//     // adds motion
+//     circle.style.left = event.clientX + 'px';
+//     circle.style.top = event.clientY + 'px';
 
-    // randomize color
-    var color = colors[Math.floor(Math.random() * colors.length)];
-    circle.style.borderColor = color;
+//     // randomize color
+//     var color = colors[Math.floor(Math.random() * colors.length)];
+//     circle.style.borderColor = color;
 
-    // adds animation
-    circle.style.transition = "all 0.5s linear 0s";
+//     // adds animation
+//     circle.style.transition = "all 0.5s linear 0s";
 
-    circle.style.left = circle.offsetLeft - 20 + 'px';
-    circle.style.top = circle.offsetTop - 20 + 'px';
+//     circle.style.left = circle.offsetLeft - 20 + 'px';
+//     circle.style.top = circle.offsetTop - 20 + 'px';
 
-    circle.style.width = "50px";
-    circle.style.height = "50px";
-    circle.style.borderWidth = "5px";
-    circle.style.opacity = 0;
-    setTimeout(() => {
-        circle.remove()
-    }, 500);
-}
+//     circle.style.width = "50px";
+//     circle.style.height = "50px";
+//     circle.style.borderWidth = "5px";
+//     circle.style.opacity = 0;
+//     setTimeout(() => {
+//         circle.remove()
+//     }, 500);
+// }
