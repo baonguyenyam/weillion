@@ -83,6 +83,20 @@ var WEILION_APP = {
 				$('#weilion_background__audio').get(0).load();
 			});
 		});
+		setTimeout(() => {
+			$('.owl-carousel button, #weilionTab a, #weilionTechTab a').each(function () {
+				$(this).on('mouseenter', () => {
+					$('#weilion_background__audio').get(0).play();
+				});
+				$(this).on('mouseleave', () => {
+					$('#weilion_background__audio').get(0).load();
+				});
+				$(this).on('click', () => {
+					$('#weilion_intro__audio').get(0).load();
+					$('#weilion_intro__audio').get(0).play();
+				});
+			});
+		}, 3000);
 	},
 	itemHover: () => {
 		$('.group-team .item, #weilion-copyright a').each(function () {

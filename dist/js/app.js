@@ -236,6 +236,8 @@ function showMenu(x, y) {
   contentmenu.style.left = x + 'px';
   contentmenu.style.top = y + 'px';
   contentmenu.classList.add('menu-show');
+  $('#weilion_background__audio').get(0).load();
+  $('#weilion_background__audio').get(0).play();
 }
 
 function hideMenu() {
@@ -347,6 +349,20 @@ var WEILION_APP = {
         $('#weilion_background__audio').get(0).load();
       });
     });
+    setTimeout(function () {
+      $('.owl-carousel button, #weilionTab a, #weilionTechTab a').each(function () {
+        $(this).on('mouseenter', function () {
+          $('#weilion_background__audio').get(0).play();
+        });
+        $(this).on('mouseleave', function () {
+          $('#weilion_background__audio').get(0).load();
+        });
+        $(this).on('click', function () {
+          $('#weilion_intro__audio').get(0).load();
+          $('#weilion_intro__audio').get(0).play();
+        });
+      });
+    }, 3000);
   },
   itemHover: function itemHover() {
     $('.group-team .item, #weilion-copyright a').each(function () {

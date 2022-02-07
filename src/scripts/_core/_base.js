@@ -272,6 +272,8 @@ function showMenu(x, y){
     contentmenu.style.left = x + 'px';
     contentmenu.style.top = y + 'px';
     contentmenu.classList.add('menu-show');
+    $('#weilion_background__audio').get(0).load();
+    $('#weilion_background__audio').get(0).play();
 }
 
 function hideMenu(){
