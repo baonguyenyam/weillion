@@ -39,17 +39,26 @@ weilion-contact
 		font-size: 3rem
 		letter-spacing: 7px
 		overflow: hidden
-		text-shadow: 4px 3px 0px $weilion-main-color
+		// text-shadow: 4px 3px 0px $weilion-main-color
+		// text-shadow: 4px 3px 0px $weilion-bg
 		&.weispace-animated-visible
 			opacity: 0
 			animation: textContactAnimationOneTime 1s ease-in forwards, textContactAnimation 1s ease-in-out infinite alternate
-		
+	a 
+		color: $weilion-sec-newspace
+		text-shadow: 1px 1px 0px $weilion-bg
+		font-weight: bold
+		&:hover,
+		&:focus,
+		&:active
+			color: $weilion-sec-newspace
 	.notebox
 		h3 
 			font-size: 1.3rem
 			font-family: 'Mandalore'
 			color: $weilion-sec-newspace
 			letter-spacing: 3px
+			text-shadow: 1px 1px 0px $weilion-bg
 			svg 
 				fill: $weilion-sec-newspace
 				height: 1.3rem

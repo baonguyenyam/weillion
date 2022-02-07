@@ -147,50 +147,48 @@ var WEILION_APP = {
 		});
 	},
 	runNumber: () => {
-		var odometer_1 = new Odometer({
-			el: $('#odometer-1')[0],
-			duration: 4000,
-		});
-		// odometer_1.update(0);
-		// odometer_1.render();
-		// var odometer_2 = new Odometer({
-		// 	el: $('#odometer-2')[0],
-		// 	duration: 7000
-		// });
-		// odometer_2.update(0);
-		// odometer_2.render();
-		// var odometer_3 = new Odometer({
-		// 	el: $('#odometer-3')[0],
-		// 	duration: 5500
-		// });
-		// odometer_3.update(0);
-		// odometer_3.render();
-		// var odometer_4 = new Odometer({
-		// 	el: $('#odometer-4')[0],
-		// 	duration: 10000
-		// });
-		// odometer_4.update(0);
-		// odometer_4.render();
-		$('#odometer-1').text(2500000);
-		// $('#odometer-2').text(1000310427);
-		// $('#odometer-3').text(10000000);
-		// $('#odometer-4').text(730244000014);
+
+		var odometerParams = [
+			{
+				id: 1, 
+				startVal: 2500000,
+				duration: 4000,
+				delay: 3000
+			},
+			{
+				id: 2, 
+				startVal: 1000310427,
+				duration: 7000,
+				delay: 4000
+			},
+			{
+				id: 3, 
+				startVal: 10000000,
+				duration: 5500,
+				delay: 5000
+			},
+			{
+				id: 4, 
+				startVal: 730244000014,
+				duration: 10000,
+				delay: 6000
+			}
+		]
+		
+		for(var i = 0; odometerParams.length > i; i++) {
+			createOdometer(odometerParams[i]);
+		}
+
 	},
 	slotMachine: () => {
-		setTimeout(function () {
-			WEILION_APP.runNumber();
-		}, 3000);
-		setInterval(function () {
-			// WEILION_APP.runNumber();
-		}, 50000);
+		WEILION_APP.runNumber();
 	},
 	weilion: () => {
 		console.log('%cWEILION', 'font-size:100px;color:#04b8ff;text-shadow:0 1px 0 #1968b3,0 2px 0 #1968b3 ,0 3px 0 #1968b3 ,0 4px 0 #1968b3 ,0 5px 0 #1968b3 ,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);')
 		console.log('%c WEILION ' + '%c - Weimong to the moon', 'border-radius: 2px; padding: 3px; background: #04b8ff; color: #000', 'color: #04b8ff')
 	},
 	timeLine: () => {
-		$(".owl-carousel")
-		.owlCarousel({
+		$("#roadmap").owlCarousel({
 			items: 1,
 			autoHeight: true,
 			margin: 30,
@@ -210,7 +208,7 @@ var WEILION_APP = {
 		.each(function(i){
 			var attr = $(this).children().attr('data-year');
 			var element = $('<span>'+attr+'</span>');
-			$('.owl-carousel .owl-dot').eq(i).append(element);
+			$('#roadmap .owl-dot').eq(i).append(element);
 		});
 	},
 	marquee: () =>{
@@ -245,4 +243,5 @@ jQuery(window).on('scroll', () => {
 });
 jQuery(window).on('resize', () => {
 	WEILION_APP.fixedHeader();
+	WEILION_APP.timeLine();
 });

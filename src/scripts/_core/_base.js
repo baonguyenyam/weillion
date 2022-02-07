@@ -26,6 +26,21 @@ function jsonLoad(path, success, error) {
     xhr.open("GET", path, true);
     xhr.send();
 }
+function createOdometer(config) {
+	
+    var instance = new Odometer(
+        {
+            el: document.querySelector('#odometer-' + config.id), 
+            duration: config.duration,
+        }
+    );
+
+    setTimeout(() => {
+        $('#odometer-'+ config.id).text(config.startVal);
+    } , config.delay);
+
+}
+
 jQuery(function ($) {
 
     // Function which adds the 'animated' class to any '.animatable' in view

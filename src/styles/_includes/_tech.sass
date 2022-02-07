@@ -1,0 +1,114 @@
+// STYLES //////////////////////////////
+weilion-tech
+	position: relative
+	display: flex
+	align-items: flex-end
+	padding: 4em 0 4rem 0
+	overflow-x: hidden
+	flex-direction: column
+	overflow-x: hidden
+	background: darken($weilion-bg,5%)
+	h2
+		user-select: none
+		font-family: 'Mandalore'
+		-webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
+		color: transparent
+		font-size: 3rem
+		letter-spacing: 7px
+		overflow: hidden
+		white-space: nowrap
+		&:hover
+			color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
+			-webkit-text-stroke: 0.5px $weilion-sec-newspace
+			text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+		&.weispace-animated-visible
+			opacity: 0
+			animation: textTechAnimationOneTime 1s ease-in forwards, textTechAnimation 1s ease-in-out infinite alternate
+	#weilionTechTab
+		border-bottom: 2px solid darken($weilion-bg,10%)
+		margin-bottom: 0
+		margin-top: 2rem
+		.nav-item
+			margin-right: 2px
+			z-index: 10
+			.nav-link
+				font-family: 'Mandalore'
+				color: $weilion-copyright-text
+				font-size: 1rem
+				letter-spacing: 3px
+				margin-bottom: 0
+				border: 0
+				border-radius: 0
+				background:  darken($weilion-bg,7%)
+				box-shadow: none
+				z-index: 10
+				padding: 0.5rem 2rem
+				img
+					filter: brightness(100%) invert(1)
+					max-width: 70px
+					display: none
+				&.active, 
+				&:focus,
+				&:hover
+					color: #fff
+					background: darken($weilion-bg,10%)
+	#weilionTechTabContent
+		padding: 1rem
+		background: darken($weilion-bg,10%)
+		color: $weilion-copyright-text
+		h3 
+			font-family: 'Mandalore'
+			font-size: 1.5rem
+			letter-spacing: 3px
+			color: #fff
+			border-bottom: 2px solid darken($weilion-bg,12%)
+			padding-bottom: 1rem
+			margin-bottom: 1rem
+		img 
+			width: 100%
+	+media-breakpoint-up(sm)
+		#weilionTechTabContent
+			padding: 2rem
+	+media-breakpoint-up(lg)
+		padding: 4em 0 8rem 0
+		h2
+			font-size: 4rem
+			letter-spacing: 8px
+		#weilionTechTab
+			.nav-item
+				.nav-link
+					font-size: 2rem
+					flex-direction: row
+					display: flex
+					justify-content: center
+					align-items: center
+					padding: 1.3rem 3rem
+					line-height: 1
+					letter-spacing: 3px
+					span
+						display: block
+						margin-left: 1rem
+					img 
+						display: block
+		#weilionTechTabContent
+			padding: 3rem
+	+media-breakpoint-up(xl)
+		padding: 4em 0 12rem 0
+		h2 
+			font-size: 5rem
+			letter-spacing: 12px
+
+@keyframes textTechAnimation
+	0%
+		transform: translate(0, 3px)
+	100%
+		transform: translate(0, -3px)
+@keyframes textTechAnimationOneTime
+	0%
+		letter-spacing: 150px
+		opacity: 0
+		color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
+		-webkit-text-stroke: 0 $weilion-sec-newspace
+		text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+	100%
+		opacity: 1	
