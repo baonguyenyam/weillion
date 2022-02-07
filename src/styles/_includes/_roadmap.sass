@@ -1,9 +1,112 @@
 // STYLES //////////////////////////////
-weilion-timeline
+weilion-roadmap
 	position: relative
 	display: flex
 	align-items: flex-end
-	padding: 2rem 0
+	padding: 4em 0 4rem 0
 	flex-direction: column
 	z-index: 50
-	
+	h2
+		user-select: none
+		font-family: 'Mandalore'
+		// -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
+		// color: rgba(255,255,255,.3)
+		font-size: 3rem
+		letter-spacing: 7px
+		overflow: hidden
+		white-space: nowrap
+		color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
+		-webkit-text-stroke: 0.5px $weilion-sec-newspace
+		text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+		// &:hover
+		&.weispace-animated-visible
+			opacity: 0
+			animation: textMongAnimationOneTime 1s ease-in forwards, textMongAnimation 1s ease-in-out infinite alternate
+	h3 
+		font-size: 2rem
+		font-family: 'Mandalore'
+		color: $weilion-sec-newspace
+		margin: 1rem 0 1rem 0
+		letter-spacing: 1px
+	#roadmap.owl-carousel
+		+media-breakpoint-down(md)
+			.owl-nav
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-top: 1rem
+				.owl-prev,
+				.owl-next
+					display: flex
+					width: 2rem
+					height: 2rem
+					background: rgba(255,255,255,.1)
+					justify-content: center
+					align-items: center
+					margin: 0.25rem
+					color: #000
+				.owl-prev
+					&:hover
+						background: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+				.owl-next
+					&:hover
+						background: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+		.owl-dots
+			button.owl-dot
+				margin-right: .5rem
+				z-index: 10
+				font-family: 'Mandalore'
+				color: $weilion-copyright-text
+				font-size: 1.3rem
+				letter-spacing: 3px
+				margin-bottom: 0
+				border: 0
+				border-radius: 0
+				background: none
+				box-shadow: none
+				display: inline-block
+				padding: .5rem 1.5rem !important
+				&.active, 
+				&:focus,
+				&:hover
+					color: #fff
+					background: rgba(red($weilion-copyright-bg),green($weilion-copyright-bg),blue($weilion-copyright-bg),.125)
+	+media-breakpoint-up(md)
+		h2
+			font-size: 4rem
+			letter-spacing: 8px
+	+media-breakpoint-up(lg)
+		padding: 5em 0 4rem 0
+		h2
+			font-size: 5rem
+			letter-spacing: 12px
+		.owl-carousel
+			// margin-top: 2rem 
+			display: flex !important
+			flex-direction: column
+			.owl-stage-outer
+				order: 2
+			.owl-dots
+				order: 1
+				margin-bottom: 2rem
+				background: rgba(red($weilion-copyright-bg),green($weilion-copyright-bg),blue($weilion-copyright-bg),.025)
+	+media-breakpoint-up(xl)
+		padding: 7rem 0 4rem 0
+		h2
+			font-size: 6rem
+			letter-spacing: 10px
+
+@keyframes textMongAnimation
+	0%
+		transform: translate(0, 3px)
+	100%
+		transform: translate(0, -3px)
+@keyframes textMongAnimationOneTime
+	0%
+		letter-spacing: 150px
+		opacity: 0
+		color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
+		-webkit-text-stroke: 0 $weilion-sec-newspace
+		text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+	100%
+		opacity: 1	

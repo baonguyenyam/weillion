@@ -188,6 +188,31 @@ var WEILION_APP = {
 		console.log('%cWEILION', 'font-size:100px;color:#04b8ff;text-shadow:0 1px 0 #1968b3,0 2px 0 #1968b3 ,0 3px 0 #1968b3 ,0 4px 0 #1968b3 ,0 5px 0 #1968b3 ,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);')
 		console.log('%c WEILION ' + '%c - Weimong to the moon', 'border-radius: 2px; padding: 3px; background: #04b8ff; color: #000', 'color: #04b8ff')
 	},
+	timeLine: () => {
+		$(".owl-carousel")
+		.owlCarousel({
+			items: 1,
+			autoHeight: true,
+			margin: 30,
+			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+			responsive : {
+				0 : {
+					dots: false,
+					nav:true,
+				},
+				992: {
+					dots: true,
+					nav: false
+				}
+			}
+		})
+		.find('.owl-item')
+		.each(function(i){
+			var attr = $(this).children().attr('data-year');
+			var element = $('<span>'+attr+'</span>');
+			$('.owl-carousel .owl-dot').eq(i).append(element);
+		});
+	},
 	marquee: () =>{
 		$('.marquee').marquee({
 			direction: 'left',
@@ -207,6 +232,7 @@ var WEILION_APP = {
 		WEILION_APP.slotMachine();
 		WEILION_APP.itemHover();
 		WEILION_APP.marquee();
+		WEILION_APP.timeLine();
 		WEILION_APP.weilion();
 	},
 }

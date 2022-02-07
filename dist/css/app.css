@@ -8811,13 +8811,110 @@ weilion-weimong {
   100% {
     opacity: 1; } }
 
-weilion-timeline {
+weilion-roadmap {
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: 2rem 0;
+  padding: 4em 0 4rem 0;
   flex-direction: column;
   z-index: 50; }
+  weilion-roadmap h2 {
+    user-select: none;
+    font-family: 'Mandalore';
+    font-size: 3rem;
+    letter-spacing: 7px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(4, 184, 255, 0.035);
+    -webkit-text-stroke: 0.5px #04b8ff;
+    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+    weilion-roadmap h2.weispace-animated-visible {
+      opacity: 0;
+      animation: textMongAnimationOneTime 1s ease-in forwards, textMongAnimation 1s ease-in-out infinite alternate; }
+  weilion-roadmap h3 {
+    font-size: 2rem;
+    font-family: 'Mandalore';
+    color: #04b8ff;
+    margin: 1rem 0 1rem 0;
+    letter-spacing: 1px; }
+  @media (max-width: 991.98px) {
+    weilion-roadmap #roadmap.owl-carousel .owl-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem; }
+      weilion-roadmap #roadmap.owl-carousel .owl-nav .owl-prev,
+      weilion-roadmap #roadmap.owl-carousel .owl-nav .owl-next {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        justify-content: center;
+        align-items: center;
+        margin: 0.25rem;
+        color: #000; }
+      weilion-roadmap #roadmap.owl-carousel .owl-nav .owl-prev:hover {
+        background: rgba(4, 184, 255, 0.5); }
+      weilion-roadmap #roadmap.owl-carousel .owl-nav .owl-next:hover {
+        background: rgba(4, 184, 255, 0.5); } }
+  weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot {
+    margin-right: .5rem;
+    z-index: 10;
+    font-family: 'Mandalore';
+    color: #666;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    display: inline-block;
+    padding: .5rem 1.5rem !important; }
+    weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot.active, weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot:focus, weilion-roadmap #roadmap.owl-carousel .owl-dots button.owl-dot:hover {
+      color: #fff;
+      background: rgba(249, 249, 249, 0.125); }
+  @media (min-width: 768px) {
+    weilion-roadmap h2 {
+      font-size: 4rem;
+      letter-spacing: 8px; } }
+  @media (min-width: 992px) {
+    weilion-roadmap {
+      padding: 5em 0 4rem 0; }
+      weilion-roadmap h2 {
+        font-size: 5rem;
+        letter-spacing: 12px; }
+      weilion-roadmap .owl-carousel {
+        display: flex !important;
+        flex-direction: column; }
+        weilion-roadmap .owl-carousel .owl-stage-outer {
+          order: 2; }
+        weilion-roadmap .owl-carousel .owl-dots {
+          order: 1;
+          margin-bottom: 2rem;
+          background: rgba(249, 249, 249, 0.025); } }
+  @media (min-width: 1200px) {
+    weilion-roadmap {
+      padding: 7rem 0 4rem 0; }
+      weilion-roadmap h2 {
+        font-size: 6rem;
+        letter-spacing: 10px; } }
+
+@keyframes textMongAnimation {
+  0% {
+    transform: translate(0, 3px); }
+  100% {
+    transform: translate(0, -3px); } }
+
+@keyframes textMongAnimationOneTime {
+  0% {
+    letter-spacing: 150px;
+    opacity: 0;
+    color: rgba(4, 184, 255, 0.035);
+    -webkit-text-stroke: 0 #04b8ff;
+    text-shadow: 0px 0px 12px rgba(4, 184, 255, 0.5); }
+  100% {
+    opacity: 1; } }
 
 weilion-contact {
   position: relative;
