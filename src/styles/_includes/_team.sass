@@ -38,7 +38,9 @@ weilion-team
 		// 	text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
 		&.weispace-animated-visible
 			opacity: 0
-			animation: textTeamAnimationOneTime 1s ease-in forwards, shine 3s ease-in-out infinite alternate
+			width: 0
+			overflow: hidden
+			animation: textTeamAnimationOneTime .5s ease-in forwards, shine 3s ease-in-out infinite alternate, textTeamAnimation 1s ease-in-out infinite alternate
 	.teams
 		h3
 			font-family: 'Mandalore'
@@ -110,6 +112,7 @@ weilion-team
 						figcaption
 							h4 
 								color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space), 1)
+								animation: textTeamAnimationFlash .5s ease-in-out forwards
 	+media-breakpoint-up(md)
 		padding: 3rem 0
 		h2
@@ -135,6 +138,7 @@ weilion-team
 				height: 80px
 				opacity: .23
 				background: $weilion-sec-space
+				animation: textTeamHeadingAnimation 1s ease-in-out infinite alternate
 		
 	+media-breakpoint-up(xl)
 		padding: 5rem 0
@@ -155,22 +159,40 @@ weilion-team
 		transform: translate(-3px, -3px)
 	100%
 		transform: translate(3px, 3px)
+@keyframes textTeamAnimationFlash
+	0%
+		opacity: 1
+	20%
+		opacity: 0
+	30%
+		opacity: 1
+	70%
+		opacity: 0
+	100%
+		opacity: 1
 @keyframes textTeamAnimation
 	0%
 		transform: translate(0, 3px)
 	100%
 		transform: translate(0, -3px)
+@keyframes textTeamHeadingAnimation
+	0%
+		transform: translate(3px, calc(50% + 4px))
+	100%
+		transform: translate(-4px, calc(50% - 3px))
 @keyframes textTeamAnimationOneTime
 	0%
-		letter-spacing: 150px
+		// letter-spacing: 150px
 		opacity: 0
+		width: 0
 		// color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
 		// -webkit-text-stroke: 0 $weilion-sec-space
 		// text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
 	100%
+		width: 100%
 		opacity: 1	
 @keyframes shine
 	0%
 		background-position: 0
 	100%
-		background-position: 500px
+		background-position: 300px

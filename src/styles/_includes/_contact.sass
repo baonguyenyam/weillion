@@ -30,7 +30,7 @@ weilion-contact
 		width: 100%
 		height: 100%
 		display: block
-		background: $weilion-main-color
+		background: darken($weilion-main-color,25%)
 		opacity: 0.5
 		z-index: -1
 	h2
@@ -43,9 +43,21 @@ weilion-contact
 		overflow: hidden
 		// text-shadow: 4px 3px 0px $weilion-main-color
 		// text-shadow: 4px 3px 0px $weilion-bg
+		&:after
+			content: attr(data-shadow)
+			position: absolute
+			top: .06em 
+			left: .06em
+			z-index: -1
+			text-shadow: none
+			background-size: .05em .05em
+			background-image: linear-gradient(45deg, transparent 45%, rgba(red($weilion-copyright-bg), green($weilion-copyright-bg), blue($weilion-copyright-bg),1) 45%, rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),1) 55%, transparent 0)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+			animation: shad-anim 20s 3s linear infinite alternate
 		&.weispace-animated-visible
 			opacity: 0
-			animation: textContactAnimationOneTime 1s ease-in forwards, textContactAnimation 1s ease-in-out infinite alternate
+			animation: textContactAnimationOneTime 2s ease-in forwards, textContactAnimation 1s 3s ease-in-out infinite alternate
 	a 
 		color: $weilion-sec-newspace
 		text-shadow: 1px 1px 0px $weilion-bg
@@ -78,6 +90,8 @@ weilion-contact
 			letter-spacing: 8px
 	+media-breakpoint-up(lg)
 		padding: 6rem 0
+		&:after
+			background: darken($weilion-main-color,10%)	
 		h2
 			font-size: 5rem
 			letter-spacing: 12px
@@ -106,6 +120,11 @@ weilion-contact
 			background-size: auto 100% !important
 
 
+@keyframes textContacshadanimOneTime
+	95%
+		visibility: hidden
+	100%
+		visibility: visible
 @keyframes textContactAnimation
 	0%
 		transform: translate(0, 3px)
@@ -113,10 +132,23 @@ weilion-contact
 		transform: translate(0, -3px)
 @keyframes textContactAnimationOneTime
 	0%
-		letter-spacing: 150px
 		opacity: 0
 		color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
 		-webkit-text-stroke: 0 $weilion-sec-newspace
 		text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+	10%
+		opacity: 1
+	85%
+		letter-spacing: 0px
+	90%
+		letter-spacing: 25px
+	95%
+		letter-spacing: 5px
+		// letter-spacing: 0px
 	100%
 		opacity: 1
+@keyframes shad-anim
+	0% 
+		background-position: 0 0
+	0%
+		background-position: 100% -100%

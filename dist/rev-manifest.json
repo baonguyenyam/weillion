@@ -1,10 +1,6 @@
 {
-  "css/app.css": "css/app-574c648bfb.css",
-  "css/app.min.css": "css/app-cf5a4de6e1.min.css",
-  "css/weilion.css": "css/weilion-9c9efc2f97.css",
+  "css/app.min.css": "css/app-f5377fcd37.min.css",
   "css/weilion.min.css": "css/weilion-8f1234e98f.min.css",
-  "js/app.js": "js/app-1635bb888a.js",
-  "js/app.min.js": "js/app-725387996a.min.js",
-  "js/weilion.js": "js/weilion-16f3c0c772.js",
+  "js/app.min.js": "js/app-0b14a82373.min.js",
   "js/weilion.min.js": "js/weilion-0ced955b85.min.js"
 }

@@ -7,21 +7,39 @@ weilion-roadmap
 	flex-direction: column
 	z-index: 50
 	h2
-		user-select: none
-		font-family: 'Mandalore'
-		// -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
-		// color: rgba(255,255,255,.3)
-		font-size: 3rem
-		letter-spacing: 7px
-		overflow: hidden
 		white-space: nowrap
-		color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
-		-webkit-text-stroke: 0.5px $weilion-sec-newspace
-		text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
-		// &:hover
-		&.weispace-animated-visible
-			opacity: 0
-			animation: textMongAnimationOneTime 1s ease-in forwards, textMongAnimation 1s ease-in-out infinite alternate
+		span
+			user-select: none
+			font-family: 'Mandalore'
+			// -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
+			// color: rgba(255,255,255,.3)
+			font-size: 3rem
+			letter-spacing: 7px
+			overflow: hidden
+			white-space: nowrap
+			display: inline-flex
+			color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
+			-webkit-text-stroke: 0.5px $weilion-sec-newspace
+			text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+			// &:hover
+			&.weispace-animated-visible
+				opacity: 0
+				&:nth-child(1)
+					animation: textRoadAnimationOneTime 1s .5s ease-in forwards, textRoadAnimation 1s 1.95s ease-in-out infinite alternate
+				&:nth-child(2)
+					animation: textRoadAnimationOneTime 1s 1.3s ease-in forwards, textRoadAnimation 1s 1.75s ease-in-out infinite alternate
+				&:nth-child(3)
+					animation: textRoadAnimationOneTime 1s .7s ease-in forwards, textRoadAnimation 1s 0.85s ease-in-out infinite alternate
+				&:nth-child(4)
+					animation: textRoadAnimationOneTime 1s 1.5s ease-in forwards, textRoadAnimation 1s 1.5s ease-in-out infinite alternate
+				&:nth-child(5)
+					animation: textRoadAnimationOneTime 1s .9s ease-in forwards, textRoadAnimation 1s 0.5s ease-in-out infinite alternate
+				&:nth-child(6)
+					animation: textRoadAnimationOneTime 1s 1.7s ease-in forwards, textRoadAnimation 1s 1.2s ease-in-out infinite alternate
+				&:nth-child(7)
+					animation: textRoadAnimationOneTime 1s 1.1s ease-in forwards, textRoadAnimation 1s 1.75s ease-in-out infinite alternate
+				&:nth-child(8)
+					animation: textRoadAnimationOneTime 1s 2s ease-in forwards, textRoadAnimation 1s 1s ease-in-out infinite alternate
 	h3 
 		font-size: 2rem
 		font-family: 'Mandalore'
@@ -87,13 +105,15 @@ weilion-roadmap
 					background: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),1)
 	+media-breakpoint-up(md)
 		h2
-			font-size: 4rem
-			letter-spacing: 8px
+			span 
+				font-size: 4rem
+				letter-spacing: 8px
 	+media-breakpoint-up(lg)
 		padding: 5em 0 4rem 0
 		h2
-			font-size: 5rem
-			letter-spacing: 12px
+			span 
+				font-size: 5rem
+				letter-spacing: 12px
 		.owl-carousel
 			// margin-top: 2rem 
 			display: flex !important
@@ -124,20 +144,32 @@ weilion-roadmap
 	+media-breakpoint-up(xl)
 		padding: 7rem 0 4rem 0
 		h2
-			font-size: 6rem
-			letter-spacing: 10px
+			span 
+				font-size: 6rem
+				letter-spacing: 10px
 
-@keyframes textMongAnimation
+@keyframes textRoadAnimation
 	0%
-		transform: translate(0, 3px)
+		transform: translate(0, 0)
+		letter-spacing: 0px
 	100%
-		transform: translate(0, -3px)
-@keyframes textMongAnimationOneTime
+		transform: translate(3px, 0)
+		letter-spacing: 30px
+@keyframes textRoadAnimationOneTime
 	0%
-		letter-spacing: 150px
+		transform: rotateZ(2320deg)
+		letter-spacing: 30px
 		opacity: 0
 		color: rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.035)
 		-webkit-text-stroke: 0 $weilion-sec-newspace
 		text-shadow: 0px 0px 12px rgba(red($weilion-sec-newspace), green($weilion-sec-newspace), blue($weilion-sec-newspace),.5)
+	50%
+		transform: rotateZ(520deg)
+		opacity: .15
+		letter-spacing: -50px
+	80%
+		transform: rotateZ(0deg)
+		opacity: .15
+		letter-spacing: 50px
 	100%
-		opacity: 1	
+		opacity: 1
