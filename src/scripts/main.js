@@ -231,6 +231,11 @@ var WEILION_APP = {
 			delayBeforeStart: 0,
 		});
 	},
+	fixediOS: () => {
+		if (navigator.userAgent.match(/(iPad|iPhone|iPod)/gi)) {
+			$('head').append('<style>weilion-weimong#weilion-weimong:after,weilion-contact#weilion-contact:before{background-attachment: scroll !important;}</style>');
+		}
+	},
 	init: () => {
 		WEILION_APP.loadingAnimation();
 		WEILION_APP.playAudio();
@@ -243,6 +248,7 @@ var WEILION_APP = {
 		WEILION_APP.techCarousel();
 		WEILION_APP.timeLine();
 		WEILION_APP.weilion();
+		WEILION_APP.fixediOS();
 	},
 }
 

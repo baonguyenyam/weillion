@@ -14,9 +14,11 @@ weilion-weimong
 		width: 100%
 		height: 100%
 		display: block
-		background: url('../img/weimong.png') no-repeat center center
+		background: url('../img/weimong.png') no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
 		background-size: cover
-		background-attachment: fixed
 		z-index: -1
 	.img-top,
 	.img-bottom
@@ -158,6 +160,25 @@ weilion-weimong
 			letter-spacing: 10px
 		.img-top
 			transform: translateY(-55%)
+	@supports (-webkit-touch-callout: none) or (-webkit-user-select: none) or (-khtml-user-select: none) or (-moz-user-select: none) or (-ms-user-select: none) or (user-select: none)
+		&:before
+			background-attachment: scroll
+			height: 100%
+	@supports not ((-webkit-touch-callout: none) and (-webkit-user-select: none) and (-khtml-user-select: none) and (-moz-user-select: none) and (-ms-user-select: none) and (user-select: none))
+		&:before
+			background-attachment: fixed
+			height: 100%
+
+.no-touch
+	weilion-weimong
+		&:before
+			background-attachment: fixed
+.touch
+	weilion-weimong
+		&:before
+			background-attachment: scroll !important
+			background-size: auto 100% !important
+
 @keyframes textMongAnimation
 	0%
 		transform: translate(0, 3px)

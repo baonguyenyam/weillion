@@ -8,21 +8,37 @@ weilion-team
 	background: darken($weilion-bg,5%)
 	z-index: -1
 	h2
-		user-select: none
+		color: #fff
+		background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%)
+		background-position: 0
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		animation: shine 3s infinite linear
+		animation-fill-mode: forwards
+		-webkit-text-size-adjust: none
+		text-decoration: none
+		white-space: nowrap
 		font-family: 'Mandalore'
 		-webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5)
-		color: transparent
+		// color: transparent
 		font-size: 3rem
 		letter-spacing: 7px
 		overflow: hidden
-		white-space: nowrap
-		&:hover
-			color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
-			-webkit-text-stroke: 0.5px $weilion-sec-space
-			text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
+		// white-space: nowrap
+		// -webkit-background-clip: text
+		// -webkit-text-fill-color: transparent
+		// animation: shine 3s infinite linear
+		// animation-fill-mode: forwards
+		// -webkit-text-size-adjust: none
+		// background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%)
+		// background-position: 0
+		// &:hover
+		// 	color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
+		// 	-webkit-text-stroke: 0.5px $weilion-sec-space
+		// 	text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
 		&.weispace-animated-visible
 			opacity: 0
-			animation: textTeamAnimationOneTime 1s ease-in forwards, textTeamAnimation 1s ease-in-out infinite alternate
+			animation: textTeamAnimationOneTime 1s ease-in forwards, shine 3s ease-in-out infinite alternate
 	.teams
 		h3
 			font-family: 'Mandalore'
@@ -148,8 +164,13 @@ weilion-team
 	0%
 		letter-spacing: 150px
 		opacity: 0
-		color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
-		-webkit-text-stroke: 0 $weilion-sec-space
-		text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
+		// color: rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.035)
+		// -webkit-text-stroke: 0 $weilion-sec-space
+		// text-shadow: 0px 0px 12px rgba(red($weilion-sec-space), green($weilion-sec-space), blue($weilion-sec-space),.5)
 	100%
 		opacity: 1	
+@keyframes shine
+	0%
+		background-position: 0
+	100%
+		background-position: 500px
