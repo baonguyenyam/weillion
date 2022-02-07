@@ -89,3 +89,24 @@ weilion-main
 				font-size: 1.3rem
 		.modal-body
 			background: darken($weilion-main-color,35%)
+#weiLionContextMenu
+	position: absolute
+	width: 400px
+	max-width: 100%
+	padding: 2rem
+	margin: 0
+	border: 2px solid $weilion-main-color
+	background: darken($weilion-main-color,35%)
+	z-index: 7000
+	border-radius: 0
+	box-shadow: 0px 5px 12px -2px rgba(0,0,0,.37%) !important
+	opacity: 0
+	transform: translate(0, 15px) scale(0.95)
+	transition: transform 0.01s ease-out, opacity 0.01s ease-out
+	pointer-events: none
+	top: 0
+	left: 0
+	&.menu-show
+		opacity: 1
+		transform: translate(0, 0) scale(1)
+		pointer-events: all
