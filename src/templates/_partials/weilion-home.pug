@@ -13,8 +13,8 @@ weilion-home(id=app+"-home")
 					.weilion-home-vivobo
 						.weilion-home-vivobo-video
 							//- video(src="/data/w-x-header.mp4" muted autoplay preload="auto" loop)
-							video#wei-player
-								source(src="https://stream-s1.weilion.com/video-header1" disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+							video(src="https://stream-s1.weilion.com/video-header1" disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+								//- source(src="https://stream-s1.weilion.com/videos?id=bg-1" disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
 							//- video#video
 									source(src="https://stream-s1.weilion.com/video-header1" muted autoplay preload="auto" loop)
 							//- video#wei-player.video-js
@@ -41,3 +41,31 @@ weilion-home(id=app+"-home")
 									img(src="./img/pause.png", alt="", srcset="")
 									//- svg.pause-btn-icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 200 200")
 										path.svg-pause(fill="transparent", d="M50 20 V160 M140 20 V160")
+		.wei-screen-electric
+			span 
+			span 
+			span 
+			span 
+			span 
+			span 
+			span 
+			span 
+			span 
+			span 
+			svg#topwave(width="100%", viewBox="0 0 290 30")
+				path.wave(fill="none", stroke-width="1", stroke-linecap="round", d="M0.100 25 c38 0 45-20 75-20s50 20 75 20 c38 0 45-5 75-20s50 20 75 20 c38  0 45-20 75-20s50 20 75 20 c38  0 45-20 75-20s50 20 75 20")
+			svg#bottomwave(viewBox="0 0 120 28")
+				mask#xxx
+					circle(cx="7", cy="12", r="40", fill="#fff")
+				filter#goo
+					fegaussianblur(in="SourceGraphic", stdDeviation="2", result="blur")
+					fecolormatrix(in="blur", mode="matrix", values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 13 -9", result="goo")
+					feblend(in="SourceGraphic", in2="goo")
+				path#wave(d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z")
+				use#wave3.wavebottom(xlink:href="#wave", x="0", y="-2")
+				use#wave2.wavebottom(xlink:href="#wave", x="0", y="0")
+
+	//- Video player 
+	//- #videobg
+		video(disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+			source(src="https://stream-s1.weilion.com/videos?id=bg-1" type="video/mp4")

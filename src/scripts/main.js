@@ -1,13 +1,14 @@
+
 // APP
 var WEILION_APP = {
 	// Init App
 	loadingAnimation: () => {
-		$('#weilion_loading').addClass('loading');
-		setTimeout(() => {
-			$('body').addClass('loaded');
-			$('#weilion_loading').removeClass('loading').addClass('loaded');
-			$('#weilion_loading').fadeOut(500);
-		}, 2000);
+		// $('#weilion_loading').addClass('loading');
+		// setTimeout(() => {
+		// 	$('body').addClass('loaded');
+		// 	$('#weilion_loading').removeClass('loading').addClass('loaded');
+		// 	$('#weilion_loading').fadeOut(500);
+		// }, 2000);
 	},
 	playAudio: () => {
 		if ($(window).width() > 991) {
@@ -59,7 +60,7 @@ var WEILION_APP = {
 			$(playerControls).removeClass('playing');
 			audiostatus = 'off';
 		});
-		if ($('#weilion_loading__audio')) {
+		if ($('#weilion_loading')) {
 			$('#weilion_loading__audio').get(0).load();
 			$('#weilion_loading__audio').get(0).play();
 		}
@@ -167,6 +168,13 @@ var WEILION_APP = {
 			backDelay: 5000,
 			startDelay: 1000,
 			loop: true
+		});
+		var typedLoading = new Typed('#text-loading', {
+			strings: ["<span>Loading... [DONE]</span><br><span>Starting WEILION System... [DONE]</span><br><span>Loading Animation... [DONE]</span><br><span>Loading sound... [DONE]</span><br><span>System initializing... [DONE]</span>"],
+			typeSpeed: 2,
+			contentType: 'html',
+			loop: false,
+			cursorChar: '_'
 		});
 	},
 	runNumber: () => {
@@ -312,11 +320,11 @@ var WEILION_APP = {
 		// 	},
 		// 	preload: 'auto'
 		// });
-		var pipButton = document.getElementById('wei-player');
-		pipButton.disablePictureInPicture = true;
+		// var pipButton = document.getElementById('wei-player');
+		// pipButton.disablePictureInPicture = true;
 	},
 	init: () => {
-		WEILION_APP.loadingAnimation();
+		// WEILION_APP.loadingAnimation();
 		WEILION_APP.playAudio();
 		WEILION_APP.fixedHeader();
 		WEILION_APP.toggleMenu();
@@ -342,4 +350,20 @@ jQuery(window).on('scroll', () => {
 jQuery(window).on('resize', () => {
 	WEILION_APP.fixedHeader();
 	// WEILION_APP.timeLine();
+});
+
+// INIT SYSTEM 
+window.paceOptions = {
+    ajax: false, // disabled
+    document: true, // disabled
+    eventLag: false, // disabled
+    // elements: {
+    //     selectors: ['.weipace-loading']
+    // }
+};
+Pace.on('done',function() {
+	document.getElementById('weilion_loading_done').classList.add('done');
+	setTimeout(() => {
+		document.getElementById('top-page').classList.add('loaded');
+	}, 1000);
 });

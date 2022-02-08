@@ -4,13 +4,37 @@ weilion-home
 	background-size: cover
 	height: 100%
 	min-height: 100vh
-	position: relative
 	display: flex
 	align-items: flex-end
 	padding: 4rem 0 2rem 0
 	overflow-x: hidden
+	position: relative
+	#videobg
+		display: none
 	+media-breakpoint-up(sm)
 		padding: 4rem 0 3rem 0
+		#videobg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100vh
+			display: block
+			overflow: hidden
+			z-index: 1
+			video
+				min-width: 100%
+				min-height: 100%
+				width: auto
+				height: 100vh
+				position: absolute
+				// top: 50%
+				// left: 50%
+				// transform: translate(-50%, -50%)
+	+media-breakpoint-up(xl)
+		background: url('../img/weilion-home-bg.png') no-repeat bottom right
+		background-size: cover
+		animation: homeBGAnimation 50s ease-in-out infinite alternate
 	&:after 
 		content: ''
 		position: absolute
@@ -272,7 +296,80 @@ weilion-home
 			@media (min-width: 1600px)
 				.odometer-number
 					margin-top: 2rem
-
+	.wei-screen-electric
+		background: rgba(red(darken($weilion-main-color,10%)), green(darken($weilion-main-color,10%)), blue(darken($weilion-main-color,10%)),.15)
+		// background: rgba(255,255,255,.055)
+		width: 350px
+		height: 200px
+		position: absolute
+		bottom: 40%
+		right: 5%
+		z-index: 10
+		border-radius: 7px
+		overflow: hidden
+		border: 1px solid rgba(255,255,255,.035)
+		display: none
+		+media-breakpoint-up(lg)
+			display: block
+			bottom: 35%
+			right: 8%
+		svg#topwave
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			stroke: rgba(255,255,255,.5)
+			height: 60%
+			.wave
+				animation: moveTheWave 3000ms linear infinite
+				stroke-dasharray: 0 0 0 0
+		svg#bottomwave
+			height: 60%
+			position: absolute
+			bottom: 0
+			right: 0
+			opacity: 1
+			z-index: 1
+			.wavebottom 
+				animation: wave 3s linear
+				animation-iteration-count: infinite
+				fill: rgba(255,255,255,.755)
+			#wave
+				fill: rgba(255,255,255,.0835)
+			#wave2
+				animation-duration: 5s
+				animation-direction: reverse
+				opacity: .6
+			#wave3
+				animation-duration: 7s
+				opacity:.3
+		span
+			display: block
+			background: rgba(255,255,255,.035)
+			z-index: -10
+			position: absolute
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4),
+			&:nth-child(5)
+				height: 1px
+				width: 100%
+				left: 0
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(8),
+			&:nth-child(9),
+			&:nth-child(10)
+				height: 100%
+				width: 1px
+				top: 0
+			@for $i from 1 through 5
+				&:nth-child(#{$i}) 
+					top: $i * 16.6666666667%
+			@for $i from 1 through 5
+				&:nth-child(#{$i+5}) 
+					left: $i * 16.6666666667%
 @keyframes openButton
 	100% 
 		transform: translateY(0)
@@ -290,3 +387,22 @@ weilion-home
 
 	// 75%
 	// 	box-shadow: 0 0 0 0.55rem rgba(255, 255, 255, 0.095)
+@keyframes moveTheWave
+	0%
+		stroke-dashoffset: 0
+		transform: translate3d(0, 0, 0)
+
+	100%
+		stroke-dashoffset: 1
+		transform: translate3d(-278px, 0, 0)
+
+
+@keyframes wave
+	to
+		transform: translateX(-100%)
+
+@keyframes homeBGAnimation
+	0%
+		background-position: bottom right
+	100%
+		background-position: bottom left

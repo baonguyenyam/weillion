@@ -28,12 +28,12 @@ meta(name='author:site', content=''+config.author.link+'')
 //- meta(name='geo.position', content=config.SEO.seo_geo_latitude+';'+config.SEO.seo_geo_longitude)
 //- meta(name='ICBM', content=config.SEO.seo_geo_latitude+','+config.SEO.seo_geo_longitude)
 // SEO
-meta(name='author', content=config.SEO.cfg_name)
+//- meta(name='author', content=config.SEO.cfg_name)
 link(rel='canonical', href='//'+config.SEO.cfg_url+href)
 // Social: Twitter
-meta(name='twitter:card', content=title+' - '+ config.SEO.cfg_name)
+meta(name='twitter:card', content=title)
 meta(name='twitter:site', content=config.SEO.cfg_url)
-meta(name='twitter:title', content=title+' - '+ config.SEO.cfg_name)
+meta(name='twitter:title', content=title)
 meta(name='twitter:description', content=description)
 meta(name='twitter:image:src', content='//'+ config.SEO.cfg_url + '/img/social.jpg')
 // Social: Facebook / Open Graph
@@ -41,7 +41,7 @@ meta(name='twitter:image:src', content='//'+ config.SEO.cfg_url + '/img/social.j
 //- meta(property='fb:app_id', content=config.SEO.app_facebook_ID)
 meta(property="og:type", content="website")
 meta(property='og:url', content='//'+config.SEO.cfg_url+href)
-meta(property='og:title', content=title+'- '+ config.SEO.cfg_name)
+meta(property='og:title', content=title)
 meta(property='og:image', content='//'+ config.SEO.cfg_url + '/img/social.jpg')
 meta(property='og:description', content=description)
 meta(property='og:site_name', content=config.SEO.cfg_name)
@@ -50,7 +50,7 @@ meta(property='og:site_name', content=config.SEO.cfg_name)
 // Social: Google / Schema.org
 //- link(rel='author', href='//plus.google.com/'+ config.SEO.cfg_sitenameurlgoogle+'/')
 //- link(rel='publisher', href='//plus.google.com/'+ config.SEO.cfg_sitenameurlgoogle+'/')
-meta(itemprop='name', content=title+'- '+ config.SEO.cfg_name)
+meta(itemprop='name', content=title)
 meta(itemprop='description', content=description)
 meta(itemprop='image', content='//'+ config.SEO.cfg_url + '/img/social.jpg')
 // Meta Tag Search

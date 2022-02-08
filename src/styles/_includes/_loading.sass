@@ -1,3 +1,39 @@
+#weilion_loading_done
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	height: 100%
+	width: 100%
+	margin: auto auto
+	overflow: hidden
+	z-index: 999999
+	background: darken($weilion-main-color,35%)
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	.innderloading
+		width: 100%
+		max-width: 600px
+		padding: 30px
+		font-size: .65rem
+		img 
+			max-width: 200px
+		#text-loading
+	&.done
+		animation: weilion_loading_done .5s 1s ease-in-out forwards
+	@media (min-width: 360px)
+		.innderloading
+			font-size: .85rem
+	@media (min-width: 768px)
+		.innderloading
+			font-size: 1rem
+			padding: 100px 50px
+	@media (min-width: 992px)
+		.innderloading
+			font-size: 1rem
+			padding: 100px 0
 #weilion_loading
 	position: fixed
 	top: 0
@@ -71,7 +107,6 @@
 	100%
 		opacity: 1
 		transform: scaleX(1)
-
 @keyframes weilion_loading_bottom
 	0%
 		opacity: 0
@@ -79,3 +114,10 @@
 	100%
 		opacity: 1
 		transform: scaleX(1)
+@keyframes weilion_loading_done
+	0%
+		opacity: 1
+		visibility: visible
+	100%
+		visibility: hidden
+		opacity: 0

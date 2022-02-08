@@ -11,6 +11,8 @@ module.exports = function (gulp, $, browserSync) {
 				'bower_components/owl.carousel/dist/assets/owl.theme.default.min.css',
 				'src/vendors/animate.min.css',
 				'src/vendors/jquery.fancybox.min.css',
+				'src/vendors/jquery.fancybox.min.css',
+				'src/vendors/pace-theme-default.min.css',
 				// 'src/vendors/video-js.min.css',
 			])
 			.pipe($.concat('weilion.css'))

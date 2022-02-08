@@ -7,7 +7,21 @@ block variables
 	- var href = "/index.html"
 block body
 	- var app = 'weilion'
-	loading(id=app+"_loading")
+	loading(id=app+"_loading_done")
+		.innderloading
+			p 
+				img(src="./img/logo.webp", alt="Weilion Logo")
+			p Weilion Platform Matrix
+				br 
+				| WEILION SPACE. All rights reserved.
+				br 
+				| Powered by WEI blockchain technology.
+				br
+				| ===========================
+			p 
+				span#text-loading
+			#pace-loading.weipace-loading
+	//- loading(id=app+"_loading")
 		bar(class=app+"_loading__top")
 		bar(class=app+"_loading__bottom")
 	include _partials/weilion-home
