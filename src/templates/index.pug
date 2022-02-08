@@ -54,12 +54,14 @@ block body
 	audio(id=app+"_intro_screen__audio", controls)
 		source(src="/data/beep-1.mp3" type="audio/mpeg")
 		source(src="/data/beep-1.wav" type="audio/wav")
-	audio(id=app+"_typing__audio", controls loop)
+	audio(id=app+"_typing__audio", controls)
 		source(src="/data/beep-24.mp3" type="audio/mpeg")
 		source(src="/data/beep-24.wav" type="audio/wav")
 	audio(id=app+"_space__audio", controls loop)
 		source(src="/data/audio.mp3" type="audio/mpeg")
 		source(src="/data/audio.ogg" type="audio/ogg")
+	audio(id=app+"_space__yahoo", controls)
+		source(src="/data/bensound-hey.mp3" type="audio/mpeg")
 	// Coming soon
 	#weilionBackdrop.modal.fade(data-backdrop="static", data-keyboard="false", tabindex="-1", aria-labelledby="weilionBackdropLabel", aria-hidden="true")
 		.modal-dialog.modal-dialog-centered
@@ -117,3 +119,41 @@ block body
 			.btn.btn-sm.btn-link-bt shift
 			.btn.btn-sm.btn-link H
 			.canceltype go to Homepage
+	#weilionCredits.modal(data-backdrop="static", data-keyboard="false", tabindex="-1", aria-labelledby="weilionCreditsPop", aria-hidden="true")
+		.modal-dialog.modal-dialog-scrollable.modal-dialog-centered
+			.modal-content
+				.modal-header
+					h5#weilionBackdropLabel.modal-title WEILION Credits
+					button.close(type="button", data-dismiss="modal", aria-label="Close")
+						i.fa.fa-times
+				.modal-body.p-4 
+					.credits 
+						h4 directed by
+						p.name Adam Do
+
+						h4 produced by
+						p.name Chien Phan
+		
+						h4 director of photography
+						p.name Sam
+		
+						//- h4 screenplay by
+						//- p.name Nguyen Pham
+
+						h4 3d by
+						p.name Stefano Tsai
+		
+						h4 animation by
+						p.name Nhat Ngoc
+		
+						h4 solution by
+						p.name Manh Pham
+		
+						h4 effect by
+						p.name Cuong Nguyen
+		
+						h4 system by
+						p.name Kenvin Nguyen
+		
+						h4 visual effects
+						p.name Huong Ngo

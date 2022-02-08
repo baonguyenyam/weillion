@@ -302,6 +302,11 @@ var WEILION_APP = {
 			if (e.shiftKey && e.which == 72) {
 				location.href = "#weilion-home";
 			}
+			if (e.shiftKey && e.altKey && e.ctrlKey && e.which == 13) {
+				$('#weilionCredits').modal('show')
+				$('#weilion_space__yahoo').get(0).load();
+				$('#weilion_space__yahoo').get(0).play();
+			}
 			// https://codepen.io/canis/pen/noGwPL
 		};
 	},

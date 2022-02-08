@@ -19,6 +19,8 @@ body
 	overflow: hidden
 	&.loaded 
 		overflow-y: scroll
+		&.modal-open
+			overflow: hidden
 	* 
 		-moz-user-select: none
 		-webkit-user-select: none
@@ -93,6 +95,49 @@ weilion-main
 				font-size: 1.3rem
 		.modal-body
 			background: darken($weilion-main-color,35%)
+#weilionCredits
+	z-index: 99999999
+	.modal-dialog
+		min-height: 100vh
+		height: 100%
+		width: 100%
+		min-width: 100vw
+		margin: 0
+	.modal-content
+		border-radius: 0
+		background: darken($weilion-main-color,35%)
+		height: 100vh
+		min-height: 100%
+		// border: 2px solid $weilion-main-color
+		.modal-header
+			background: darken($weilion-main-color,35%)
+			border-bottom: 2px solid darken($weilion-main-color,30%)
+			.close 
+				color: $weilion-main-color
+				opacity: 1
+				text-shadow: none 
+				font-size: 1.3rem
+		.modal-body
+			background: darken($weilion-main-color,35%)
+			overflow: hidden
+			position: relative
+			.credits 
+				position: absolute
+				top: 100%
+				left: 0
+				width: 100%
+				animation: 30s credits linear infinite
+				text-align: center
+				h4 
+					font-family: 'Mandalore'
+					font-size: 1.3rem
+					letter-spacing: 3px
+					color: rgba(255,255,255,0.5)
+				p 
+					font-family: 'Roboto Mono'
+					font-size: 1.5rem
+					color: $weilion-main-color
+					margin-bottom: 3rem
 #weiLionContextMenu
 	position: absolute
 	width: 340px
@@ -169,3 +214,9 @@ body, html
 		max-width: 66.666666%
 	.offset-xxl-2
 		margin-left: 16.6666666667%
+
+@keyframes credits
+	0%
+		top: 100%
+	100%
+		top: -100%
