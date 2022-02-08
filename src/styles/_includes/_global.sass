@@ -91,9 +91,9 @@ weilion-main
 			background: darken($weilion-main-color,35%)
 #weiLionContextMenu
 	position: absolute
-	width: 400px
+	width: 340px
 	max-width: 100%
-	padding: 2rem
+	padding: 1.1rem
 	margin: 0
 	border: 2px solid $weilion-main-color
 	background: darken($weilion-main-color,35%)
@@ -106,7 +106,54 @@ weilion-main
 	pointer-events: none
 	top: 0
 	left: 0
+	flex-direction: column
+	display: flex
 	&.menu-show
 		opacity: 1
 		transform: translate(0, 0) scale(1)
 		pointer-events: all
+	h5
+		margin-bottom: 1rem
+		font-size: 1.1rem
+	.oktype 
+		margin: .25rem 0
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		flex-direction: row
+		flex-wrap: nowrap
+		font-size: .8rem
+		color: rgba(255,255,255,.5)
+		.btn-link-bt
+			border: 2px solid $weilion-main-color
+			background:  darken($weilion-main-color,20%)
+			color:  darken($weilion-main-color,0%)
+			font-family: 'Mandalore'
+			font-size: .9rem 
+			padding: 0 .25rem
+			line-height: .85rem
+			height: 1.4rem
+			display: flex
+			align-items: center
+			justify-content: center
+			overflow: hidden
+			margin-right: .5rem
+			text-decoration: none
+			letter-spacing: 1px
+		.btn-link
+			text-decoration: none
+			border: 2px solid $weilion-main-color
+			background:  darken($weilion-main-color,20%)
+			color:  darken($weilion-main-color,0%)
+			font-family: 'Mandalore'
+			font-size: 1rem 
+			width: 1.4rem
+			line-height: .85rem
+			padding: 0
+			height: 1.4rem
+			display: flex
+			align-items: center
+			justify-content: center
+			overflow: hidden
+		.canceltype
+			margin-left: 1rem

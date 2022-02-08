@@ -164,32 +164,32 @@ var WEILION_APP = {
 
 		var odometerParams = [
 			{
-				id: 1, 
+				id: 1,
 				startVal: 11,
 				duration: 4000,
 				delay: 3000
 			},
 			{
-				id: 2, 
+				id: 2,
 				startVal: 90000000,
 				duration: 7000,
 				delay: 4000
 			},
 			{
-				id: 3, 
+				id: 3,
 				startVal: 15000000,
 				duration: 5500,
 				delay: 5000
 			},
 			{
-				id: 4, 
+				id: 4,
 				startVal: 75000000,
 				duration: 10000,
 				delay: 6000
 			}
 		]
-		
-		for(var i = 0; odometerParams.length > i; i++) {
+
+		for (var i = 0; odometerParams.length > i; i++) {
 			createOdometer(odometerParams[i]);
 		}
 
@@ -207,10 +207,10 @@ var WEILION_APP = {
 			autoHeight: true,
 			margin: 30,
 			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-			responsive : {
-				0 : {
+			responsive: {
+				0: {
 					dots: false,
-					nav:true,
+					nav: true,
 				},
 				992: {
 					dots: true,
@@ -218,12 +218,12 @@ var WEILION_APP = {
 				}
 			}
 		})
-		.find('.owl-item')
-		.each(function(i){
-			var attr = $(this).children().attr('data-year');
-			var element = $('<span>'+attr+'</span>');
-			$('#roadmap .owl-dot').eq(i).append(element);
-		});
+			.find('.owl-item')
+			.each(function (i) {
+				var attr = $(this).children().attr('data-year');
+				var element = $('<span>' + attr + '</span>');
+				$('#roadmap .owl-dot').eq(i).append(element);
+			});
 	},
 	techCarousel: () => {
 		$("#tech-01").owlCarousel({
@@ -231,11 +231,11 @@ var WEILION_APP = {
 			autoHeight: true,
 			margin: 30,
 			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-			nav:true,
+			nav: true,
 			dots: false
 		})
 	},
-	marquee: () =>{
+	marquee: () => {
 		$('.marquee').marquee({
 			direction: 'left',
 			duration: 30000,
@@ -250,6 +250,40 @@ var WEILION_APP = {
 			$('head').append('<style>weilion-weimong#weilion-weimong:after,weilion-contact#weilion-contact:before{background-attachment: scroll !important;}</style>');
 		}
 	},
+	keyboardEvent: () => {
+		document.onkeyup = function (e) {
+			if (e.shiftKey && e.which == 77) {
+				$('#welionMenu').trigger('click');
+			}
+			if (e.shiftKey && e.which == 83) {
+				$('.player-controls').trigger('click');
+			}
+			if (e.shiftKey && e.which == 87) {
+				location.href = "#weilion-weispace";  
+			}
+			if (e.shiftKey && e.which == 71) {
+				location.href = "#weilion-generation";  
+			}
+			if (e.shiftKey && e.which == 78) {
+				location.href = "#weilion-tech";  
+			}
+			if (e.shiftKey && e.which == 73) {
+				location.href = "#weilion-weimong";  
+			}
+			if (e.shiftKey && e.which == 84) {
+				location.href = "#weilion-team";  
+			}
+			if (e.shiftKey && e.which == 67) {
+				location.href = "#weilion-contact";  
+			}
+			if (e.shiftKey && e.which == 82) {
+				location.href = "#weilion-roadmap";  
+			}
+			if (e.shiftKey && e.which == 72) {
+				location.href = "#weilion-home";  
+			}
+		};
+	},
 	init: () => {
 		WEILION_APP.loadingAnimation();
 		WEILION_APP.playAudio();
@@ -261,8 +295,9 @@ var WEILION_APP = {
 		WEILION_APP.marquee();
 		WEILION_APP.techCarousel();
 		WEILION_APP.timeLine();
-		WEILION_APP.weilion();
+		WEILION_APP.keyboardEvent();
 		WEILION_APP.fixediOS();
+		WEILION_APP.weilion();
 	},
 }
 

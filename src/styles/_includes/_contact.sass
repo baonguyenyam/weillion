@@ -46,8 +46,8 @@ weilion-contact
 		&:after
 			content: attr(data-shadow)
 			position: absolute
-			top: .06em 
-			left: .06em
+			top: 4px
+			left: 4px
 			z-index: -1
 			text-shadow: none
 			background-size: .05em .05em
@@ -88,6 +88,9 @@ weilion-contact
 		h2
 			font-size: 4rem
 			letter-spacing: 8px
+			&:after
+				top: 5px
+				left: 7px
 	+media-breakpoint-up(lg)
 		padding: 6rem 0
 		&:after
@@ -95,11 +98,17 @@ weilion-contact
 		h2
 			font-size: 5rem
 			letter-spacing: 12px
+			&:after
+				top: 7px
+				left: 9px
 	+media-breakpoint-up(xl)
 		padding: 7rem 0
 		h2
 			font-size: 6rem
 			letter-spacing: 10px
+			&:after
+				top: .5rem
+				left: .5rem
 	@supports (-webkit-touch-callout: none) or (-webkit-user-select: none) or (-khtml-user-select: none) or (-moz-user-select: none) or (-ms-user-select: none) or (user-select: none)
 		&:before
 			background-attachment: scroll
@@ -119,12 +128,6 @@ weilion-contact
 			background-attachment: scroll !important
 			background-size: auto 100% !important
 
-
-@keyframes textContacshadanimOneTime
-	95%
-		visibility: hidden
-	100%
-		visibility: visible
 @keyframes textContactAnimation
 	0%
 		transform: translate(0, 3px)

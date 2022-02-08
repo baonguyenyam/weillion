@@ -5,7 +5,7 @@ module.exports = function (gulp, $, browserSync) {
 		gulp.watch('./src/img/**/*.*', gulp.series('copy-img'));
 		gulp.watch('./src/**/*.html', gulp.series('copy'));
 		gulp.watch('./src/templates/**/*.pug', gulp.series('tao-html'));
-		gulp.watch('./src/scripts/**/*.js', gulp.series('tao-js'));
+		gulp.watch('./src/scripts/**/*.js', gulp.series('tao-js-dev'));
 		gulp.watch("./dist/**/*.*").on('change', browserSync.reload);
 		done();
 	});
