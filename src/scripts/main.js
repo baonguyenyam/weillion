@@ -309,6 +309,9 @@ var WEILION_APP = {
 			}
 			// https://codepen.io/canis/pen/noGwPL
 		};
+		$('#weilionCredits').on('hidden.bs.modal', function (event) {
+			$('#weilion_space__yahoo').get(0).load();
+		})
 	},
 	videoJS: () => {
 		// videojs('wei-player', {
