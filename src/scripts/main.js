@@ -99,7 +99,7 @@ var WEILION_APP = {
 		}, 3000);
 	},
 	itemHover: () => {
-		$('.group-team .item, #weilion-copyright a').each(function () {
+		$('.group-team .item, #weilion-copyright a, #weilion-resources a').each(function () {
 			$(this).on('mouseenter', () => {
 				$('#weilion_background__audio').get(0).play();
 			});
@@ -256,7 +256,7 @@ var WEILION_APP = {
 	},
 	fixediOS: () => {
 		if (navigator.userAgent.match(/(iPad|iPhone|iPod)/gi)) {
-			$('head').append('<style>weilion-weimong#weilion-weimong:after,weilion-contact#weilion-contact:before{background-attachment: scroll !important;}</style>');
+			$('head').append('<style>weilion-weimong#weilion-weimong:after,weilion-contact#weilion-contact:before,weilion-resources#weilion-resources:after{background-attachment: scroll !important;}</style>');
 		}
 	},
 	keyboardEvent: () => {
@@ -288,26 +288,30 @@ var WEILION_APP = {
 			if (e.shiftKey && e.which == 82) {
 				location.href = "#weilion-roadmap";
 			}
+			if (e.shiftKey && e.which == 79) {
+				location.href = "#weilion-resources";
+			}
 			if (e.shiftKey && e.which == 72) {
 				location.href = "#weilion-home";
 			}
+			// https://codepen.io/canis/pen/noGwPL
 		};
 	},
 	videoJS: () => {
-		videojs('wei-player', {
-			controls: false,
-			autoplay: true,
-			loop: true,
-			muted: true,
-			height: 161,
-			width: 286,
-			pictureInPictureToggle: false,
-			disablePictureInPicture: true,
-			controlBar: {
-				pictureInPictureToggle: false,
-			},
-			preload: 'auto'
-		});
+		// videojs('wei-player', {
+		// 	controls: false,
+		// 	autoplay: true,
+		// 	loop: true,
+		// 	muted: true,
+		// 	height: 161,
+		// 	width: 286,
+		// 	pictureInPictureToggle: false,
+		// 	disablePictureInPicture: true,
+		// 	controlBar: {
+		// 		pictureInPictureToggle: false,
+		// 	},
+		// 	preload: 'auto'
+		// });
 		var pipButton = document.getElementById('wei-player');
 		pipButton.disablePictureInPicture = true;
 	},
