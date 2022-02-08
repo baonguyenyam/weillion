@@ -259,30 +259,50 @@ var WEILION_APP = {
 				$('.player-controls').trigger('click');
 			}
 			if (e.shiftKey && e.which == 87) {
-				location.href = "#weilion-weispace";  
+				location.href = "#weilion-weispace";
 			}
 			if (e.shiftKey && e.which == 71) {
-				location.href = "#weilion-generation";  
+				location.href = "#weilion-generation";
 			}
 			if (e.shiftKey && e.which == 78) {
-				location.href = "#weilion-tech";  
+				location.href = "#weilion-tech";
 			}
 			if (e.shiftKey && e.which == 73) {
-				location.href = "#weilion-weimong";  
+				location.href = "#weilion-weimong";
 			}
 			if (e.shiftKey && e.which == 84) {
-				location.href = "#weilion-team";  
+				location.href = "#weilion-team";
 			}
 			if (e.shiftKey && e.which == 67) {
-				location.href = "#weilion-contact";  
+				location.href = "#weilion-contact";
 			}
 			if (e.shiftKey && e.which == 82) {
-				location.href = "#weilion-roadmap";  
+				location.href = "#weilion-roadmap";
 			}
 			if (e.shiftKey && e.which == 72) {
-				location.href = "#weilion-home";  
+				location.href = "#weilion-home";
 			}
 		};
+	},
+	videoJS: () => {
+		videojs('wei-player', {
+			controls: false,
+			autoplay: true,
+			loop: true,
+			muted: true,
+			height: 161,
+			width: 286,
+			pictureInPictureToggle: false,
+			disablePictureInPicture: true,
+			controlBar: {
+				liveDisplay: false,
+				pictureInPictureToggle: false,
+				disablePictureInPicture: true,
+			},
+			preload: 'auto'
+		});
+		var pipButton = document.getElementById('wei-player');
+		pipButton.disablePictureInPicture = true;
 	},
 	init: () => {
 		WEILION_APP.loadingAnimation();
@@ -295,6 +315,7 @@ var WEILION_APP = {
 		WEILION_APP.marquee();
 		WEILION_APP.techCarousel();
 		WEILION_APP.timeLine();
+		WEILION_APP.videoJS();
 		WEILION_APP.keyboardEvent();
 		WEILION_APP.fixediOS();
 		WEILION_APP.weilion();

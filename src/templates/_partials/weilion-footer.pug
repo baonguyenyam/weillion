@@ -26,4 +26,7 @@ weilion-copyright(id=app+"-copyright")
 					.logo.animatable(data-animate="animate__fadeInUp animate__fast")
 						a(href="/#weilion-home") 
 							img(src="./img/logo-big.png", alt="Weilion Logo")
-					.copytext.animatable(data-animate="animate__fadeInUp animate__slow") &copy; 2022 WEILION. All rights reserved.
+					- var num = Date.now()
+					.copytext.animatable(data-animate="animate__fadeInUp animate__slow")
+						.rightc &copy; 2022 WEILION. All rights reserved.
+						.small Build wei-#{num}.
