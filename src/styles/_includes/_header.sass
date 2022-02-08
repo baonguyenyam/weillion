@@ -1,5 +1,34 @@
 weilion-header
 	z-index: 1000
+	position: relative
+	&:after
+		display: block
+		content: ""
+		position: absolute
+		bottom: -1px
+		left: 0
+		width: 100%
+		height: 1px 
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), 1)
+		opacity: 0
+		z-index: 1
+	&:before
+		z-index: 2
+		display: block
+		content: ""
+		position: absolute
+		bottom: -1px
+		left: 0
+		width: 3px
+		height: 1px 
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .25)
+		border-radius: 100%
+		box-shadow: 0 0 3px 1px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .25)
+	&.active
+		&:before 
+			animation: weilionHeaderAnimationCircle 2.5s infinite
+		&:after 
+			animation: weilionHeaderAnimation 6s infinite
 	.navbar
 		padding-left: 0
 		padding-right: 0
@@ -28,15 +57,18 @@ weilion-header
 					&:focus
 						border: 0
 						box-shadow: none
+						outline: 0
 				&:hover,
 				&:active,
 				&:focus
 					border: 0
 					box-shadow: none
+					outline: 0
 					.nav-link 
 						// color: $weilion-main-color
 						border: 0
 						box-shadow: none
+						outline: 0
 						color: #fff
 						text-shadow: 0 0 7px $weilion-main-hover, 0 0 20px $weilion-main-hover
 		#welionMenu
@@ -78,6 +110,9 @@ weilion-header
 		padding-top: 1.5rem 
 		padding-bottom: 1.5rem 
 		transition: $weilion-transition
+		&.active
+			&:before 
+				animation: weilionHeaderAnimationCircle 6s infinite
 		.navbar
 			padding-left: 0
 			padding-right: 0
@@ -163,7 +198,7 @@ weilion-header
 	&.active
 		position: fixed
 		top: 0
-		background: rgba(0,0,0,.65)
+		background: rgba(0,0,0,.9)
 		// background: rgba(red($weilion-main-color),green($weilion-main-color), blue($weilion-main-color),.85)
 		width: 100%
 		margin: 0
@@ -259,6 +294,47 @@ weilion-header
 					width: 0%
 					left: 50%
 
+@keyframes weilionHeaderAnimationCircle
+	0%
+		left: -200%
+		width: 30px
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), 1)
+		box-shadow: 0 0 2px 0 rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .95)
+	10%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .6)
+	20%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .45)
+		box-shadow: 0 0 3px 1px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),1)
+	30%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), 1)
+	40%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), 1)
+		box-shadow: 0 0 2px 0 rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .95)
+	50%
+		width: 90px
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .65)
+		box-shadow: 0 0 3px 1px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),1)
+	60%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), 1)
+		box-shadow: 0 0 2px 0 rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .95)
+	70%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .6)
+	80%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), 1)
+	90%
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .6)
+	100%
+		width: 30px
+		background: rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover), .95)
+		box-shadow: 0 0 3px 1px rgba(red($weilion-main-hover), green($weilion-main-hover), blue($weilion-main-hover),1)
+		left: 200%
+@keyframes weilionHeaderAnimation
+	0%
+		opacity: .15
+	50%
+		opacity: .55
+	100%
+		opacity: .15
 @keyframes openMenu
 	0% 
 		// transform: scale(1)
