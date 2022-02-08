@@ -159,6 +159,15 @@ var WEILION_APP = {
 			fadeOutClass: 'typed-fade-out',
 			fadeOutDelay: 500,
 		});
+		var typedTech = new Typed('#text-weitech', {
+			strings: ["wei tech"],
+			typeSpeed: 30,
+			cursorChar: '_',
+			backSpeed: 30,
+			backDelay: 5000,
+			startDelay: 1000,
+			loop: true
+		});
 	},
 	runNumber: () => {
 
@@ -295,9 +304,7 @@ var WEILION_APP = {
 			pictureInPictureToggle: false,
 			disablePictureInPicture: true,
 			controlBar: {
-				liveDisplay: false,
 				pictureInPictureToggle: false,
-				disablePictureInPicture: true,
 			},
 			preload: 'auto'
 		});
