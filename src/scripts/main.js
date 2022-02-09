@@ -281,7 +281,7 @@ var WEILION_APP = {
 			if (e.shiftKey && e.which == 71) {
 				location.href = "#weilion-generation";
 			}
-			if (e.shiftKey && e.which == 78) {
+			if (e.shiftKey && e.which == 72) {
 				location.href = "#weilion-tech";
 			}
 			if (e.shiftKey && e.which == 73) {
@@ -299,13 +299,16 @@ var WEILION_APP = {
 			if (e.shiftKey && e.which == 79) {
 				location.href = "#weilion-resources";
 			}
-			if (e.shiftKey && e.which == 72) {
+			if (e.shiftKey && e.which == 80) {
 				location.href = "#weilion-home";
 			}
 			if (e.shiftKey && e.altKey && e.ctrlKey && e.which == 13) {
 				$('#weilionCredits').modal('show')
 				$('#weilion_space__yahoo').get(0).load();
 				$('#weilion_space__yahoo').get(0).play();
+			}
+			if (e.altKey && e.which == 77) {
+				$('#welionToggleMenu .nav-item').toggleClass('showkey');
 			}
 			// https://codepen.io/canis/pen/noGwPL
 		};
