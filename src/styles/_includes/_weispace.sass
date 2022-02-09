@@ -217,6 +217,8 @@ weilion-weispace
 			justify-content: flex-end
 			align-items: flex-end
 			li 
+				flex-direction: row-reverse
+				text-align: right
 				.icon 
 					background: rgba(22,21,29,.75)
 					color: $weilion-sec-newspace
@@ -228,6 +230,9 @@ weilion-weispace
 					justify-content: center
 					// box-shadow: 3px 2px 6px 0 rgba(0,0,0,.5)
 					box-shadow: 1px 1px 0 0 rgba(0,0,0,.5)
+				.text
+					margin-right: 1rem
+					margin-left: 0
 	+media-breakpoint-up(xl)
 		padding: 5rem 0
 		h2

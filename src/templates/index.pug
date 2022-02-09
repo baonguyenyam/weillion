@@ -9,18 +9,18 @@ block body
 	- var app = 'weilion'
 	loading(id=app+"_loading_done")
 		.innderloading
-			p 
-				img(src="./img/logo.webp", alt="Weilion Logo")
-			p Weilion Platform Matrix
-				br 
-				| WEILION SPACE. All rights reserved.
-				br 
-				| Powered by WEI blockchain technology.
-				br
-				| ===========================
-			p 
-				span#text-loading
-			#pace-loading.weipace-loading
+			.cnt 
+				.caption 
+					span Weilion Platform Matrix
+				p 
+					img(src="./img/logo.webp", alt="Weilion Logo")
+				p WEILION SPACE. All rights reserved.
+					br 
+					| Powered by WEI blockchain technology.
+				.liner
+				p.cnt-lo
+					span#text-loading
+				#pace-loading.weipace-loading
 	//- loading(id=app+"_loading")
 		bar(class=app+"_loading__top")
 		bar(class=app+"_loading__bottom")

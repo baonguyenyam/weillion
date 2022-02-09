@@ -201,19 +201,29 @@ weilion-home
 			flex-direction: row
 			align-items: center
 		.weilion-home-vivobo-video
-			max-width: 320px
-			padding: 1rem
 			background: rgba(0,0,0,1)
+			padding: .7rem
 			border: 1px solid rgba(255,255,255,.15)
 			border-radius: 10px
 			justify-content: center
 			align-items: center
 			display: none
+			.innder
+				overflow: hidden
+				max-width: calc(320px - 1.4rem)
+				min-width: calc(320px - 1.4rem)
+				min-height: calc(185px - 1.4rem)
+				background: url('../img/thumvi.png') no-repeat center center
+				position: relative
+				video 
+					width: 100%
+					// height: 100%
+					margin: 0
+					position: absolute
+					top: 0
+					left: 0
 			+media-breakpoint-up(lg)
 				display: flex
-			video 
-				width: 100%
-				margin: 0
 		.weilion-home-odometer
 			display: flex
 			flex-direction: row
