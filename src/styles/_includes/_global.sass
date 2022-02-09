@@ -140,23 +140,43 @@ weilion-main
 					margin-bottom: 3rem
 #weiLionContextMenu
 	position: absolute
-	width: 340px
+	width: 500px
 	max-width: 100%
 	padding: 1.1rem
-	margin: 0
-	border: 2px solid $weilion-main-color
+	margin: 5px
+	border: 1px solid $weilion-main-color
 	background: darken($weilion-main-color,35%)
 	z-index: 7000
 	border-radius: 0
-	box-shadow: 0px 5px 12px -2px rgba(0,0,0,.37%) !important
+	// box-shadow: 0px 5px 12px -2px rgba(0,0,0,.37%) !important
 	opacity: 0
-	transform: translate(0, 15px) scale(0.95)
+	// transform: translate(0, 15px) scale(0.95)
 	transition: transform 0.01s ease-out, opacity 0.01s ease-out
 	pointer-events: none
 	top: 0
 	left: 0
 	flex-direction: column
 	display: flex
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		width: 10px
+		height: 10px
+		display: block
+		z-index: 100
+	&:before
+		top: 0
+		left: 0
+		transform: translate(-5px, -5px)
+		border-left: 1px solid darken($weilion-sec-space,5%)
+		border-top: 1px solid darken($weilion-sec-space,5%)
+	&:after
+		bottom: 0
+		right: 0
+		transform: translate(5px, 5px)
+		border-right: 1px solid darken($weilion-sec-space,5%)
+		border-bottom: 1px solid darken($weilion-sec-space,5%)
 	&.menu-show
 		opacity: 1
 		transform: translate(0, 0) scale(1)
@@ -164,6 +184,101 @@ weilion-main
 	h5
 		margin-bottom: 1rem
 		font-size: 1.1rem
+		text-transform: uppercase
+		font-family: 'Mandalore'
+		letter-spacing: 3px
+		border-top: 1px solid $weilion-main-color
+		border-bottom: 1px solid $weilion-main-color
+		line-height: 2rem
+		color: $weilion-main-color
+	h6
+		margin-bottom: 1rem
+		font-size: .9rem
+		text-transform: uppercase
+		font-family: 'Mandalore'
+		letter-spacing: 2px
+		color: $weilion-main-color
+	.csl 
+		margin-bottom: 0
+		font-size: .8rem
+		color: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.7)
+		padding-top: 1rem
+		text-align: center
+	.blockcircle
+		position: relative
+		.clicle
+			margin: 2rem 0 0 0
+			&:nth-child(1)
+				width: 5px
+				height: 5px
+				animation: flashDot 1s ease-out infinite
+				border-radius: 100%
+				background: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),1)
+				border: 2px solid rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),1)
+				position: absolute
+				top: calc(100px - 2rem)
+				left: 100px
+				transform: translate(-50%, -50%)
+			&:nth-child(2)
+				width: 200px
+				height: 200px
+				border-radius: 100%
+				background: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.125)
+				border: 1px solid rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.55)
+			&:nth-child(3)
+				width: 50px
+				height: 50px
+				border-radius: 100%
+				background: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.125)
+				border: 1px solid rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.55)
+				position: absolute
+				top: calc(100px - 2rem)
+				left: 100px
+				transform: translate(-50%, -50%)
+			&:nth-child(4)
+				width: 120px
+				height: 120px
+				border-radius: 100%
+				background: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.125)
+				border: 1px solid rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.55)
+				position: absolute
+				top: calc(100px - 2rem)
+				left: 100px
+				transform: translate(-50%, -50%)
+			&:nth-child(5)
+				width: 5px
+				height: 5px
+				border-radius: 100%
+				background: rgba(red($weilion-sec-color),green($weilion-sec-color),blue($weilion-sec-color),1)
+				border: 2px solid rgba(red($weilion-sec-color),green($weilion-sec-color),blue($weilion-sec-color),1)
+				position: absolute
+				top: calc(50px - 2rem)
+				left: 160px
+				transform: translate(-50%, -50%)
+				animation: flashDot 1s ease-out infinite
+			&:nth-child(6)
+				width: 200px
+				height: 200px
+				border-radius: 100%
+				position: absolute
+				top: 0
+				left: 0
+				margin: 0
+				transform: rotate(0deg)
+				animation: consolerotate 3s infinite linear
+				&:after
+					display: block
+					content: ''
+					width: 5px
+					height: 5px
+					border-radius: 100%
+					background: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),1)
+					border: 2px solid rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),1)
+					position: absolute
+					top: 0
+					left: 50%
+					transform: translate(-50%, -50%)
+					animation: flashDot 1s ease-out infinite
 	.oktype 
 		margin: .25rem 0
 		display: flex
@@ -172,7 +287,7 @@ weilion-main
 		flex-direction: row
 		flex-wrap: nowrap
 		font-size: .8rem
-		color: rgba(255,255,255,.5)
+		color: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),0.7)
 		.btn-link-bt
 			border: 2px solid $weilion-main-color
 			background:  darken($weilion-main-color,20%)
@@ -220,3 +335,8 @@ body, html
 		top: 100%
 	100%
 		top: -100%
+@keyframes consolerotate
+	from
+		transform: rotate(0deg) 
+	to
+		transform: rotate(359deg)
