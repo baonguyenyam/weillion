@@ -279,6 +279,27 @@ weilion-main
 					left: 50%
 					transform: translate(-50%, -50%)
 					animation: flashDot 1s ease-out infinite
+			&:nth-child(7)
+				width: 200px
+				height: 200px
+				border-radius: 100%
+				position: absolute
+				top: 0
+				left: 0
+				margin: 0
+				transform: rotate(0deg)
+				animation: consolerotate 1.235s infinite linear
+				&:before
+					display: block
+					content: ''
+					width: 50%
+					height: 1px
+					border-radius: 0
+					background: rgba(red($weilion-main-color),green($weilion-main-color),blue($weilion-main-color),1)
+					position: absolute
+					top: 50%
+					left: 50%
+					// animation: flashDot 1s ease-out infinite
 	.oktype 
 		margin: .25rem 0
 		display: flex
