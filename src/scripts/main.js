@@ -60,10 +60,10 @@ var WEILION_APP = {
 			$(playerControls).removeClass('playing');
 			audiostatus = 'off';
 		});
-		if ($('#weilion_loading')) {
-			$('#weilion_loading__audio').get(0).load();
-			$('#weilion_loading__audio').get(0).play();
-		}
+		// if ($('#weilion_loading')) {
+			// $('#weilion_loading__audio').get(0).load();
+			// $('#weilion_loading__audio').get(0).play();
+		// }
 		$('.weilion-home-btn, .weilion-mong-btn').on('mouseenter mouseleave', () => {
 			$('#weilion_intro__audio').get(0).load();
 			$('#weilion_intro__audio').get(0).play();
@@ -265,9 +265,12 @@ var WEILION_APP = {
 	fixediOS: () => {
 		if (navigator.userAgent.match(/(iPad|iPhone|iPod|webOS|Safari)/gi) && $(window).width() < 1366) {
 			$('head').append('<style>weilion-weimong#weilion-weimong:after,weilion-contact#weilion-contact:before,weilion-resources#weilion-resources:after{background-attachment: scroll !important;}</style>');
-			$('#weilion-home .weilion-home-vivobo-video .innder').html('')
-			$('#weilion-home .weilion-home-vivobo-video .innder').addClass('active')
+			// $('#weilion-home .weilion-home-vivobo-video .innder').html('')
+			// $('#weilion-home .weilion-home-vivobo-video .innder').addClass('active')
 		}
+		// setTimeout(() => {
+		// 	$('#weilion-home .weilion-home-vivobo-video .innder').html('').addClass('active')
+		// }, 3000);
 	},
 	keyboardEvent: () => {
 		document.onkeyup = function (e) {
@@ -351,7 +354,7 @@ var WEILION_APP = {
 		WEILION_APP.marquee();
 		WEILION_APP.techCarousel();
 		WEILION_APP.timeLine();
-		WEILION_APP.videoJS();
+		// WEILION_APP.videoJS();
 		WEILION_APP.keyboardEvent();
 		WEILION_APP.fixediOS();
 		WEILION_APP.weilion();
