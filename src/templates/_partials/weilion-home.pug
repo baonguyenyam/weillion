@@ -13,14 +13,13 @@ weilion-home(id=app+"-home")
 					.weilion-home-vivobo
 						.weilion-home-vivobo-video
 							.innder
+								//- video.video-js(src="https://stream-s1.weilion.com/video-header1")
 								//- video(src="/data/w-x-header.mp4" muted autoplay preload="auto" loop)
-								video(disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
-									source(src="https://stream-s1.weilion.com/video-header1")
-									//- source(src="https://stream-s1.weilion.com/videos?id=bg-1" disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+								//- video(disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+								video#wei-player(disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+									source(src="https://stream-s1.weilion.com/video-header1" type="video/mp4")
 								//- video#video
 										source(src="https://stream-s1.weilion.com/video-header1" muted autoplay preload="auto" loop)
-								//- video#wei-player.video-js
-										source(src="https://stream-s1.weilion.com/video-header1")
 						.weilion-home-odometer
 							.odometer-number
 								h2 holder
