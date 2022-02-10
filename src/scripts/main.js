@@ -263,7 +263,7 @@ var WEILION_APP = {
 		});
 	},
 	fixediOS: () => {
-		if (navigator.userAgent.match(/(iPad|iPhone|iPod)/gi)) {
+		if (navigator.userAgent.match(/(iPad|iPhone|iPod|webOS)/gi)) {
 			$('head').append('<style>weilion-weimong#weilion-weimong:after,weilion-contact#weilion-contact:before,weilion-resources#weilion-resources:after{background-attachment: scroll !important;}</style>');
 		}
 	},
