@@ -14,6 +14,7 @@ module.exports = function (gulp, $, browserSync) {
 				'src/vendors/smoothscroll.js',
 				'src/vendors/jquery.marquee.min.js',
 				'src/vendors/jquery.fancybox.min.js',
+				'src/vendors/jquery.background-video.js',
 				// 'src/vendors/video.min.js',
 				// 'src/vendors/videojs-http-streaming.min.js',
 				// 'src/vendors/particle.js',

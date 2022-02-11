@@ -174,8 +174,11 @@ var WEILION_APP = {
 			typeSpeed: 2,
 			contentType: 'html',
 			loop: false,
-			cursorChar: '_'
-		});
+			cursorChar: '_',
+			onComplete: (self) => {
+				$('#pace-loading').removeClass('d-none')
+			}
+		})
 	},
 	runNumber: () => {
 
@@ -322,26 +325,31 @@ var WEILION_APP = {
 		})
 	},
 	videoJS: () => {
-		videojs('wei-player', {
-			controls: false,
-			autoplay: true,
-			loop: true,
-			muted: true,
-			height: 161,
-			// liveui: true,
-			width: 286,
-			pictureInPictureToggle: false,
-			disablePictureInPicture: true,
-			controlBar: {
-				pictureInPictureToggle: false,
-			},
-			preload: 'auto'
-		}).on('error', function() {
-			$('#weilion-home .weilion-home-vivobo-video .innder').html('')
-			$('#weilion-home .weilion-home-vivobo-video .innder').addClass('active')
-		  });
-		var pipButton = document.getElementById('wei-player');
-		pipButton.disablePictureInPicture = true;
+		$('#pace-loading').on('click', function() {
+			$('#weilion_loading_done').addClass('done');
+			$('#top-page').addClass('loaded');
+		})
+		// videojs('wei-player', {
+		// 	controls: false,
+		// 	autoplay: true,
+		// 	loop: true,
+		// 	muted: true,
+		// 	height: 161,
+		// 	// liveui: true,
+		// 	width: 286,
+		// 	pictureInPictureToggle: false,
+		// 	disablePictureInPicture: true,
+		// 	controlBar: {
+		// 		pictureInPictureToggle: false,
+		// 	},
+		// 	preload: 'auto'
+		// }).on('error', function() {
+		// 	$('#weilion-home .weilion-home-vivobo-video .innder').html('')
+		// 	$('#weilion-home .weilion-home-vivobo-video .innder').addClass('active')
+		//   });
+		// var pipButton = document.getElementById('wei-player');
+		// pipButton.disablePictureInPicture = true;
+		document.getElementById('wei-player').play();
 	},
 	init: () => {
 		// WEILION_APP.loadingAnimation();
@@ -354,7 +362,7 @@ var WEILION_APP = {
 		WEILION_APP.marquee();
 		WEILION_APP.techCarousel();
 		WEILION_APP.timeLine();
-		// WEILION_APP.videoJS();
+		WEILION_APP.videoJS();
 		WEILION_APP.keyboardEvent();
 		WEILION_APP.fixediOS();
 		WEILION_APP.weilion();

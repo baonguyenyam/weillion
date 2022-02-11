@@ -28,6 +28,11 @@
 		img 
 			max-width: 200px
 		#text-loading
+		#pace-loading
+			z-index: 100
+			position: fixed
+			right: 2rem
+			top: 2rem
 	&.done
 		animation: weilion_loading_done .5s 1s ease-in-out forwards
 	@media (min-width: 360px)
@@ -48,6 +53,7 @@
 				position: relative
 				margin: 50px auto
 				padding: 50px 60px
+				z-index: -1
 				.caption
 					display: block
 					position: absolute
@@ -67,7 +73,7 @@
 					content: " "
 					position: absolute
 					border: 1px solid #2efffe
-					z-index: 1
+					z-index: -1
 				&::before
 					top: 20px
 					bottom: 20px
