@@ -36,7 +36,7 @@ block body
 	include _partials/weilion-contact
 	include _partials/weilion-footer
 	// Audio player
-	audio(id=app+"_loading__audio", controls, autoplay)
+	audio(id=app+"_loading__audio", controls)
 		source(src="/data/002.mp3" type="audio/mpeg")
 		source(src="/data/002.wav" type="audio/wav")
 	audio(id=app+"_background__audio", controls)
@@ -63,7 +63,7 @@ block body
 	audio(id=app+"_space__yahoo", controls)
 		source(src="/data/bensound-hey.mp3" type="audio/mpeg")
 	// Coming soon
-	#weilionBackdrop.modal.fade(data-backdrop="static", data-keyboard="false", tabindex="-1", aria-labelledby="weilionBackdropLabel", aria-hidden="true")
+	#weilionBackdrop.modal(data-backdrop="static", data-keyboard="false", tabindex="-1", aria-labelledby="weilionBackdropLabel", aria-hidden="true")
 		.modal-dialog.modal-dialog-centered
 			.modal-content
 				.modal-header
@@ -154,9 +154,6 @@ block body
 						h4 director of photography
 						p.name Sam
 		
-						//- h4 screenplay by
-						//- p.name Nguyen Pham
-
 						h4 3d by
 						p.name Stefano Tsai
 		

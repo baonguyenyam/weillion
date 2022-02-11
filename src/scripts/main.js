@@ -68,7 +68,7 @@ var WEILION_APP = {
 			$('#weilion_intro__audio').get(0).load();
 			$('#weilion_intro__audio').get(0).play();
 		});
-		$('.weilion-home-btn, .weilion-mong-btn').on('click', () => {
+		$('[data-target="#weilionBackdrop"]').on('click', () => {
 			$('#weilion_intro_click__audio').get(0).load();
 			$('#weilion_intro_click__audio').get(0).play();
 		});

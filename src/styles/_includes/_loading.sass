@@ -16,7 +16,7 @@
 	.innderloading
 		width: 100%
 		max-width: 600px
-		padding: 30px
+		padding: 15px
 		font-size: .65rem
 		.caption
 			display: none
@@ -27,76 +27,75 @@
 			margin: 1rem auto
 		img 
 			max-width: 200px
+			width: 100%
 		#text-loading
 		#pace-loading
 			z-index: 100
 			position: fixed
-			right: 2rem
-			top: 2rem
+			right: 1rem
+			top: 1rem
+		.cnt
+			background-color: #180099
+			box-shadow: 10px 10px 0 0 rgba(0,0,0,.8)
+			position: relative
+			margin: 50px auto
+			padding: 40px 40px
+			z-index: -1
+			.caption
+				white-space: nowrap
+				display: block
+				position: absolute
+				top: 14px
+				left: 50%
+				transform: translateX(-50%)
+				top: 10px
+				text-align: center
+				color: #2efffe
+				z-index: 2
+				span
+					display: inline-block
+					padding: 0 10px
+					background-color: #180099
+			&::before,
+			&::after
+				content: " "
+				position: absolute
+				border: 1px solid #2efffe
+				z-index: -1
+			&::before
+				top: 20px
+				bottom: 20px
+				left: 20px
+				right: 20px
+			&::after
+				top: 22px
+				bottom: 22px
+				left: 22px
+				right: 22px
+			.cnt-lo
+				color: #2efffe
+				margin-bottom: 0
+				#text-loading
+					.done 
+						color: #fcff55
 	&.done
 		animation: weilion_loading_done .5s 1s ease-in-out forwards
 	@media (min-width: 360px)
 		.innderloading
 			font-size: .85rem
+			padding: 20px
 	@media (min-width: 768px)
 		.innderloading
 			font-size: 1rem
 			padding: 100px 50px
 	@media (min-width: 992px)
-		// background-color: #333333
 		.innderloading
 			font-size: 1rem
 			padding: 100px 0
 			.cnt
-				background-color: #180099
 				box-shadow: 20px 20px 0 0 rgba(0,0,0,.8)
-				position: relative
 				margin: 50px auto
 				padding: 50px 60px
-				z-index: -1
-				.caption
-					display: block
-					position: absolute
-					top: 14px
-					left: 50%
-					transform: translateX(-50%)
-					top: 10px
-					text-align: center
-					color: #2efffe
-					z-index: 2
-					span
-						display: inline-block
-						padding: 0 10px
-						background-color: #180099
-				&::before,
-				&::after
-					content: " "
-					position: absolute
-					border: 1px solid #2efffe
-					z-index: -1
-				&::before
-					top: 20px
-					bottom: 20px
-					left: 20px
-					right: 20px
-				&::after
-					top: 22px
-					bottom: 22px
-					left: 22px
-					right: 22px
-				.cnt-lo
-					color: #2efffe
-					margin-bottom: 0
-					#text-loading
-						// > span
-						// 	display: flex
-						// 	justify-content: space-between
-						// 	flex-direction: row
-						// 	flex-wrap: nowrap
-						// br 
-						// 	display: none
-						.done 
-							color: #fcff55
 #weilion_loading
 	position: fixed
 	top: 0
