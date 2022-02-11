@@ -170,7 +170,7 @@ var WEILION_APP = {
 			loop: true
 		});
 		var typedLoading = new Typed('#text-loading', {
-			strings: ["<span>Loading... <span class='done'>[DONE]</span></span><br><span>Starting WEILION system... <span class='done'>[DONE]</span></span><br><span>Loading animation... <span class='done'>[DONE]</span></span><br><span>Loading sound... <span class='done'>[DONE]</span></span><br><span>System initializing... <span class='done'>[DONE]</span></span>"],
+			strings: ["<span>Booting up... <span class='done'>[DONE]</span></span><br><span>Starting WEILION system... <span class='done'>[DONE]</span></span><br><span>Loading animation... <span class='done'>[DONE]</span></span><br><span>Loading sound... <span class='done'>[DONE]</span></span><br><span>System initializing... <span class='done'>[DONE]</span></span>"],
 			typeSpeed: 2,
 			contentType: 'html',
 			loop: false,
