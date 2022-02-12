@@ -13,7 +13,7 @@ module.exports = function (gulp, $, browserSync) {
 				'src/vendors/jquery.fancybox.min.css',
 				'src/vendors/jquery.fancybox.min.css',
 				'src/vendors/pace-theme-default.min.css',
-				'src/vendors/plyr.css',
+				// 'src/vendors/plyr.css',
 				// 'src/vendors/video-js.min.css',
 			])
 			.pipe($.concat('weilion.css'))

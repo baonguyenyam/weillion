@@ -78,6 +78,7 @@ weilion-header
 							text-shadow: 0 0 7px $weilion-main-hover, 0 0 20px $weilion-main-hover
 		#welionMenu
 			z-index: 950
+			min-width: 20px
 		#welionToggleMenu
 			.dropdown-menu
 				background-color: rgba(0, 0, 0, 0.5)
@@ -196,13 +197,31 @@ weilion-header
 	+media-breakpoint-up(xl)
 		.navbar
 			#welionToggleMenu
+				margin-right: 1rem
+				.navbar-nav
+					font-size: 1.1rem
+					.nav-item
+						margin-left: 1rem
+						.nav-link
+							letter-spacing: 2px
+	@media (min-width: 1300px)
+		.navbar
+			#welionToggleMenu
+				margin-right: 1.5rem
+				.navbar-nav
+					font-size: 1.1rem
+					.nav-item
+						margin-left: 1.5rem
+						.nav-link
+							letter-spacing: 3px
+	@media (min-width: 1500px)
+		.navbar
+			#welionToggleMenu
 				margin-right: 2rem
 				.navbar-nav
 					font-size: 1.1rem
 					.nav-item
 						margin-left: 2rem
-						.nav-link
-							letter-spacing: 3px
 	&.active
 		position: fixed
 		top: 0
