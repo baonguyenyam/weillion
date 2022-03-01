@@ -61,8 +61,8 @@ var WEILION_APP = {
 			audiostatus = 'off';
 		});
 		// if ($('#weilion_loading')) {
-			// $('#weilion_loading__audio').get(0).load();
-			// $('#weilion_loading__audio').get(0).play();
+		// $('#weilion_loading__audio').get(0).load();
+		// $('#weilion_loading__audio').get(0).play();
 		// }
 		$('.weilion-home-btn, .weilion-mong-btn').on('mouseenter mouseleave', () => {
 			$('#weilion_intro__audio').get(0).load();
@@ -325,52 +325,45 @@ var WEILION_APP = {
 		})
 	},
 	videoJS: () => {
-		$('#pace-loading').on('click', function() {
+		$('#pace-loading').on('click', function () {
 			$('#weilion_loading_done').addClass('done');
 			$('#top-page').addClass('loaded');
 		})
-		// var player = new Plyr('#wei-player', {
-		// 	controls: false,
-		// 	autoplay: true,
-		// 	volume: 0,
-		// 	blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
-		// 	muted: true,
-		// 	hideControls: true,
-		// 	loop: { active: true },
-		// 	// youtube	: { 
-		// 	// 	noCookie: false, 
-		// 	// 	rel: 0, 
-		// 	// 	showinfo: 0, 
-		// 	// 	iv_load_policy: 3, 
-		// 	// 	modestbranding: 1 
+		var player = new Plyr('#videobghome', {
+			controls: false,
+			autoplay: true,
+			volume: 0,
+			// blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
+			muted: true,
+			hideControls: true,
+			loop: { active: true },
+			// youtube	: { 
+			// 	noCookie: false, 
+			// 	rel: 0, 
+			// 	showinfo: 0, 
+			// 	iv_load_policy: 3, 
+			// 	modestbranding: 1 
+			// },
+			previewThumbnails:{ 
+				enabled: false,
+				src: '/img/thumvi-2.png'
+			}
+		});
+		player.play();
+		// videojs('videobghome', {
+		// 	// controls: false,
+		// 	// autoplay: true,
+		// 	// loop: true,
+		// 	// muted: true,
+		// 	// fluid: true,
+		// 	// pictureInPictureToggle: false,
+		// 	// disablePictureInPicture: true,
+		// 	// controlBar: {
+		// 	// 	pictureInPictureToggle: false,
 		// 	// },
-		// 	previewThumbnails:{ 
-		// 		enabled: false,
-		// 		src: '/img/thumvi-2.png'
-		// 	}
-		// });
-		// player.play();
-		// videojs('wei-player', {
-		// 	controls: false,
-		// 	autoplay: true,
-		// 	loop: true,
-		// 	muted: true,
-		// 	height: 161,
-		// 	// liveui: true,
-		// 	width: 286,
-		// 	pictureInPictureToggle: false,
-		// 	disablePictureInPicture: true,
-		// 	controlBar: {
-		// 		pictureInPictureToggle: false,
-		// 	},
 		// 	preload: 'auto'
-		// }).on('error', function() {
-		// 	$('#weilion-home .weilion-home-vivobo-video .innder').html('')
-		// 	$('#weilion-home .weilion-home-vivobo-video .innder').addClass('active')
-		//   });
-		// var pipButton = document.getElementById('wei-player');
-		// pipButton.disablePictureInPicture = true;
-		// document.getElementById('wei-player').play();
+		// }).on('error', function () {
+		// });
 	},
 	init: () => {
 		// WEILION_APP.loadingAnimation();
@@ -403,14 +396,14 @@ jQuery(window).on('resize', () => {
 
 // INIT SYSTEM 
 window.paceOptions = {
-    ajax: false, // disabled
-    document: true, // disabled
-    eventLag: false, // disabled
-    // elements: {
-    //     selectors: ['.weipace-loading']
-    // }
+	ajax: false, // disabled
+	document: true, // disabled
+	eventLag: false, // disabled
+	// elements: {
+	//     selectors: ['.weipace-loading']
+	// }
 };
-Pace.on('done',function() {
+Pace.on('done', function () {
 	document.getElementById('weilion_loading_done').classList.add('done');
 	setTimeout(() => {
 		document.getElementById('top-page').classList.add('loaded');
