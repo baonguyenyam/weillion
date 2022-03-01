@@ -329,27 +329,29 @@ var WEILION_APP = {
 			$('#weilion_loading_done').addClass('done');
 			$('#top-page').addClass('loaded');
 		})
-		var player = new Plyr('#videobghome', {
-			controls: false,
-			autoplay: true,
-			volume: 0,
-			// blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
-			muted: true,
-			hideControls: true,
-			loop: { active: true },
-			// youtube	: { 
-			// 	noCookie: false, 
-			// 	rel: 0, 
-			// 	showinfo: 0, 
-			// 	iv_load_policy: 3, 
-			// 	modestbranding: 1 
-			// },
-			previewThumbnails:{ 
-				enabled: false,
-				src: '/img/thumvi-2.png'
-			}
-		});
-		player.play();
+		if ($(window).width() > 991) {
+			var player = new Plyr('#videobghome', {
+				controls: false,
+				autoplay: true,
+				volume: 0,
+				// blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
+				muted: true,
+				hideControls: true,
+				loop: { active: true },
+				// youtube	: { 
+				// 	noCookie: false, 
+				// 	rel: 0, 
+				// 	showinfo: 0, 
+				// 	iv_load_policy: 3, 
+				// 	modestbranding: 1 
+				// },
+				previewThumbnails: {
+					enabled: false,
+					src: '/img/thumvi-2.png'
+				}
+			});
+			player.play();
+		}
 		// videojs('videobghome', {
 		// 	// controls: false,
 		// 	// autoplay: true,
