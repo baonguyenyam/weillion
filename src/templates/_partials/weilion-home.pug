@@ -76,5 +76,7 @@ weilion-home(id=app+"-home")
 
 	//- Video player 
 	#videobg
-		video#videobghome(crossorigin playsinline disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+		video#videobghome.video-desk(crossorigin playsinline disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
 			source(src="./data/bgvideo_c2.mp4" type="video/mp4")
+		video#videobghome.video-mobile(crossorigin playsinline disablePictureInPicture="true" muted autoplay preload="auto" loop disablepictureinpicture controlslist="nodownload")
+			source(src="./data/video-header-mobile.mp4" type="video/mp4")

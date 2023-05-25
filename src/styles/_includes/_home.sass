@@ -10,25 +10,32 @@ weilion-home
 	// overflow-x: hidden
 	position: relative
 	#videobg
-		display: none
-	+media-breakpoint-up(md)
-		padding: 4rem 0 3rem 0
-		#videobg
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		display: block
+		video
+			min-width: 100%
+			min-height: 100%
 			position: absolute
 			top: 0
 			left: 0
 			width: 100%
 			height: 100%
+			object-fit: cover
 			display: block
+			&.video-desk
+				display: none
+	+media-breakpoint-up(md)
+		padding: 4rem 0 3rem 0
+		#videobg
 			video
-				min-width: 100%
-				min-height: 100%
-				// width: auto
-				// height: 100vh
-				// position: absolute
-				// top: 50%
-				// left: 50%
-				// transform: translate(-50%, -50%)
+				&.video-desk
+					display: block
+				&.video-mobile
+					display: none
 	+media-breakpoint-up(xl)
 		background: url('../img/weilion-home-bg.png') no-repeat bottom right
 		background-size: cover
@@ -207,7 +214,7 @@ weilion-home
 			border-radius: 10px
 			justify-content: center
 			align-items: center
-				display: flex
+			display: none
 			.innder
 				overflow: hidden
 				min-width: calc(200px - 1.4rem)
@@ -232,8 +239,8 @@ weilion-home
 					min-height: calc(190px - 1.4rem)
 					background: url('../img/thumvi-2.png') no-repeat bottom right
 					background-size: cover
-			// +media-breakpoint-up(lg)
-			// 	display: flex
+			+media-breakpoint-up(lg)
+				display: flex
 		.weilion-home-odometer
 			display: flex
 			flex-direction: row
